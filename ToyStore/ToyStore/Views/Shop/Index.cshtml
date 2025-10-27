@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Sklep - ToyStore";
+}
+
+<div class="container my-5">
+    <h1 class="text-center mb-4 text-primary">Nasza oferta</h1>
+    <p class="text-center text-muted mb-5">Przeglądaj nasze najnowsze zabawki i znajdź coś dla swojego dziecka 🎁</p>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <img src="~/images/products/klocki.jpg" class="card-img-top" alt="Klocki">
+                <div class="card-body">
+                    <h5 class="card-title">Klocki Lego</h5>
+                    <p class="card-text">Zbuduj świat swojej wyobraźni z zestawem klasycznych klocków Lego.</p>
+                </div>
+                <div class="card-footer text-center">
+                    <a asp-controller="Shop" asp-action="Details" asp-route-id="1" class="btn btn-outline-primary">Szczegóły</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <img src="~/images/products/pluszak.jpg" class="card-img-top" alt="Pluszak">
+                <div class="card-body">
+                    <h5 class="card-title">Miś Teddy</h5>
+                    <p class="card-text">Mięciutki i przytulny — najlepszy przyjaciel każdego malucha.</p>
+                </div>
+                <div class="card-footer text-center">
+                    <a asp-controller="Shop" asp-action="Details" asp-route-id="2" class="btn btn-outline-primary">Szczegóły</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <img src="~/images/products/edukacyjna.jpg" class="card-img-top" alt="Gra edukacyjna">
+                <div class="card-body">
+                    <h5 class="card-title">Gra edukacyjna</h5>
+                    <p class="card-text">Nauka przez zabawę — gra rozwijająca logiczne myślenie i spostrzegawczość.</p>
+                </div>
+                <div class="card-footer text-center">
+                    <a asp-controller="Shop" asp-action="Details" asp-route-id="3" class="btn btn-outline-primary">Szczegóły</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

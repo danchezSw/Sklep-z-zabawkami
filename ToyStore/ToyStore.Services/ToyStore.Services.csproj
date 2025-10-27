@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ToyStore.DAL\ToyStore.DAL.csproj" />
+    <ProjectReference Include="..\ToyStore.Model\ToyStore.Model.csproj" />
+    <ProjectReference Include="..\ToyStore.ViewModels\ToyStore.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "ToyStore - Sklep z zabawkami";
+}
+
+<div class="text-center my-5">
+    <h1 class="display-3 fw-bold text-primary">Witamy w ToyStore!</h1>
+    <p class="lead text-secondary">Najlepsze zabawki dla dzieci w każdym wieku 🎁</p>
+    <a asp-controller="Shop" asp-action="Index" class="btn btn-lg btn-primary mt-3">Zobacz ofertę</a>
+
+</div>
+
+<hr class="my-5" />
+
+<div class="container">
+    <h2 class="text-center mb-4">Kategorie zabawek</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <img src="~/images/klocki.jpg" class="card-img-top p-4" alt="Klocki">
+                <div class="card-body">
+                    <h5 class="card-title">Klocki</h5>
+                    <p class="card-text">Rozwijaj kreatywność i wyobraźnię dziecka dzięki naszym zestawom klocków!</p>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="#" class="btn btn-outline-primary">Zobacz</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <img src="~/images/pluszak.jpg" class="card-img-top p-4" alt="Pluszaki">
+                <div class="card-body">
+                    <h5 class="card-title">Pluszaki</h5>
+                    <p class="card-text">Miękkie, przytulne i zawsze gotowe na zabawę — znajdź swojego ulubionego misia!</p>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="#" class="btn btn-outline-primary">Zobacz</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <img src="~/images/gry.jpg" class="card-img-top p-4" alt="Gry edukacyjne">
+                <div class="card-body">
+                    <h5 class="card-title">Gry edukacyjne</h5>
+                    <p class="card-text">Ucz się przez zabawę — gry, które rozwijają pamięć, logikę i spostrzegawczość.</p>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="#" class="btn btn-outline-primary">Zobacz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="my-5" />
+
+<div class="bg-light py-5">
+    <div class="container text-center">
+        <h2 class="mb-3">Dlaczego ToyStore?</h2>
+        <p class="text-muted mb-4">Szybka wysyłka, atrakcyjne ceny i szeroki wybór zabawek od najlepszych producentów!</p>
+        <a asp-controller="Shop" asp-action="Index" class="btn btn-success btn-lg">Przejdź do sklepu</a>
+
+    </div>
+</div>

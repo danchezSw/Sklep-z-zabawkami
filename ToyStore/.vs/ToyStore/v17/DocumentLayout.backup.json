@@ -3,8 +3,100 @@
   "WorkspaceRootPath": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|solutionrelative:toystore\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|solutionrelative:toystore\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76A7EBFE-67FE-45B8-89A6-A483AAEBDC6E}|ToyStore.Model\\ToyStore.Model.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore.model\\datamodels\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76A7EBFE-67FE-45B8-89A6-A483AAEBDC6E}|ToyStore.Model\\ToyStore.Model.csproj|solutionrelative:toystore.model\\datamodels\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.DAL\\Migrations\\20251101204804_Role2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ToyStore.DAL\\Migrations\\20251101204804_Role2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2901C91-A96A-49D3-A483-99F5E1F7D457}|ToyStore.DAL\\ToyStore.DAL.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore.dal\\ef\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2901C91-A96A-49D3-A483-99F5E1F7D457}|ToyStore.DAL\\ToyStore.DAL.csproj|solutionrelative:toystore.dal\\ef\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76A7EBFE-67FE-45B8-89A6-A483AAEBDC6E}|ToyStore.Model\\ToyStore.Model.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore.model\\datamodels\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76A7EBFE-67FE-45B8-89A6-A483AAEBDC6E}|ToyStore.Model\\ToyStore.Model.csproj|solutionrelative:toystore.model\\datamodels\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|solutionrelative:toystore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore\\toystore.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|solutionrelative:toystore\\toystore.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|solutionrelative:toystore\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|solutionrelative:toystore\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore\\areas\\identity\\pages\\account\\resendemailconfirmation.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|solutionrelative:toystore\\areas\\identity\\pages\\account\\resendemailconfirmation.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore\\areas\\identity\\pages\\account\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|solutionrelative:toystore\\areas\\identity\\pages\\account\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore\\areas\\identity\\pages\\account\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|solutionrelative:toystore\\areas\\identity\\pages\\account\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore\\areas\\identity\\pages\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|solutionrelative:toystore\\areas\\identity\\pages\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore\\areas\\identity\\pages\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|solutionrelative:toystore\\areas\\identity\\pages\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore\\areas\\identity\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|solutionrelative:toystore\\areas\\identity\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore\\areas\\identity\\pages\\account\\forgotpasswordconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|solutionrelative:toystore\\areas\\identity\\pages\\account\\forgotpasswordconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|solutionrelative:toystore\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore\\areas\\identity\\pages\\account\\logout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|solutionrelative:toystore\\areas\\identity\\pages\\account\\logout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore\\areas\\identity\\pages\\account\\forgotpasswordconfirmation.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|solutionrelative:toystore\\areas\\identity\\pages\\account\\forgotpasswordconfirmation.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore\\areas\\identity\\pages\\account\\forgotpassword.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|solutionrelative:toystore\\areas\\identity\\pages\\account\\forgotpassword.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore\\areas\\identity\\pages\\account\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|solutionrelative:toystore\\areas\\identity\\pages\\account\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|solutionrelative:toystore\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{76A7EBFE-67FE-45B8-89A6-A483AAEBDC6E}|ToyStore.Model\\ToyStore.Model.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore.model\\datamodels\\rolevalue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{76A7EBFE-67FE-45B8-89A6-A483AAEBDC6E}|ToyStore.Model\\ToyStore.Model.csproj|solutionrelative:toystore.model\\datamodels\\rolevalue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -59,24 +151,8 @@
       "RelativeMoniker": "D:0:0:{76A7EBFE-67FE-45B8-89A6-A483AAEBDC6E}|ToyStore.Model\\ToyStore.Model.csproj|solutionrelative:toystore.model\\datamodels\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F2901C91-A96A-49D3-A483-99F5E1F7D457}|ToyStore.DAL\\ToyStore.DAL.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore.dal\\ef\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F2901C91-A96A-49D3-A483-99F5E1F7D457}|ToyStore.DAL\\ToyStore.DAL.csproj|solutionrelative:toystore.dal\\ef\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|solutionrelative:toystore\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|solutionrelative:toystore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F2901C91-A96A-49D3-A483-99F5E1F7D457}|ToyStore.DAL\\ToyStore.DAL.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore.dal\\applicationdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F2901C91-A96A-49D3-A483-99F5E1F7D457}|ToyStore.DAL\\ToyStore.DAL.csproj|solutionrelative:toystore.dal\\applicationdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore\\toystore.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{64BA2541-966C-46F2-B9D0-6AC36CEEB51A}|ToyStore\\ToyStore.Web.csproj|solutionrelative:toystore\\toystore.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{76A7EBFE-67FE-45B8-89A6-A483AAEBDC6E}|ToyStore.Model\\ToyStore.Model.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore.model\\datamodels\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -85,10 +161,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{76A7EBFE-67FE-45B8-89A6-A483AAEBDC6E}|ToyStore.Model\\ToyStore.Model.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore.model\\datamodels\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{76A7EBFE-67FE-45B8-89A6-A483AAEBDC6E}|ToyStore.Model\\ToyStore.Model.csproj|solutionrelative:toystore.model\\datamodels\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{76A7EBFE-67FE-45B8-89A6-A483AAEBDC6E}|ToyStore.Model\\ToyStore.Model.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore.model\\datamodels\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{76A7EBFE-67FE-45B8-89A6-A483AAEBDC6E}|ToyStore.Model\\ToyStore.Model.csproj|solutionrelative:toystore.model\\datamodels\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{76A7EBFE-67FE-45B8-89A6-A483AAEBDC6E}|ToyStore.Model\\ToyStore.Model.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore.model\\datamodels\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -105,6 +177,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{76A7EBFE-67FE-45B8-89A6-A483AAEBDC6E}|ToyStore.Model\\ToyStore.Model.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore.model\\toystore.model.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{76A7EBFE-67FE-45B8-89A6-A483AAEBDC6E}|ToyStore.Model\\ToyStore.Model.csproj|solutionrelative:toystore.model\\toystore.model.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2901C91-A96A-49D3-A483-99F5E1F7D457}|ToyStore.DAL\\ToyStore.DAL.csproj|c:\\users\\mateu\\desktop\\studiaprojekt\\toystore\\toystore.dal\\migrations\\20251031212317_role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2901C91-A96A-49D3-A483-99F5E1F7D457}|ToyStore.DAL\\ToyStore.DAL.csproj|solutionrelative:toystore.dal\\migrations\\20251031212317_role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -114,168 +190,284 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Shop\\Index.cshtml",
-              "RelativeDocumentMoniker": "ToyStore\\Views\\Shop\\Index.cshtml",
-              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Shop\\Index.cshtml",
-              "RelativeToolTip": "ToyStore\\Views\\Shop\\Index.cshtml",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAcwDEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-27T07:57:55.012Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ShopController.cs",
-              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Controllers\\ShopController.cs",
-              "RelativeDocumentMoniker": "ToyStore\\Controllers\\ShopController.cs",
-              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Controllers\\ShopController.cs",
-              "RelativeToolTip": "ToyStore\\Controllers\\ShopController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T07:57:15.378Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\_ViewStart.cshtml",
-              "RelativeDocumentMoniker": "ToyStore\\Views\\_ViewStart.cshtml",
-              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\_ViewStart.cshtml",
-              "RelativeToolTip": "ToyStore\\Views\\_ViewStart.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-27T07:40:07.18Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "ToyStore\\Views\\_ViewImports.cshtml",
-              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "ToyStore\\Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-27T07:39:52.049Z"
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Program.cs",
+              "RelativeDocumentMoniker": "ToyStore\\Program.cs",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Program.cs",
+              "RelativeToolTip": "ToyStore\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T13:10:34.432Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Error.cshtml",
-              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Shared\\Error.cshtml",
-              "RelativeDocumentMoniker": "ToyStore\\Views\\Shared\\Error.cshtml",
-              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Shared\\Error.cshtml",
-              "RelativeToolTip": "ToyStore\\Views\\Shared\\Error.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "ForgotPassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\Account\\ForgotPassword.cshtml",
+              "RelativeDocumentMoniker": "ToyStore\\Areas\\Identity\\Pages\\Account\\ForgotPassword.cshtml",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\Account\\ForgotPassword.cshtml",
+              "RelativeToolTip": "ToyStore\\Areas\\Identity\\Pages\\Account\\ForgotPassword.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-27T07:39:19.272Z"
+              "WhenOpened": "2025-10-31T21:13:49.693Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "_ValidationScriptsPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeDocumentMoniker": "ToyStore\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeToolTip": "ToyStore\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-27T07:39:05.548Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "ToyStore\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "ToyStore\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAB2AAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAAwEMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-27T07:38:46.62Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Shop\\Details.cshtml",
-              "RelativeDocumentMoniker": "ToyStore\\Views\\Shop\\Details.cshtml",
-              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Shop\\Details.cshtml",
-              "RelativeToolTip": "ToyStore\\Views\\Shop\\Details.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "ToyStore\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeToolTip": "ToyStore\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ViewState": "AgIAADgAAAAAAAAAAAAiwEwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-27T07:58:04.573Z"
+              "WhenOpened": "2025-10-31T21:13:55.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.DAL\\EF\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "ToyStore.DAL\\EF\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.DAL\\EF\\ApplicationDbContext.cs",
+              "RelativeToolTip": "ToyStore.DAL\\EF\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T13:01:25.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.Model\\DataModels\\User.cs",
+              "RelativeDocumentMoniker": "ToyStore.Model\\DataModels\\User.cs",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.Model\\DataModels\\User.cs*",
+              "RelativeToolTip": "ToyStore.Model\\DataModels\\User.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T12:53:19.935Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "ToyStore\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "ToyStore\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-27T07:34:00.133Z"
+              "Title": "Register.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeDocumentMoniker": "ToyStore\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeToolTip": "ToyStore\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAIwKEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T21:27:56.805Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Privacy.cshtml",
-              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Home\\Privacy.cshtml",
-              "RelativeDocumentMoniker": "ToyStore\\Views\\Home\\Privacy.cshtml",
-              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Home\\Privacy.cshtml",
-              "RelativeToolTip": "ToyStore\\Views\\Home\\Privacy.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "ToyStore\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeToolTip": "ToyStore\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ViewState": "AgIAACwAAAAAAAAAAAAiwEkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-27T07:33:54.452Z"
+              "WhenOpened": "2025-10-31T21:26:58.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "20251101204804_Role2.cs",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.DAL\\Migrations\\20251101204804_Role2.cs",
+              "RelativeDocumentMoniker": "ToyStore.DAL\\Migrations\\20251101204804_Role2.cs",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.DAL\\Migrations\\20251101204804_Role2.cs",
+              "RelativeToolTip": "ToyStore.DAL\\Migrations\\20251101204804_Role2.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T20:48:05.608Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ToyStore.Web.csproj",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\ToyStore.Web.csproj",
+              "RelativeDocumentMoniker": "ToyStore\\ToyStore.Web.csproj",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\ToyStore.Web.csproj",
+              "RelativeToolTip": "ToyStore\\ToyStore.Web.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-26T12:30:46.743Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Role.cs",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.Model\\DataModels\\Role.cs",
+              "RelativeDocumentMoniker": "ToyStore.Model\\DataModels\\Role.cs",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.Model\\DataModels\\Role.cs",
+              "RelativeToolTip": "ToyStore.Model\\DataModels\\Role.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T21:19:43.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "ToyStore\\Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
+              "RelativeToolTip": "ToyStore\\Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-31T21:13:48.657Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "20251026132829_InitialCreate.cs",
-              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.DAL\\Migrations\\20251026132829_InitialCreate.cs",
-              "RelativeDocumentMoniker": "ToyStore.DAL\\Migrations\\20251026132829_InitialCreate.cs",
-              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.DAL\\Migrations\\20251026132829_InitialCreate.cs",
-              "RelativeToolTip": "ToyStore.DAL\\Migrations\\20251026132829_InitialCreate.cs",
+              "Title": "ResendEmailConfirmation.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\Account\\ResendEmailConfirmation.cshtml.cs",
+              "RelativeDocumentMoniker": "ToyStore\\Areas\\Identity\\Pages\\Account\\ResendEmailConfirmation.cshtml.cs",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\Account\\ResendEmailConfirmation.cshtml.cs",
+              "RelativeToolTip": "ToyStore\\Areas\\Identity\\Pages\\Account\\ResendEmailConfirmation.cshtml.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAIAwwBEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T21:28:03.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "ToyStore\\Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "ToyStore\\Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T13:28:30.915Z"
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-31T21:37:37.517Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ApplicationDbContextFactory.cs",
-              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.DAL\\ApplicationDbContextFactory.cs",
-              "RelativeDocumentMoniker": "ToyStore.DAL\\ApplicationDbContextFactory.cs",
-              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.DAL\\ApplicationDbContextFactory.cs",
-              "RelativeToolTip": "ToyStore.DAL\\ApplicationDbContextFactory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T13:23:43.95Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Program.cs",
-              "RelativeDocumentMoniker": "ToyStore\\Program.cs",
-              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Program.cs",
-              "RelativeToolTip": "ToyStore\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T13:10:34.432Z"
+              "DocumentIndex": 14,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "ToyStore\\Areas\\Identity\\Pages\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\_ViewImports.cshtml",
+              "RelativeToolTip": "ToyStore\\Areas\\Identity\\Pages\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-31T21:37:42.635Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "ToyStore\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+              "RelativeToolTip": "ToyStore\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-31T21:38:16.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Login.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeDocumentMoniker": "ToyStore\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeToolTip": "ToyStore\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T21:27:36.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Logout.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\Account\\Logout.cshtml.cs",
+              "RelativeDocumentMoniker": "ToyStore\\Areas\\Identity\\Pages\\Account\\Logout.cshtml.cs",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\Account\\Logout.cshtml.cs",
+              "RelativeToolTip": "ToyStore\\Areas\\Identity\\Pages\\Account\\Logout.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T21:27:45.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ForgotPasswordConfirmation.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\Account\\ForgotPasswordConfirmation.cshtml.cs",
+              "RelativeDocumentMoniker": "ToyStore\\Areas\\Identity\\Pages\\Account\\ForgotPasswordConfirmation.cshtml.cs",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\Account\\ForgotPasswordConfirmation.cshtml.cs",
+              "RelativeToolTip": "ToyStore\\Areas\\Identity\\Pages\\Account\\ForgotPasswordConfirmation.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T21:34:58.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ForgotPasswordConfirmation.cshtml",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\Account\\ForgotPasswordConfirmation.cshtml",
+              "RelativeDocumentMoniker": "ToyStore\\Areas\\Identity\\Pages\\Account\\ForgotPasswordConfirmation.cshtml",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\Account\\ForgotPasswordConfirmation.cshtml",
+              "RelativeToolTip": "ToyStore\\Areas\\Identity\\Pages\\Account\\ForgotPasswordConfirmation.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-31T21:13:51.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ForgotPassword.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\Account\\ForgotPassword.cshtml.cs",
+              "RelativeDocumentMoniker": "ToyStore\\Areas\\Identity\\Pages\\Account\\ForgotPassword.cshtml.cs",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\Account\\ForgotPassword.cshtml.cs",
+              "RelativeToolTip": "ToyStore\\Areas\\Identity\\Pages\\Account\\ForgotPassword.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAWwAwAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T21:27:23.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\appsettings.json",
               "RelativeDocumentMoniker": "ToyStore\\appsettings.json",
@@ -283,23 +475,194 @@
               "RelativeToolTip": "ToyStore\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-26T13:10:32.329Z"
+              "WhenOpened": "2025-10-26T13:10:32.329Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.DAL\\EF\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "ToyStore.DAL\\EF\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.DAL\\EF\\ApplicationDbContext.cs",
-              "RelativeToolTip": "ToyStore.DAL\\EF\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "DocumentIndex": 21,
+              "Title": "Logout.cshtml",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
+              "RelativeDocumentMoniker": "ToyStore\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
+              "RelativeToolTip": "ToyStore\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-31T21:13:56.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "20251031212317_Role.cs",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.DAL\\Migrations\\20251031212317_Role.cs",
+              "RelativeDocumentMoniker": "ToyStore.DAL\\Migrations\\20251031212317_Role.cs",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.DAL\\Migrations\\20251031212317_Role.cs",
+              "RelativeToolTip": "ToyStore.DAL\\Migrations\\20251031212317_Role.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T13:01:25.945Z"
+              "WhenOpened": "2025-10-31T21:23:18.989Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 23,
+              "Title": "RoleValue.cs",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.Model\\DataModels\\RoleValue.cs",
+              "RelativeDocumentMoniker": "ToyStore.Model\\DataModels\\RoleValue.cs",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.Model\\DataModels\\RoleValue.cs",
+              "RelativeToolTip": "ToyStore.Model\\DataModels\\RoleValue.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T21:20:47.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ShopController.cs",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Controllers\\ShopController.cs",
+              "RelativeDocumentMoniker": "ToyStore\\Controllers\\ShopController.cs",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Controllers\\ShopController.cs",
+              "RelativeToolTip": "ToyStore\\Controllers\\ShopController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T07:57:15.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Shop\\Index.cshtml",
+              "RelativeDocumentMoniker": "ToyStore\\Views\\Shop\\Index.cshtml",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Shop\\Index.cshtml",
+              "RelativeToolTip": "ToyStore\\Views\\Shop\\Index.cshtml",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAcwDEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-27T07:57:55.012Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "ToyStore\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "ToyStore\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-27T07:40:07.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "ToyStore\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "ToyStore\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-27T07:39:52.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "ToyStore\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "ToyStore\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-27T07:39:19.272Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "ToyStore\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "ToyStore\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-27T07:39:05.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Shop\\Details.cshtml",
+              "RelativeDocumentMoniker": "ToyStore\\Views\\Shop\\Details.cshtml",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Shop\\Details.cshtml",
+              "RelativeToolTip": "ToyStore\\Views\\Shop\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-27T07:58:04.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "ToyStore\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "ToyStore\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAADAAAAAAAAAAAIBJwEAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-27T07:34:00.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "ToyStore\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "ToyStore\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-27T07:33:54.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "20251026132829_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.DAL\\Migrations\\20251026132829_InitialCreate.cs",
+              "RelativeDocumentMoniker": "ToyStore.DAL\\Migrations\\20251026132829_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.DAL\\Migrations\\20251026132829_InitialCreate.cs",
+              "RelativeToolTip": "ToyStore.DAL\\Migrations\\20251026132829_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T13:28:30.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "ApplicationDbContextFactory.cs",
+              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.DAL\\ApplicationDbContextFactory.cs",
+              "RelativeDocumentMoniker": "ToyStore.DAL\\ApplicationDbContextFactory.cs",
+              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.DAL\\ApplicationDbContextFactory.cs",
+              "RelativeToolTip": "ToyStore.DAL\\ApplicationDbContextFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T13:23:43.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
               "Title": "OrderItem.cs",
               "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.Model\\DataModels\\OrderItem.cs",
               "RelativeDocumentMoniker": "ToyStore.Model\\DataModels\\OrderItem.cs",
@@ -307,11 +670,12 @@
               "RelativeToolTip": "ToyStore.Model\\DataModels\\OrderItem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T12:51:32.43Z"
+              "WhenOpened": "2025-10-26T12:51:32.43Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 35,
               "Title": "Order.cs",
               "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.Model\\DataModels\\Order.cs",
               "RelativeDocumentMoniker": "ToyStore.Model\\DataModels\\Order.cs",
@@ -319,11 +683,12 @@
               "RelativeToolTip": "ToyStore.Model\\DataModels\\Order.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T12:50:03.867Z"
+              "WhenOpened": "2025-10-26T12:50:03.867Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 34,
               "Title": "ToyStore.DAL.csproj",
               "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.DAL\\ToyStore.DAL.csproj",
               "RelativeDocumentMoniker": "ToyStore.DAL\\ToyStore.DAL.csproj",
@@ -331,23 +696,12 @@
               "RelativeToolTip": "ToyStore.DAL\\ToyStore.DAL.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-26T12:38:35.257Z"
+              "WhenOpened": "2025-10-26T12:38:35.257Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "ToyStore.Web.csproj",
-              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\ToyStore.Web.csproj",
-              "RelativeDocumentMoniker": "ToyStore\\ToyStore.Web.csproj",
-              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore\\ToyStore.Web.csproj",
-              "RelativeToolTip": "ToyStore\\ToyStore.Web.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-26T12:30:46.743Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 39,
               "Title": "OrderStatus.cs",
               "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.Model\\DataModels\\OrderStatus.cs",
               "RelativeDocumentMoniker": "ToyStore.Model\\DataModels\\OrderStatus.cs",
@@ -355,23 +709,12 @@
               "RelativeToolTip": "ToyStore.Model\\DataModels\\OrderStatus.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T12:55:16.469Z"
+              "WhenOpened": "2025-10-26T12:55:16.469Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.Model\\DataModels\\User.cs",
-              "RelativeDocumentMoniker": "ToyStore.Model\\DataModels\\User.cs",
-              "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.Model\\DataModels\\User.cs",
-              "RelativeToolTip": "ToyStore.Model\\DataModels\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T12:53:19.935Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 38,
               "Title": "Category.cs",
               "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.Model\\DataModels\\Category.cs",
               "RelativeDocumentMoniker": "ToyStore.Model\\DataModels\\Category.cs",
@@ -379,11 +722,12 @@
               "RelativeToolTip": "ToyStore.Model\\DataModels\\Category.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T12:48:44.73Z"
+              "WhenOpened": "2025-10-26T12:48:44.73Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 41,
               "Title": "CartItem.cs",
               "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.Model\\DataModels\\CartItem.cs",
               "RelativeDocumentMoniker": "ToyStore.Model\\DataModels\\CartItem.cs",
@@ -391,23 +735,25 @@
               "RelativeToolTip": "ToyStore.Model\\DataModels\\CartItem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T12:49:36.007Z"
+              "WhenOpened": "2025-10-26T12:49:36.007Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 40,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.Model\\DataModels\\Product.cs",
               "RelativeDocumentMoniker": "ToyStore.Model\\DataModels\\Product.cs",
               "ToolTip": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.Model\\DataModels\\Product.cs",
               "RelativeToolTip": "ToyStore.Model\\DataModels\\Product.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAA5wBsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwBsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T12:47:12.589Z"
+              "WhenOpened": "2025-10-26T12:47:12.589Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 42,
               "Title": "ToyStore.Services.csproj",
               "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.Services\\ToyStore.Services.csproj",
               "RelativeDocumentMoniker": "ToyStore.Services\\ToyStore.Services.csproj",
@@ -415,11 +761,12 @@
               "RelativeToolTip": "ToyStore.Services\\ToyStore.Services.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-26T12:42:01.402Z"
+              "WhenOpened": "2025-10-26T12:42:01.402Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 43,
               "Title": "ToyStore.Model.csproj",
               "DocumentMoniker": "C:\\Users\\mateu\\Desktop\\studiaprojekt\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj",
               "RelativeDocumentMoniker": "ToyStore.Model\\ToyStore.Model.csproj",
@@ -427,7 +774,8 @@
               "RelativeToolTip": "ToyStore.Model\\ToyStore.Model.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-26T12:38:47.228Z"
+              "WhenOpened": "2025-10-26T12:38:47.228Z",
+              "EditorCaption": ""
             }
           ]
         }

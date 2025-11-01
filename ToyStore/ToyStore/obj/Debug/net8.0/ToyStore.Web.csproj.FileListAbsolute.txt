@@ -509,10 +509,14 @@ C:\Users\mateu\Desktop\studiaprojekt\ToyStore\ToyStore\obj\Debug\net8.0\staticwe
 C:\Users\mateu\Desktop\studiaprojekt\ToyStore\ToyStore\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\mateu\Desktop\studiaprojekt\ToyStore\ToyStore\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\mateu\Desktop\studiaprojekt\ToyStore\ToyStore\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\mateu\Desktop\studiaprojekt\ToyStore\ToyStore\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\mateu\Desktop\studiaprojekt\ToyStore\ToyStore\obj\Debug\net8.0\ToyStore.4528C10F.Up2Date
 C:\Users\mateu\Desktop\studiaprojekt\ToyStore\ToyStore\obj\Debug\net8.0\ToyStore.Web.dll
 C:\Users\mateu\Desktop\studiaprojekt\ToyStore\ToyStore\obj\Debug\net8.0\refint\ToyStore.Web.dll
 C:\Users\mateu\Desktop\studiaprojekt\ToyStore\ToyStore\obj\Debug\net8.0\ToyStore.Web.pdb
 C:\Users\mateu\Desktop\studiaprojekt\ToyStore\ToyStore\obj\Debug\net8.0\ToyStore.Web.genruntimeconfig.cache
 C:\Users\mateu\Desktop\studiaprojekt\ToyStore\ToyStore\obj\Debug\net8.0\ref\ToyStore.Web.dll
+C:\Users\mateu\Desktop\studiaprojekt\ToyStore\ToyStore\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\mateu\Desktop\studiaprojekt\ToyStore\ToyStore\bin\Debug\net8.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+C:\Users\mateu\Desktop\studiaprojekt\ToyStore\ToyStore\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\mateu\Desktop\studiaprojekt\ToyStore\ToyStore\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\mateu\Desktop\studiaprojekt\ToyStore\ToyStore\obj\Debug\net8.0\ToyStore.Web.MvcApplicationPartsAssemblyInfo.cs

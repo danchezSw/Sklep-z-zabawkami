@@ -11,6 +11,8 @@
     <ProjectReference Include="..\ToyStore.Model\ToyStore.Model.csproj" />
     <ProjectReference Include="..\ToyStore.Services\ToyStore.Services.csproj" />
     <ProjectReference Include="..\ToyStore.ViewModels\ToyStore.ViewModels.csproj" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.8" />
 	<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10" />
   </ItemGroup>
 

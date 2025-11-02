@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,61 +7,222 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ToyStore.styles.css" asp-append-version="true" />
+
+    <style>
+        /* 🔹 Efekty linków i przycisków */
+        .nav-link {
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+            .nav-link:hover {
+                color: #0d6efd !important;
+                transform: scale(1.05);
+            }
+
+        .btn {
+            transition: transform 0.2s ease, filter 0.2s ease;
+        }
+
+            .btn:hover {
+                transform: scale(1.05);
+                filter: brightness(0.9);
+            }
+
+        /* 🔹 Animacja modala */
+        .modal.fade .modal-dialog.modal-slide-down {
+            transform: translateY(-100px);
+            transition: transform 0.4s ease-out;
+        }
+
+        .modal.show .modal-dialog.modal-slide-down {
+            transform: translateY(0);
+        }
+
+        /* 🔹 Styl tła i okna modala */
+        .modal-backdrop.show {
+            backdrop-filter: blur(6px);
+            background-color: rgba(0, 0, 0, 0.45);
+        }
+
+        .modal-content {
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        /* 🔹 Stylizacja logo w navbarze */
+        .logo-img {
+            height: 50px;
+            width: auto;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+            .logo-img:hover {
+                transform: scale(1.1);
+                filter: brightness(1.1);
+            }
+
+    </style>
 </head>
+
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ToyStore</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/logo.png" alt="ToyStore logo" class="logo-img" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Shop" asp-action="Index">Sklep</a>
-                        </li>
 
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-controller="Shop" asp-action="Index">Sklep</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav ms-auto">
                         @if (User.Identity?.IsAuthenticated ?? false)
                         {
                             <li class="nav-item">
-                                <form class="d-inline d-flex align-items-center m-0" asp-area="Identity" asp-page="/Account/Logout" method="post">
+                                <form class="d-inline" asp-area="Identity" asp-page="/Account/Logout" method="post">
                                     <input type="hidden" name="returnUrl" value="/" />
-                                    <button type="submit" class="btn btn-link nav-link p-0 m-0" style="line-height: normal;">Wyloguj</button>
+                                    <button type="submit" class="btn btn-link nav-link p-0 text-dark">Wyloguj</button>
                                 </form>
                             </li>
                         }
                         else
                         {
-                            <li class="nav-item"><a class="nav-link" asp-area="Identity" asp-page="/Account/Login">Logowanie</a></li>
-                            <li class="nav-item"><a class="nav-link" asp-area="Identity" asp-page="/Account/Register">Rejestracja</a></li>
+                            <li class="nav-item">
+                                <a href="javascript:void(0);" class="nav-link text-dark" data-auth="login">Logowanie</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void(0);" class="nav-link text-dark" data-auth="register">Rejestracja</a>
+                            </li>
                         }
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - ToyStore - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+    <footer class="border-top footer text-muted text-center py-3">
+        &copy; 2025 - ToyStore - <a asp-controller="Home" asp-action="Privacy">Privacy</a>
     </footer>
+
+    <!-- 🔹 Wspólny modal -->
+    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-slide-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="authModalLabel">Logowanie</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+                </div>
+                <div class="modal-body" id="authModalBody">
+                    <div class="text-center text-muted py-4">Ładowanie...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🔹 Toast powiadomienia -->
+    <div id="centerToast"
+         class="position-fixed top-50 start-50 translate-middle bg-success text-white px-4 py-3 rounded shadow"
+         style="z-index: 2000; display: none; min-width: 300px; text-align: center;">
+    </div>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const modal = new bootstrap.Modal(document.getElementById("authModal"));
+            const modalBody = document.getElementById("authModalBody");
+            const modalTitle = document.getElementById("authModalLabel");
+
+            // 🔹 Funkcja ładująca stronę do modala
+            async function loadAuthPage(url, title) {
+                modalTitle.innerText = title;
+                modalBody.innerHTML = `<div class="text-center text-muted py-4">Ładowanie...</div>`;
+
+                const res = await fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } });
+                const html = await res.text();
+                modalBody.innerHTML = html;
+                modal.show();
+                setupSwitchLinks();
+            }
+
+            // 🔹 Główne linki w navbarze
+            document.querySelectorAll("[data-auth]").forEach(link => {
+                link.addEventListener("click", e => {
+                    e.preventDefault();
+                    const type = link.getAttribute("data-auth");
+                    switch (type) {
+                        case "login": loadAuthPage("/Identity/Account/Login", "Logowanie"); break;
+                        case "register": loadAuthPage("/Identity/Account/Register", "Rejestracja"); break;
+                        case "forgot": loadAuthPage("/Identity/Account/ForgotPassword", "Przypomnienie hasła"); break;
+                        case "resend": loadAuthPage("/Identity/Account/ResendEmailConfirmation", "Potwierdzenie e-maila"); break;
+                    }
+                });
+            });
+
+            // 🔹 Przełączniki wewnątrz popupu
+            function setupSwitchLinks() {
+                modalBody.querySelectorAll("[data-switch]").forEach(link => {
+                    link.addEventListener("click", e => {
+                        e.preventDefault();
+                        const type = link.getAttribute("data-switch");
+                        switch (type) {
+                            case "login": loadAuthPage("/Identity/Account/Login", "Logowanie"); break;
+                            case "register": loadAuthPage("/Identity/Account/Register", "Rejestracja"); break;
+                            case "forgot": loadAuthPage("/Identity/Account/ForgotPassword", "Przypomnienie hasła"); break;
+                            case "resend": loadAuthPage("/Identity/Account/ResendEmailConfirmation", "Potwierdzenie e-maila"); break;
+                        }
+                    });
+                });
+            }
+
+            // 🔹 Czyść modal po zamknięciu
+            document.getElementById("authModal").addEventListener("hidden.bs.modal", () => {
+                modalBody.innerHTML = "";
+            });
+        });
+
+        // 🔹 Uniwersalna funkcja powiadomień
+        function showCenteredToast(message, type = "success") {
+            const toast = document.getElementById("centerToast");
+            toast.innerText = message;
+
+            toast.className = `position-fixed top-50 start-50 translate-middle px-4 py-3 rounded shadow text-white bg-${type === "danger" ? "danger" : "success"}`;
+            toast.style.display = "block";
+            toast.style.opacity = "0";
+
+            setTimeout(() => {
+                toast.style.transition = "opacity 0.5s ease";
+                toast.style.opacity = "1";
+            }, 10);
+
+            setTimeout(() => {
+                toast.style.opacity = "0";
+                setTimeout(() => toast.style.display = "none", 500);
+            }, 3000);
+        }
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

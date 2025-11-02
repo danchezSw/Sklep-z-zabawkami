@@ -2,55 +2,115 @@
     ViewData["Title"] = "ToyStore - Sklep z zabawkami";
 }
 
+<style>
+    /* Efekt powiększenia kart */
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+    /* Styl karuzeli - dopasowanie do obrazków */
+    .carousel-item img {
+        width: 100%;
+        height: auto;
+        max-height: 600px;
+        object-fit: contain;
+        border-radius: 15px;
+        background-color: #f8f9fa;
+    }
+
+    .carousel-caption {
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        padding: 10px 20px;
+    }
+
+    /* 🔹 Efekt dla wszystkich przycisków */
+    .btn {
+        transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .btn:hover {
+            transform: scale(1.08);
+            filter: brightness(0.9);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+    /* 🔹 Efekt dla linków w navbarze (nagłówku strony) */
+    .navbar a.nav-link {
+        transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+        .navbar a.nav-link:hover {
+            color: #0d6efd; /* lekko niebieski odcień */
+            text-shadow: 0 0 5px rgba(13, 110, 253, 0.4);
+        }
+</style>
+
 <div class="text-center my-5">
     <h1 class="display-3 fw-bold text-primary">Witamy w ToyStore!</h1>
     <p class="lead text-secondary">Najlepsze zabawki dla dzieci w każdym wieku 🎁</p>
     <a asp-controller="Shop" asp-action="Index" class="btn btn-lg btn-primary mt-3">Zobacz ofertę</a>
-
 </div>
 
 <hr class="my-5" />
 
 <div class="container">
-    <h2 class="text-center mb-4">Kategorie zabawek</h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-            <div class="card h-100 shadow-sm">
-                <img src="~/images/klocki.jpg" class="card-img-top p-4" alt="Klocki">
-                <div class="card-body">
-                    <h5 class="card-title">Klocki</h5>
-                    <p class="card-text">Rozwijaj kreatywność i wyobraźnię dziecka dzięki naszym zestawom klocków!</p>
-                </div>
-                <div class="card-footer text-center">
-                    <a href="#" class="btn btn-outline-primary">Zobacz</a>
-                </div>
+    <h2 class="text-center mb-4">Nasze kategorie</h2>
+
+    <!-- 🔹 Karuzela Bootstrap -->
+    <div id="toyCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner rounded shadow">
+
+            <div class="carousel-item active">
+                <a asp-controller="Shop" asp-action="Details" asp-route-id="1">
+                    <img src="~/images/klocki.jpg" class="d-block w-100" alt="Klocki">
+                    <div class="carousel-caption">
+                        <h5>Klocki</h5>
+                        <p>Rozwijaj kreatywność i wyobraźnię dziecka dzięki naszym zestawom klocków!</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="carousel-item">
+                <a asp-controller="Shop" asp-action="Details" asp-route-id="2">
+                    <img src="~/images/pluszak.jpg" class="d-block w-100" alt="Pluszaki">
+                    <div class="carousel-caption">
+                        <h5>Pluszaki</h5>
+                        <p>Miękkie, przytulne i zawsze gotowe na zabawę — znajdź swojego ulubionego misia!</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="carousel-item">
+                <a asp-controller="Shop" asp-action="Details" asp-route-id="3">
+                    <img src="~/images/gry.jpg" class="d-block w-100" alt="Gry edukacyjne">
+                    <div class="carousel-caption">
+                        <h5>Gry edukacyjne</h5>
+                        <p>Ucz się przez zabawę — gry, które rozwijają pamięć, logikę i spostrzegawczość.</p>
+                    </div>
+                </a>
             </div>
         </div>
 
-        <div class="col">
-            <div class="card h-100 shadow-sm">
-                <img src="~/images/pluszak.jpg" class="card-img-top p-4" alt="Pluszaki">
-                <div class="card-body">
-                    <h5 class="card-title">Pluszaki</h5>
-                    <p class="card-text">Miękkie, przytulne i zawsze gotowe na zabawę — znajdź swojego ulubionego misia!</p>
-                </div>
-                <div class="card-footer text-center">
-                    <a href="#" class="btn btn-outline-primary">Zobacz</a>
-                </div>
-            </div>
-        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#toyCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Poprzedni</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#toyCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Następny</span>
+        </button>
 
-        <div class="col">
-            <div class="card h-100 shadow-sm">
-                <img src="~/images/gry.jpg" class="card-img-top p-4" alt="Gry edukacyjne">
-                <div class="card-body">
-                    <h5 class="card-title">Gry edukacyjne</h5>
-                    <p class="card-text">Ucz się przez zabawę — gry, które rozwijają pamięć, logikę i spostrzegawczość.</p>
-                </div>
-                <div class="card-footer text-center">
-                    <a href="#" class="btn btn-outline-primary">Zobacz</a>
-                </div>
-            </div>
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#toyCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Klocki"></button>
+            <button type="button" data-bs-target="#toyCarousel" data-bs-slide-to="1" aria-label="Pluszaki"></button>
+            <button type="button" data-bs-target="#toyCarousel" data-bs-slide-to="2" aria-label="Gry edukacyjne"></button>
         </div>
     </div>
 </div>
@@ -62,6 +122,5 @@
         <h2 class="mb-3">Dlaczego ToyStore?</h2>
         <p class="text-muted mb-4">Szybka wysyłka, atrakcyjne ceny i szeroki wybór zabawek od najlepszych producentów!</p>
         <a asp-controller="Shop" asp-action="Index" class="btn btn-success btn-lg">Przejdź do sklepu</a>
-
     </div>
 </div>

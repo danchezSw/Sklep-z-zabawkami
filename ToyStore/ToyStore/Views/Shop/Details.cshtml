@@ -1,12 +1,82 @@
-﻿@{
-    ViewData["Title"] = "Szczegóły produktu";
+﻿@model dynamic
+@{
+    ViewData["Title"] = "Szczegóły - ToyStore";
+    var id = Convert.ToInt32(ViewContext.RouteData.Values["id"]);
 }
 
-<div class="container my-5">
-    <h1 class="text-center mb-4">@ViewData["Title"]</h1>
-    <p class="text-center text-muted">Tutaj w przyszłości będą szczegóły wybranego produktu.</p>
+<style>
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
 
-    <div class="text-center mt-4">
-        <a asp-controller="Shop" asp-action="Index" class="btn btn-secondary">← Powrót do sklepu</a>
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+    .btn-back {
+        background-color: #28a745;
+        color: white;
+        font-size: 1.1rem;
+        padding: 10px 25px;
+        border: none;
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+
+        .btn-back:hover {
+            transform: scale(1.1);
+            background-color: #218838;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            color: white;
+            text-decoration: none;
+        }
+</style>
+
+<div class="container my-5">
+    @if (id == 2)
+    {
+        <h1 class="text-center mb-4 text-primary">Nasze pluszowe misie</h1>
+        <p class="text-center text-muted mb-5">Wybierz swojego ulubionego przyjaciela 🧸</p>
+
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+
+            <!-- 🧸 Miś Ośmiornica -->
+            <div class="col">
+                <a asp-controller="Shop" asp-action="Product" asp-route-name="osmiornica" class="text-decoration-none text-dark">
+                    <div class="card h-100 shadow-sm">
+                        <img src="~/images/osmiornicayellow.png" class="card-img-top" alt="Miś Ośmiornica">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Miś Ośmiornica</h5>
+                            <p class="card-text">Dwustronny miś – zmienia wyraz twarzy w zależności od nastroju!</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 🐥 Miś Kurczak -->
+            <div class="col">
+                <a asp-controller="Shop" asp-action="Product" asp-route-name="kurczak" class="text-decoration-none text-dark">
+                    <div class="card h-100 shadow-sm">
+                        <img src="~/images/kurczakpink.png" class="card-img-top" alt="Miś Kurczak">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Miś Kurczak</h5>
+                            <p class="card-text">Uroczy pluszak kurczak – idealny prezent dla najmłodszych.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    }
+    else
+    {
+        <h1 class="text-center mb-4 text-primary">Szczegóły produktu</h1>
+        <p class="text-center text-muted">Tutaj pojawi się opis wybranego produktu.</p>
+    }
+
+    <div class="text-center mt-5">
+        <a asp-controller="Shop" asp-action="Index" class="btn-back">← Powrót do oferty</a>
     </div>
 </div>

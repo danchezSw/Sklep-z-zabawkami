@@ -2,48 +2,84 @@
     ViewData["Title"] = "Sklep - ToyStore";
 }
 
+<style>
+    /* Efekt powiększenia kart */
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+    /* Styl przycisku powrotu */
+    .btn-back {
+        background-color: #28a745; /* zielony */
+        color: white;
+        font-size: 1.1rem;
+        padding: 10px 25px;
+        border: none;
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+
+        .btn-back:hover {
+            transform: scale(1.1);
+            background-color: #218838;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            color: white;
+            text-decoration: none;
+        }
+</style>
+
 <div class="container my-5">
     <h1 class="text-center mb-4 text-primary">Nasza oferta</h1>
     <p class="text-center text-muted mb-5">Przeglądaj nasze najnowsze zabawki i znajdź coś dla swojego dziecka 🎁</p>
 
     <div class="row row-cols-1 row-cols-md-3 g-4">
+
         <div class="col">
-            <div class="card h-100 shadow-sm">
-                <img src="~/images/products/klocki.jpg" class="card-img-top" alt="Klocki">
-                <div class="card-body">
-                    <h5 class="card-title">Klocki Lego</h5>
-                    <p class="card-text">Zbuduj świat swojej wyobraźni z zestawem klasycznych klocków Lego.</p>
+            <a asp-controller="Shop" asp-action="Details" asp-route-id="1" class="text-decoration-none text-dark">
+                <div class="card h-100 shadow-sm">
+                    <img src="~/images/klocki.jpg" class="card-img-top" alt="Klocki">
+                    <div class="card-body">
+                        <h5 class="card-title">Klocki Lego</h5>
+                        <p class="card-text">Zbuduj świat swojej wyobraźni z zestawem klasycznych klocków Lego.</p>
+                    </div>
                 </div>
-                <div class="card-footer text-center">
-                    <a asp-controller="Shop" asp-action="Details" asp-route-id="1" class="btn btn-outline-primary">Szczegóły</a>
-                </div>
-            </div>
+            </a>
         </div>
 
         <div class="col">
-            <div class="card h-100 shadow-sm">
-                <img src="~/images/products/pluszak.jpg" class="card-img-top" alt="Pluszak">
-                <div class="card-body">
-                    <h5 class="card-title">Miś Teddy</h5>
-                    <p class="card-text">Mięciutki i przytulny — najlepszy przyjaciel każdego malucha.</p>
+            <a asp-controller="Shop" asp-action="Details" asp-route-id="2" class="text-decoration-none text-dark">
+                <div class="card h-100 shadow-sm">
+                    <img src="~/images/pluszak.jpg" class="card-img-top" alt="Pluszak">
+                    <div class="card-body">
+                        <h5 class="card-title">Miś Teddy</h5>
+                        <p class="card-text">Mięciutki i przytulny — najlepszy przyjaciel każdego malucha.</p>
+                    </div>
                 </div>
-                <div class="card-footer text-center">
-                    <a asp-controller="Shop" asp-action="Details" asp-route-id="2" class="btn btn-outline-primary">Szczegóły</a>
-                </div>
-            </div>
+            </a>
         </div>
 
         <div class="col">
-            <div class="card h-100 shadow-sm">
-                <img src="~/images/products/edukacyjna.jpg" class="card-img-top" alt="Gra edukacyjna">
-                <div class="card-body">
-                    <h5 class="card-title">Gra edukacyjna</h5>
-                    <p class="card-text">Nauka przez zabawę — gra rozwijająca logiczne myślenie i spostrzegawczość.</p>
+            <a asp-controller="Shop" asp-action="Details" asp-route-id="3" class="text-decoration-none text-dark">
+                <div class="card h-100 shadow-sm">
+                    <img src="~/images/gry.jpg" class="card-img-top p-4" alt="Gry edukacyjne">
+                    <div class="card-body">
+                        <h5 class="card-title">Gra edukacyjna</h5>
+                        <p class="card-text">Nauka przez zabawę — gra rozwijająca logiczne myślenie i spostrzegawczość.</p>
+                    </div>
                 </div>
-                <div class="card-footer text-center">
-                    <a asp-controller="Shop" asp-action="Details" asp-route-id="3" class="btn btn-outline-primary">Szczegóły</a>
-                </div>
-            </div>
+            </a>
         </div>
+
+    </div>
+
+    <!-- 🔹 Przycisk powrotu -->
+    <div class="text-center mt-5">
+        <a asp-controller="Home" asp-action="Index" class="btn-back">← Powrót do strony głównej</a>
     </div>
 </div>

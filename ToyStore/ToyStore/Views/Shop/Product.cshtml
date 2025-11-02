@@ -1,0 +1,73 @@
+﻿@{
+    var product = ViewBag.Product;
+    ViewData["Title"] = product?.Name ?? "Produkt";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <img id="productImage" src="@product.DefaultImage" alt="@product.Name"
+                 class="img-fluid rounded shadow-lg product-image" />
+        </div>
+
+        <div class="col-md-6">
+            <h2 class="mb-3 text-primary">@product.Name</h2>
+            <p class="text-muted">@product.Description</p>
+
+            <div class="mb-3">
+                <label for="colorSelect" class="form-label">Wybierz kolor:</label>
+                <select id="colorSelect" class="form-select" aria-label="Wybierz kolor misia">
+                    @foreach (var c in product.Colors)
+                    {
+                        <option value="@c">@c</option>
+                    }
+                </select>
+            </div>
+
+            <button id="addToCart" type="button" class="btn btn-primary">🛒 Dodaj do koszyka</button>
+
+            <div class="mt-4">
+                <a asp-controller="Shop" asp-action="Details" asp-route-id="2" class="btn btn-link">← Powrót do misiów</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .product-image {
+        transition: transform 0.25s ease, opacity 0.25s ease;
+        cursor: pointer;
+        max-height: 450px;
+        width: auto;
+    }
+
+        .product-image:hover {
+            transform: scale(1.05);
+        }
+
+    select {
+        max-width: 260px;
+    }
+</style>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const productImage = document.getElementById("productImage");
+            const colorSelect = document.getElementById("colorSelect");
+            const colorImages = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(product.ColorImages));
+
+            // Zmiana obrazka z efektem fade
+            colorSelect.addEventListener('change', function () {
+                const chosen = this.value;
+                if (colorImages[chosen]) {
+                    productImage.style.opacity = 0;
+                    setTimeout(() => {
+                        productImage.src = colorImages[chosen];
+                        productImage.style.opacity = 1;
+                    }, 250);
+                }
+            });
+        });
+    </script>
+}

@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Misie";
+    var bears = ViewBag.Bears as List<dynamic>;
+}
+
+<div class="container text-center mt-5">
+    <h2 class="mb-4 text-primary">🧸 Wybierz swojego misia</h2>
+    <div class="row justify-content-center">
+        @foreach (var bear in bears)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-lg rounded-4 p-3 hover-card">
+                    <img src="@bear.Image" alt="@bear.Name" class="img-fluid rounded-3 mb-3 bear-img" />
+                    <h5>@bear.Name</h5>
+                    <a href="@bear.Link" class="btn btn-primary mt-2">Zobacz szczegóły</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .hover-card {
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+        .hover-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+    .bear-img {
+        height: 220px;
+        object-fit: contain;
+    }
+</style>

@@ -2,6 +2,12 @@ wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\images\gry.jpg
 wwwroot\images\klocki.jpg
+wwwroot\images\kurczakpink.png
+wwwroot\images\kurczakpurple.png
+wwwroot\images\logo.png
+wwwroot\images\osmiornicablue.png
+wwwroot\images\osmiornicapink.png
+wwwroot\images\osmiornicayellow.png
 wwwroot\images\pluszak.jpg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css

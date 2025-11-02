@@ -3,6 +3,9 @@
 @{
     ViewData["Title"] = "Wyślij ponownie email z potwierdzeniem";
 }
+@{
+    Layout = null;
+}
 
 <h1>@ViewData["Title"]</h1>
 <h2>Podaj swój email:</h2>
@@ -17,6 +20,8 @@
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
             <button type="submit" class="w-100 btn btn-lg btn-primary">Wyślij</button>
+            <p><a href="javascript:void(0);" data-switch="login">Wróć do logowania</a></p>
+
         </form>
     </div>
 </div>

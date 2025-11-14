@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="~/ToyStore.styles.css" asp-append-version="true" />
 
     <style>
-        /* 🔹 Efekty linków i przycisków */
         .nav-link {
             transition: color 0.3s ease, transform 0.2s ease;
         }
@@ -28,7 +27,6 @@
                 filter: brightness(0.9);
             }
 
-        /* 🔹 Animacja modala */
         .modal.fade .modal-dialog.modal-slide-down {
             transform: translateY(-100px);
             transition: transform 0.4s ease-out;
@@ -38,7 +36,6 @@
             transform: translateY(0);
         }
 
-        /* 🔹 Styl tła i okna modala */
         .modal-backdrop.show {
             backdrop-filter: blur(6px);
             background-color: rgba(0, 0, 0, 0.45);
@@ -48,7 +45,7 @@
             border-radius: 1rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
-        /* 🔹 Stylizacja logo w navbarze */
+
         .logo-img {
             height: 50px;
             width: auto;
@@ -60,6 +57,18 @@
                 filter: brightness(1.1);
             }
 
+        /* 🔹 Koszyk z liczbą produktów */
+        .cart-count {
+            position: absolute;
+            top: 0;
+            right: -10px;
+            background: red;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border-radius: 50%;
+            padding: 2px 6px;
+        }
     </style>
 </head>
 
@@ -88,7 +97,15 @@
                         </li>
                     </ul>
 
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto position-relative">
+                        <!-- 🔹 Koszyk z liczbą produktów -->
+                        <li class="nav-item me-3">
+                            <a class="nav-link text-dark position-relative" asp-controller="Cart" asp-action="Index">
+                                <i class="fa fa-shopping-cart"></i> Koszyk
+                                <span id="cartCount" class="cart-count">0</span>
+                            </a>
+                        </li>
+
                         @if (User.Identity?.IsAuthenticated ?? false)
                         {
                             <li class="nav-item">
@@ -123,7 +140,7 @@
         &copy; 2025 - ToyStore - <a asp-controller="Home" asp-action="Privacy">Privacy</a>
     </footer>
 
-    <!-- 🔹 Wspólny modal -->
+    <!-- 🔹 Modal logowania/rejestracji -->
     <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg modal-slide-down">
             <div class="modal-content">
@@ -154,11 +171,9 @@
             const modalBody = document.getElementById("authModalBody");
             const modalTitle = document.getElementById("authModalLabel");
 
-            // 🔹 Funkcja ładująca stronę do modala
             async function loadAuthPage(url, title) {
                 modalTitle.innerText = title;
                 modalBody.innerHTML = `<div class="text-center text-muted py-4">Ładowanie...</div>`;
-
                 const res = await fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } });
                 const html = await res.text();
                 modalBody.innerHTML = html;
@@ -166,7 +181,6 @@
                 setupSwitchLinks();
             }
 
-            // 🔹 Główne linki w navbarze
             document.querySelectorAll("[data-auth]").forEach(link => {
                 link.addEventListener("click", e => {
                     e.preventDefault();
@@ -180,7 +194,6 @@
                 });
             });
 
-            // 🔹 Przełączniki wewnątrz popupu
             function setupSwitchLinks() {
                 modalBody.querySelectorAll("[data-switch]").forEach(link => {
                     link.addEventListener("click", e => {
@@ -196,30 +209,29 @@
                 });
             }
 
-            // 🔹 Czyść modal po zamknięciu
             document.getElementById("authModal").addEventListener("hidden.bs.modal", () => {
                 modalBody.innerHTML = "";
             });
+
+            // 🔹 Funkcja aktualizacji liczby produktów w koszyku
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+                const count = cart.reduce((acc, item) => acc + item.Quantity, 0);
+                document.getElementById("cartCount").innerText = count;
+            }
+
+            updateCartCount();
         });
 
-        // 🔹 Uniwersalna funkcja powiadomień
         function showCenteredToast(message, type = "success") {
             const toast = document.getElementById("centerToast");
             toast.innerText = message;
-
             toast.className = `position-fixed top-50 start-50 translate-middle px-4 py-3 rounded shadow text-white bg-${type === "danger" ? "danger" : "success"}`;
             toast.style.display = "block";
             toast.style.opacity = "0";
 
-            setTimeout(() => {
-                toast.style.transition = "opacity 0.5s ease";
-                toast.style.opacity = "1";
-            }, 10);
-
-            setTimeout(() => {
-                toast.style.opacity = "0";
-                setTimeout(() => toast.style.display = "none", 500);
-            }, 3000);
+            setTimeout(() => { toast.style.transition = "opacity 0.5s ease"; toast.style.opacity = "1"; }, 10);
+            setTimeout(() => { toast.style.opacity = "0"; setTimeout(() => toast.style.display = "none", 500); }, 3000);
         }
     </script>
 

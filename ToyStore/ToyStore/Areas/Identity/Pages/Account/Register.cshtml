@@ -8,7 +8,8 @@
 
 <div class="row">
     <div class="col-md-4">
-        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+        <form id="registerForm" asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+
             <h2>Utwórz nowe konto:</h2>
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
@@ -72,4 +73,30 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function() {
+            $("#registerForm").submit(function(e) {
+                e.preventDefault(); // blokujemy standardowe przeładowanie strony
+
+                var $form = $(this);
+                var url = $form.attr('action') || window.location.href;
+                var data = $form.serialize(); // serializujemy dane formularza
+
+                $.post(url, data)
+                    .done(function(response) {
+                        if ($(response).find(".text-danger").length > 0) {
+                            $("#authModalBody").html(response);
+                        } else {
+                            var modal = bootstrap.Modal.getInstance(document.getElementById("authModal"));
+                            modal.hide();
+                            showCenteredToast("Konto utworzone pomyślnie!");
+                        }
+                    })
+                    .fail(function() {
+                        showCenteredToast("Wystąpił błąd podczas rejestracji.", "danger");
+                    });
+            });
+        });
+    </script>
 }
+

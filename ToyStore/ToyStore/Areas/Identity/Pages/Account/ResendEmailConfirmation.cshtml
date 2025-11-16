@@ -12,7 +12,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form method="post">
+        <form id="resendEmailForm" method="post">
             <div asp-validation-summary="All" class="text-danger" role="alert"></div>
             <div class="form-floating mb-3">
                 <input asp-for="Input.Email" class="form-control" aria-required="true" placeholder="name@example.com" />
@@ -21,8 +21,8 @@
             </div>
             <button type="submit" class="w-100 btn btn-lg btn-primary">Wyślij</button>
             <p><a href="javascript:void(0);" data-switch="login">Wróć do logowania</a></p>
-
         </form>
+
     </div>
 </div>
 

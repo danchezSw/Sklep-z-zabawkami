@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Gry edukacyjne";
+    var products = ViewData["Products"] as Dictionary<string, ToyStore.Web.Controllers.ProductModel>;
+}
+
+<div class="container my-5">
+    <h1 class="text-center mb-4 text-primary">Gry edukacyjne</h1>
+    <p class="text-center text-muted mb-5">Rozwijające zabawy dla dzieci 🎲</p>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        @if (products != null)
+        {
+            foreach (var game in products.Values)
+            {
+                <div class="col">
+                    <a href="/Shop/Product/@game.Title" class="text-decoration-none text-dark">
+                        <div class="card h-100 shadow-sm">
+                            <img src="@game.DefaultImage" class="card-img-top product-img" />
+                            <div class="card-body">
+                                <h5 class="card-title">@game.Title</h5>
+                                @if (game.Colors != null && game.Colors.Count > 0)
+                                {
+                                    <p class="card-text">Dostępne kolory: @string.Join(", ", game.Colors.Keys)</p>
+                                }
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        }
+        else
+        {
+            <p class="text-center text-muted">Brak produktów w tej kategorii.</p>
+        }
+
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="/Shop" class="btn btn-success">← Powrót do sklepu</a>
+    </div>
+</div>
+
+<style>
+    .product-img {
+        max-height: 200px;
+        object-fit: contain;
+    }
+
+    .btn-back {
+        background-color: #28a745;
+        color: white;
+        font-size: 1.1rem;
+        padding: 10px 25px;
+        border: none;
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        text-decoration: none;
+    }
+
+        .btn-back:hover {
+            transform: scale(1.1);
+            background-color: #218838;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+</style>

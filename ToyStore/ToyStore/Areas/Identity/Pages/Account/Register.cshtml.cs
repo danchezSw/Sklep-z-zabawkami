@@ -112,6 +112,7 @@ namespace ToyStore.Web.Areas.Identity.Pages.Account
                         await _userManager.AddToRoleAsync(user, RoleValue.Customer.ToString());
                     }
 
+                    // Wysy³anie maila (jak masz)
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
@@ -125,8 +126,10 @@ namespace ToyStore.Web.Areas.Identity.Pages.Account
                     await _emailSender.SendEmailAsync(Input.Email, "PotwierdŸ swój adres e-mail",
                         $"Proszê potwierdŸ swoje konto klikaj¹c <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>tutaj</a>.");
 
-                    return RedirectToPage("Login", new { area = "Identity" });
+                    //  Zamiast przekierowania – zwracamy pusty wynik
+                    return new EmptyResult();
                 }
+
 
                 foreach (var error in result.Errors)
                 {

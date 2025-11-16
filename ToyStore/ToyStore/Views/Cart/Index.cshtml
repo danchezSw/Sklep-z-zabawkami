@@ -1,0 +1,55 @@
+﻿@model List<ToyStore.Web.Models.CartItem>
+
+@{
+    ViewData["Title"] = "Twój koszyk";
+}
+
+<div class="container my-5">
+    <h2 class="mb-4 text-center">Twój koszyk</h2>
+
+    @if (Model != null && Model.Count > 0)
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Produkt</th>
+                    <th>Cena</th>
+                    <th>Ilość</th>
+                    <th>Łącznie</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    // Obliczamy sumę dla tej linii
+                    decimal lineTotal = item.Price * item.Quantity;
+
+                    <tr>
+                        <td>
+                            <img src="@Url.Content(item.Image)" style="height:50px; margin-right:10px;" />
+                            @item.ProductName
+                        </td>
+                        <td>@item.Price.ToString("C")</td>
+                        <td>@item.Quantity</td>
+                        <td>@lineTotal.ToString("C")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        decimal total = Model.Sum(x => x.Price * x.Quantity);
+
+        <div class="text-end mt-3">
+            <strong>Suma: @total.ToString("C")</strong>
+        </div>
+    }
+    else
+    {
+        <p class="text-center text-muted">Twój koszyk jest pusty.</p>
+    }
+
+    <div class="text-center mt-4">
+        <a asp-controller="Shop" asp-action="Index" class="btn btn-primary">Kontynuuj zakupy</a>
+        <button class="btn btn-success">Przejdź do płatności</button>
+    </div>
+</div>

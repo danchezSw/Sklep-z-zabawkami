@@ -74,44 +74,22 @@ namespace ToyStore.Web.Areas.Identity.Pages.Account
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl ??= Url.Content("~/");
-
-            ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-
             if (ModelState.IsValid)
             {
-                var user = await _userManager.FindByEmailAsync(Input.Email);
-                if (user != null)
-                {
-                    var claims = await _userManager.GetClaimsAsync(user);
-                    if (!claims.Any(c => c.Type == "FullName"))
-                    {
-                        await _userManager.AddClaimAsync(user, new Claim("FullName", user.FullName ?? user.Email));
-                    }
-                }
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
-
                 if (result.Succeeded)
                 {
-                    _logger.LogInformation("Zalogowano pomyœlnie");
+                    if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                        return new JsonResult(new { success = true });
+
                     return LocalRedirect(returnUrl);
                 }
-                if (result.RequiresTwoFactor)
-                {
-                    return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });
-                }
-                if (result.IsLockedOut)
-                {
-                    _logger.LogWarning("User account locked out.");
-                    return RedirectToPage("./Lockout");
-                }
-                else
-                {
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-                    return Page();
-                }
+                ModelState.AddModelError(string.Empty, "Nieudana próba logowania.");
             }
 
             return Page();
         }
+
+
     }
 }

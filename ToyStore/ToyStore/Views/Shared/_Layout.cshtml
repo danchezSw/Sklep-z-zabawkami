@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="~/ToyStore.styles.css" asp-append-version="true" />
 
     <style>
-        /* 🔹 Efekty linków i przycisków */
         .nav-link {
             transition: color 0.3s ease, transform 0.2s ease;
         }
@@ -28,7 +27,6 @@
                 filter: brightness(0.9);
             }
 
-        /* 🔹 Animacja modala */
         .modal.fade .modal-dialog.modal-slide-down {
             transform: translateY(-100px);
             transition: transform 0.4s ease-out;
@@ -38,7 +36,6 @@
             transform: translateY(0);
         }
 
-        /* 🔹 Styl tła i okna modala */
         .modal-backdrop.show {
             backdrop-filter: blur(6px);
             background-color: rgba(0, 0, 0, 0.45);
@@ -48,7 +45,7 @@
             border-radius: 1rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
-        /* 🔹 Stylizacja logo w navbarze */
+
         .logo-img {
             height: 50px;
             width: auto;
@@ -60,9 +57,19 @@
                 filter: brightness(1.1);
             }
 
+        .cart-count {
+            position: absolute;
+            top: 0;
+            right: -10px;
+            background: red;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border-radius: 50%;
+            padding: 2px 6px;
+        }
     </style>
 </head>
-
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -70,25 +77,25 @@
                 <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
                     <img src="~/images/logo.png" alt="ToyStore logo" class="logo-img" />
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Shop" asp-action="Index">Sklep</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link text-dark" asp-controller="Shop" asp-action="Index">Sklep</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
                     </ul>
 
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto position-relative">
+                        <li class="nav-item me-3">
+                            <a class="nav-link text-dark position-relative" asp-controller="Cart" asp-action="Index">
+                                <i class="fa fa-shopping-cart"></i> Koszyk
+                                <span id="cartCount" class="cart-count">@(ViewBag.CartCount ?? 0)</span>
+                            </a>
+                        </li>
+
                         @if (User.Identity?.IsAuthenticated ?? false)
                         {
                             <li class="nav-item">
@@ -100,12 +107,8 @@
                         }
                         else
                         {
-                            <li class="nav-item">
-                                <a href="javascript:void(0);" class="nav-link text-dark" data-auth="login">Logowanie</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="javascript:void(0);" class="nav-link text-dark" data-auth="register">Rejestracja</a>
-                            </li>
+                            <li class="nav-item"><a href="javascript:void(0);" class="nav-link text-dark" data-auth="login">Logowanie</a></li>
+                            <li class="nav-item"><a href="javascript:void(0);" class="nav-link text-dark" data-auth="register">Rejestracja</a></li>
                         }
                     </ul>
                 </div>
@@ -114,16 +117,14 @@
     </header>
 
     <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+        <main role="main" class="pb-3">@RenderBody()</main>
     </div>
 
     <footer class="border-top footer text-muted text-center py-3">
         &copy; 2025 - ToyStore - <a asp-controller="Home" asp-action="Privacy">Privacy</a>
     </footer>
 
-    <!-- 🔹 Wspólny modal -->
+    <!-- 🔹 Modal -->
     <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg modal-slide-down">
             <div class="modal-content">
@@ -138,88 +139,173 @@
         </div>
     </div>
 
-    <!-- 🔹 Toast powiadomienia -->
-    <div id="centerToast"
-         class="position-fixed top-50 start-50 translate-middle bg-success text-white px-4 py-3 rounded shadow"
-         style="z-index: 2000; display: none; min-width: 300px; text-align: center;">
-    </div>
+    <!-- 🔹 Toast -->
+    <div id="centerToast" class="position-fixed top-50 start-50 translate-middle bg-success text-white px-4 py-3 rounded shadow" style="z-index: 2000; display: none; min-width: 300px; text-align: center;"></div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             const modal = new bootstrap.Modal(document.getElementById("authModal"));
             const modalBody = document.getElementById("authModalBody");
             const modalTitle = document.getElementById("authModalLabel");
 
-            // 🔹 Funkcja ładująca stronę do modala
+            // 🔹 Wczytywanie stron auth do modalu
             async function loadAuthPage(url, title) {
                 modalTitle.innerText = title;
                 modalBody.innerHTML = `<div class="text-center text-muted py-4">Ładowanie...</div>`;
-
-                const res = await fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } });
-                const html = await res.text();
-                modalBody.innerHTML = html;
-                modal.show();
-                setupSwitchLinks();
+                try {
+                    const res = await fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } });
+                    const html = await res.text();
+                    modalBody.innerHTML = html;
+                    modal.show();
+                    setupSwitchLinks();
+                    setupRegisterForm();
+                    setupLoginForm();
+                    setupForgotForm();
+                    setupResendForm();
+                } catch (err) {
+                    modalBody.innerHTML = `<div class="text-danger text-center py-4">Błąd ładowania</div>`;
+                    console.error(err);
+                }
             }
 
-            // 🔹 Główne linki w navbarze
-            document.querySelectorAll("[data-auth]").forEach(link => {
-                link.addEventListener("click", e => {
-                    e.preventDefault();
-                    const type = link.getAttribute("data-auth");
-                    switch (type) {
-                        case "login": loadAuthPage("/Identity/Account/Login", "Logowanie"); break;
-                        case "register": loadAuthPage("/Identity/Account/Register", "Rejestracja"); break;
-                        case "forgot": loadAuthPage("/Identity/Account/ForgotPassword", "Przypomnienie hasła"); break;
-                        case "resend": loadAuthPage("/Identity/Account/ResendEmailConfirmation", "Potwierdzenie e-maila"); break;
-                    }
-                });
-            });
-
-            // 🔹 Przełączniki wewnątrz popupu
+            // 🔹 Linki switch (login/register/forgot/resend)
             function setupSwitchLinks() {
                 modalBody.querySelectorAll("[data-switch]").forEach(link => {
                     link.addEventListener("click", e => {
                         e.preventDefault();
                         const type = link.getAttribute("data-switch");
-                        switch (type) {
+                        switch(type) {
                             case "login": loadAuthPage("/Identity/Account/Login", "Logowanie"); break;
                             case "register": loadAuthPage("/Identity/Account/Register", "Rejestracja"); break;
                             case "forgot": loadAuthPage("/Identity/Account/ForgotPassword", "Przypomnienie hasła"); break;
-                            case "resend": loadAuthPage("/Identity/Account/ResendEmailConfirmation", "Potwierdzenie e-maila"); break;
+                            case "resend": loadAuthPage("/Identity/Account/ResendEmailConfirmation", "Wyślij ponownie e-mail"); break;
                         }
                     });
                 });
             }
 
-            // 🔹 Czyść modal po zamknięciu
-            document.getElementById("authModal").addEventListener("hidden.bs.modal", () => {
-                modalBody.innerHTML = "";
+            // 🔹 Formularz rejestracji
+            function setupRegisterForm() {
+                const form = modalBody.querySelector("#registerForm");
+                if (!form) return;
+                form.addEventListener("submit", async e => {
+                    e.preventDefault();
+                    const formData = new FormData(form);
+                    const action = form.getAttribute("action") || window.location.href;
+                    try {
+                        const res = await fetch(action, { method:"POST", body:formData, headers: {"X-Requested-With":"XMLHttpRequest"} });
+                        const text = await res.text();
+                        if(text.includes("text-danger")) { modalBody.innerHTML = text; setupRegisterForm(); }
+                        else { modal.hide(); showCenteredToast("Konto utworzone pomyślnie!"); }
+                    } catch(err){ showCenteredToast("Błąd podczas rejestracji.", "danger"); console.error(err); }
+                });
+            }
+
+            // 🔹 Formularz logowania
+                    function setupLoginForm() {
+            const loginForm = modalBody.querySelector("#loginForm");
+            if (!loginForm) return;
+
+            loginForm.addEventListener("submit", async function(e) {
+                e.preventDefault();
+                const formData = new FormData(loginForm);
+                const action = loginForm.getAttribute("action") || window.location.href;
+
+                try {
+                    const response = await fetch(action, {
+                        method: "POST",
+                        body: formData,
+                        headers: { "X-Requested-With": "XMLHttpRequest" }
+                    });
+
+                    const text = await response.text();
+
+                    // Jeśli strona zwraca Page() (czyli login nieudany)
+                    if (text.includes("text-danger")) {
+                        modalBody.innerHTML = text;
+                        setupLoginForm();
+                    } else {
+                        modal.hide();
+                        showCenteredToast("Zalogowano pomyślnie!");
+                        // Opcjonalnie: odśwież navbar, żeby pokazać, że użytkownik jest zalogowany
+                        window.location.reload();
+                    }
+                } catch (err) {
+                    showCenteredToast("Wystąpił błąd podczas logowania.", "danger");
+                    console.error(err);
+                }
             });
+        }
+
+
+            // 🔹 Formularz ForgotPassword
+            function setupForgotForm() {
+                const form = modalBody.querySelector("#forgotPasswordForm");
+                if(!form) return;
+                form.addEventListener("submit", async e => {
+                    e.preventDefault();
+                    const formData = new FormData(form);
+                    try {
+                        const res = await fetch(form.action || "/Identity/Account/ForgotPassword", { method:"POST", body:formData });
+                        if(res.ok){ showCenteredToast("✉️ Sprawdź swoją skrzynkę e-mail."); form.reset(); }
+                        else { showCenteredToast("Błąd wysyłania prośby.", "danger"); }
+                    } catch(err){ showCenteredToast("Błąd wysyłania prośby.", "danger"); console.error(err); }
+                });
+            }
+
+            // 🔹 Formularz ResendEmailConfirmation
+                    function setupResendForm() {
+            const form = modalBody.querySelector("#resendEmailForm"); // <-- po ID, a nie po pierwszym form
+            if (!form) return;
+
+            form.addEventListener("submit", async e => {
+                e.preventDefault();
+                const formData = new FormData(form);
+
+                try {
+                    const res = await fetch(form.action || "/Identity/Account/ResendEmailConfirmation", {
+                        method: "POST",
+                        body: formData
+                    });
+                    if (res.ok) {
+                        showCenteredToast("✉️ E-mail z potwierdzeniem wysłany.");
+                        form.reset();
+                    } else {
+                        showCenteredToast("Błąd wysyłania e-mail.", "danger");
+                    }
+                } catch (err) {
+                    showCenteredToast("Błąd wysyłania e-mail.", "danger");
+                    console.error(err);
+                }
+            });
+        }
+
+
+            // 🔹 Obsługa kliknięć logowanie/rejestracja w navbarze
+            document.querySelectorAll("[data-auth]").forEach(link => {
+                link.addEventListener("click", e => {
+                    e.preventDefault();
+                    const type = link.getAttribute("data-auth");
+                    switch(type) {
+                        case "login": loadAuthPage("/Identity/Account/Login", "Logowanie"); break;
+                        case "register": loadAuthPage("/Identity/Account/Register", "Rejestracja"); break;
+                    }
+                });
+            });
+
         });
 
-        // 🔹 Uniwersalna funkcja powiadomień
-        function showCenteredToast(message, type = "success") {
+        function showCenteredToast(message, type="success"){
             const toast = document.getElementById("centerToast");
             toast.innerText = message;
-
-            toast.className = `position-fixed top-50 start-50 translate-middle px-4 py-3 rounded shadow text-white bg-${type === "danger" ? "danger" : "success"}`;
-            toast.style.display = "block";
-            toast.style.opacity = "0";
-
-            setTimeout(() => {
-                toast.style.transition = "opacity 0.5s ease";
-                toast.style.opacity = "1";
-            }, 10);
-
-            setTimeout(() => {
-                toast.style.opacity = "0";
-                setTimeout(() => toast.style.display = "none", 500);
-            }, 3000);
+            toast.className = `position-fixed top-50 start-50 translate-middle px-4 py-3 rounded shadow text-white bg-${type==="danger"?"danger":"success"}`;
+            toast.style.display="block"; toast.style.opacity="0";
+            setTimeout(()=>{ toast.style.transition="opacity 0.5s"; toast.style.opacity="1"; }, 10);
+            setTimeout(()=>{ toast.style.opacity="0"; setTimeout(()=>toast.style.display="none",500); }, 3000);
         }
     </script>
 

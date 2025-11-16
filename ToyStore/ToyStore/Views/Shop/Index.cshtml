@@ -3,7 +3,6 @@
 }
 
 <style>
-    /* Efekt powiększenia kart */
     .card {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         cursor: pointer;
@@ -14,9 +13,8 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
-    /* Styl przycisku powrotu */
     .btn-back {
-        background-color: #28a745; /* zielony */
+        background-color: #28a745;
         color: white;
         font-size: 1.1rem;
         padding: 10px 25px;
@@ -35,42 +33,45 @@
 </style>
 
 <div class="container my-5">
-    <h1 class="text-center mb-4 text-primary">Nasza oferta</h1>
-    <p class="text-center text-muted mb-5">Przeglądaj nasze najnowsze zabawki i znajdź coś dla swojego dziecka 🎁</p>
+    <h1 class="text-center mb-4 text-primary">Kategorie produktów</h1>
+    <p class="text-center text-muted mb-5">Wybierz kategorię zabawek, aby zobaczyć produkty 🎁</p>
 
     <div class="row row-cols-1 row-cols-md-3 g-4">
 
+        <!-- KLOCKI -->
         <div class="col">
-            <a asp-controller="Shop" asp-action="Details" asp-route-id="1" class="text-decoration-none text-dark">
+            <a asp-controller="Shop" asp-action="Category" asp-route-name="klocki" class="text-decoration-none text-dark">
                 <div class="card h-100 shadow-sm">
-                    <img src="~/images/klocki.jpg" class="card-img-top" alt="Klocki">
+                    <img src="/images/klocki.jpg" class="card-img-top" alt="Klocki">
                     <div class="card-body">
-                        <h5 class="card-title">Klocki Lego</h5>
-                        <p class="card-text">Zbuduj świat swojej wyobraźni z zestawem klasycznych klocków Lego.</p>
+                        <h5 class="card-title">Klocki</h5>
+                        <p class="card-text">Kreatywne zestawy klocków dla dzieci w każdym wieku.</p>
                     </div>
                 </div>
             </a>
         </div>
 
+        <!-- MISIE -->
         <div class="col">
-            <a asp-controller="Shop" asp-action="Details" asp-route-id="2" class="text-decoration-none text-dark">
+            <a asp-controller="Shop" asp-action="Category" asp-route-name="misie" class="text-decoration-none text-dark">
                 <div class="card h-100 shadow-sm">
-                    <img src="~/images/pluszak.jpg" class="card-img-top" alt="Pluszak">
+                    <img src="/images/pluszak.jpg" class="card-img-top" alt="Misie">
                     <div class="card-body">
-                        <h5 class="card-title">Miś Teddy</h5>
-                        <p class="card-text">Mięciutki i przytulny — najlepszy przyjaciel każdego malucha.</p>
+                        <h5 class="card-title">Misie</h5>
+                        <p class="card-text">Pluszaki: ośmiornica, kurczak, miś i inne mięciutkie zabawki.</p>
                     </div>
                 </div>
             </a>
         </div>
 
+        <!-- GRY EDUKACYJNE -->
         <div class="col">
-            <a asp-controller="Shop" asp-action="Details" asp-route-id="3" class="text-decoration-none text-dark">
+            <a asp-controller="Shop" asp-action="Category" asp-route-name="gry" class="text-decoration-none text-dark">
                 <div class="card h-100 shadow-sm">
-                    <img src="~/images/gry.jpg" class="card-img-top p-4" alt="Gry edukacyjne">
+                    <img src="/images/gry.jpg" class="card-img-top p-4" alt="Gry edukacyjne">
                     <div class="card-body">
-                        <h5 class="card-title">Gra edukacyjna</h5>
-                        <p class="card-text">Nauka przez zabawę — gra rozwijająca logiczne myślenie i spostrzegawczość.</p>
+                        <h5 class="card-title">Gry edukacyjne</h5>
+                        <p class="card-text">Rozwijające gry planszowe, puzzle i zestawy edukacyjne.</p>
                     </div>
                 </div>
             </a>

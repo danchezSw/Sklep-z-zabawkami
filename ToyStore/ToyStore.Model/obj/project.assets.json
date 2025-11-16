@@ -699,11 +699,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Sklep-z-zabawkami-main\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj",
+      "projectUniqueName": "C:\\Users\\mateu\\Sklep-z-zabawkami\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj",
       "projectName": "ToyStore.Model",
-      "projectPath": "D:\\Sklep-z-zabawkami-main\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj",
+      "projectPath": "C:\\Users\\mateu\\Sklep-z-zabawkami\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj",
       "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
-      "outputPath": "D:\\Sklep-z-zabawkami-main\\ToyStore\\ToyStore.Model\\obj\\",
+      "outputPath": "C:\\Users\\mateu\\Sklep-z-zabawkami\\ToyStore\\ToyStore.Model\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

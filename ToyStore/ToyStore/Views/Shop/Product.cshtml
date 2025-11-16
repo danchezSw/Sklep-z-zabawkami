@@ -1,73 +1,106 @@
-﻿@{
-    var product = ViewBag.Product;
-    ViewData["Title"] = product?.Name ?? "Produkt";
+﻿@model ToyStore.Web.Controllers.ProductModel
+
+@{
+    ViewData["Title"] = Model.Title;
+    string initialImage = Url.Content(Model.DefaultImage);
 }
 
-<div class="container mt-5">
+<div class="container mt-4">
+
+    <h2 class="text-center mb-4">@Model.Title</h2>
+
     <div class="row">
         <div class="col-md-6 text-center">
-            <img id="productImage" src="@product.DefaultImage" alt="@product.Name"
-                 class="img-fluid rounded shadow-lg product-image" />
+            <img id="productImage" src="@initialImage" class="img-fluid rounded shadow" style="max-height: 350px;" />
         </div>
 
         <div class="col-md-6">
-            <h2 class="mb-3 text-primary">@product.Name</h2>
-            <p class="text-muted">@product.Description</p>
 
-            <div class="mb-3">
-                <label for="colorSelect" class="form-label">Wybierz kolor:</label>
-                <select id="colorSelect" class="form-select" aria-label="Wybierz kolor misia">
-                    @foreach (var c in product.Colors)
-                    {
-                        <option value="@c">@c</option>
+            @* Jeśli produkt ma kolory (np. misie), pokazujemy kółka kolorów *@
+            @if (Model.Colors != null && Model.Colors.Count > 0)
+            {
+                <h4>Wybierz kolor:</h4>
+                <div class="d-flex gap-2 flex-wrap mb-3">
+                    @{
+                        var firstColorKey = Model.Colors.Keys.First();
                     }
-                </select>
-            </div>
+                    @foreach (var color in Model.Colors)
+                    {
+                        var activeClass = color.Key == firstColorKey ? "active" : "";
+                        <div class="color-swatch @activeClass" title="@color.Key"
+                             style="background-color:@color.Key;"
+                             data-img="@Url.Content("~/images/" + color.Value)"
+                             data-color="@color.Key">
+                        </div>
+                    }
+                </div>
+            }
 
-            <button id="addToCart" type="button" class="btn btn-primary">🛒 Dodaj do koszyka</button>
+            <form asp-controller="Shop" asp-action="AddToCart" method="post" class="mt-3">
+                @Html.AntiForgeryToken()
 
-            <div class="mt-4">
-                <a asp-controller="Shop" asp-action="Details" asp-route-id="2" class="btn btn-link">← Powrót do misiów</a>
-            </div>
+                <input type="hidden" name="name" value="@Model.Title" />
+                <input type="hidden" name="image" id="selectedImage" value="@initialImage" />
+                <input type="hidden" name="color" id="selectedColor"
+                       value="@(Model.Colors?.Keys.FirstOrDefault() ?? "")" />
+                <input type="hidden" name="price" value="@Model.Price" />
+
+                <div class="mt-3">
+                    <label for="quantity" class="form-label">Ilość:</label>
+                    <input type="number" id="quantity" name="quantity"
+                           class="form-control" value="1" min="1" style="width:120px;" />
+                </div>
+
+                <button type="submit" class="btn btn-success btn-lg mt-3">
+                    Dodaj do koszyka
+                </button>
+            </form>
+
         </div>
     </div>
 </div>
 
-<style>
-    .product-image {
-        transition: transform 0.25s ease, opacity 0.25s ease;
-        cursor: pointer;
-        max-height: 450px;
-        width: auto;
-    }
-
-        .product-image:hover {
-            transform: scale(1.05);
-        }
-
-    select {
-        max-width: 260px;
-    }
-</style>
-
 @section Scripts {
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const productImage = document.getElementById("productImage");
-            const colorSelect = document.getElementById("colorSelect");
-            const colorImages = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(product.ColorImages));
+        const imgElement = document.getElementById("productImage");
+        const selectedImageInput = document.getElementById("selectedImage");
+        const selectedColorInput = document.getElementById("selectedColor");
 
-            // Zmiana obrazka z efektem fade
-            colorSelect.addEventListener('change', function () {
-                const chosen = this.value;
-                if (colorImages[chosen]) {
-                    productImage.style.opacity = 0;
-                    setTimeout(() => {
-                        productImage.src = colorImages[chosen];
-                        productImage.style.opacity = 1;
-                    }, 250);
-                }
+        document.querySelectorAll(".color-swatch").forEach(swatch => {
+            swatch.addEventListener("click", () => {
+                const img = swatch.dataset.img;
+                const color = swatch.dataset.color;
+
+                // Zmieniamy obrazek
+                imgElement.src = img;
+                selectedImageInput.value = img;
+                selectedColorInput.value = color;
+
+                // zaznacz aktywny kolor
+                document.querySelectorAll(".color-swatch").forEach(s => s.classList.remove("active"));
+                swatch.classList.add("active");
             });
         });
     </script>
 }
+
+<style>
+    .color-swatch {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid #ccc;
+        cursor: pointer;
+        transition: transform 0.2s, border-color 0.2s;
+    }
+
+        .color-swatch:hover {
+            transform: scale(1.2);
+            border-color: #007bff;
+        }
+
+        .color-swatch.active {
+            border-color: #007bff;
+            box-shadow: 0 0 5px #007bff;
+        }
+</style>

@@ -1,36 +1,57 @@
 ﻿@{
     ViewData["Title"] = "Misie";
-    var bears = ViewBag.Bears as List<dynamic>;
 }
 
-<div class="container text-center mt-5">
-    <h2 class="mb-4 text-primary">🧸 Wybierz swojego misia</h2>
-    <div class="row justify-content-center">
-        @foreach (var bear in bears)
-        {
-            <div class="col-md-4 mb-4">
-                <div class="card shadow-lg rounded-4 p-3 hover-card">
-                    <img src="@bear.Image" alt="@bear.Name" class="img-fluid rounded-3 mb-3 bear-img" />
-                    <h5>@bear.Name</h5>
-                    <a href="@bear.Link" class="btn btn-primary mt-2">Zobacz szczegóły</a>
-                </div>
-            </div>
-        }
+<h2 class="text-center mt-4">Misie</h2>
+
+<div class="row mt-4">
+
+    <div class="col-6 col-md-3 text-center mb-4">
+        <a href="/Shop/Product?name=osmiornica">
+            <img src="/images/osmiornicablue.png" class="img-fluid rounded mb-2 category-img" />
+            <p>Ośmiornica</p>
+        </a>
     </div>
+
+    <div class="col-6 col-md-3 text-center mb-4">
+        <a href="/Shop/Product?name=kurczak">
+            <img src="/images/kurczakpink.png" class="img-fluid rounded mb-2 category-img" />
+            <p>Kurczak</p>
+        </a>
+    </div>
+
+    <div class="col-6 col-md-3 text-center mb-4">
+        <a href="/Shop/Product?name=slon">
+            <img src="/images/plush_toy_elephant_blue.png" class="img-fluid rounded mb-2 category-img" />
+            <p>Słoń</p>
+        </a>
+    </div>
+
+    <div class="col-6 col-md-3 text-center mb-4">
+        <a href="/Shop/Product?name=foka">
+            <img src="/images/plush_toy_seal.jpg" class="img-fluid rounded mb-2 category-img" />
+            <p>Foka</p>
+        </a>
+    </div>
+
+    <div class="col-6 col-md-3 text-center mb-4">
+        <a href="/Shop/Product?name=pluszak">
+            <img src="/images/pluszak.jpg" class="img-fluid rounded mb-2 category-img" />
+            <p>Miś (brązowy)</p>
+        </a>
+    </div>
+    <div class="text-center mt-5">
+        <a href="/Shop" class="btn btn-success">← Powrót do sklepu</a>
+    </div>
+
 </div>
 
 <style>
-    .hover-card {
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    .category-img {
+        transition: transform .2s ease;
     }
 
-        .hover-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        .category-img:hover {
+            transform: scale(1.15);
         }
-
-    .bear-img {
-        height: 220px;
-        object-fit: contain;
-    }
 </style>

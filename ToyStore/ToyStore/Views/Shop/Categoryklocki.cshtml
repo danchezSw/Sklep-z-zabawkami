@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Klocki Lego";
+    var products = ViewData["Products"] as Dictionary<string, ToyStore.Web.Controllers.ProductModel>;
+}
+
+<div class="container my-5">
+    <h1 class="text-center mb-4 text-primary">Klocki Lego</h1>
+    <p class="text-center text-muted mb-5">Wybierz zestaw i rozpocznij budowanie! 🧱</p>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @if (products != null && products.Count > 0)
+        {
+            @foreach (var kv in products)
+            {
+                var key = kv.Key;
+                var item = kv.Value;
+                <div class="col">
+                    <a href="/Shop/Product?name=@key" class="text-decoration-none text-dark">
+                        <div class="card h-100 shadow-sm">
+                            <img src="@Url.Content(item.DefaultImage)" class="card-img-top product-img" />
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Title</h5>
+                                <p class="card-text">Opis zestawu lub krótka notka.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+
+        }
+        else
+        {
+            <p class="text-center text-muted">Brak produktów w tej kategorii.</p>
+        }
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="/Shop" class="btn btn-success">← Powrót do sklepu</a>
+    </div>
+</div>
+
+<style>
+    .product-img {
+        transition: transform 0.2s ease;
+    }
+
+        .product-img:hover {
+            transform: scale(1.05);
+        }
+</style>

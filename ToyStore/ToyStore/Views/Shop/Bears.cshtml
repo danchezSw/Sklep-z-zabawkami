@@ -1,57 +1,62 @@
 ﻿@{
     ViewData["Title"] = "Misie";
+    var products = ViewData["Products"] as Dictionary<string, ToyStore.Web.Controllers.ProductModel>;
 }
 
-<h2 class="text-center mt-4">Misie</h2>
+<div class="container my-5">
+    <h1 class="text-center mb-4 text-primary">Misie</h1>
+    <p class="text-center text-muted mb-5">Pluszaki: ośmiornica, kurczak, miś i inne mięciutkie zabawki.</p>
 
-<div class="row mt-4">
-
-    <div class="col-6 col-md-3 text-center mb-4">
-        <a href="/Shop/Product?name=osmiornica">
-            <img src="/images/osmiornicablue.png" class="img-fluid rounded mb-2 category-img" />
-            <p>Ośmiornica</p>
-        </a>
-    </div>
-
-    <div class="col-6 col-md-3 text-center mb-4">
-        <a href="/Shop/Product?name=kurczak">
-            <img src="/images/kurczakpink.png" class="img-fluid rounded mb-2 category-img" />
-            <p>Kurczak</p>
-        </a>
-    </div>
-
-    <div class="col-6 col-md-3 text-center mb-4">
-        <a href="/Shop/Product?name=slon">
-            <img src="/images/plush_toy_elephant_blue.png" class="img-fluid rounded mb-2 category-img" />
-            <p>Słoń</p>
-        </a>
-    </div>
-
-    <div class="col-6 col-md-3 text-center mb-4">
-        <a href="/Shop/Product?name=foka">
-            <img src="/images/plush_toy_seal.jpg" class="img-fluid rounded mb-2 category-img" />
-            <p>Foka</p>
-        </a>
-    </div>
-
-    <div class="col-6 col-md-3 text-center mb-4">
-        <a href="/Shop/Product?name=pluszak">
-            <img src="/images/pluszak.jpg" class="img-fluid rounded mb-2 category-img" />
-            <p>Miś (brązowy)</p>
-        </a>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @if (products != null && products.Count > 0)
+        {
+            foreach (var kv in products)
+            {
+                var key = kv.Key;
+                var item = kv.Value;
+                <div class="col">
+                    <a asp-controller="Shop" asp-action="Product" asp-route-name="@key" class="text-decoration-none text-dark">
+                        <div class="card h-100 shadow-sm">
+                            <img src="@Url.Content(item.DefaultImage)" class="card-img-top product-img" />
+                            <div class="card-body text-center">
+                                <h5 class="card-title">@item.Title</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        }
+        else
+        {
+            <p class="text-center text-muted">Brak produktów w tej kategorii.</p>
+        }
     </div>
     <div class="text-center mt-5">
         <a href="/Shop" class="btn btn-success">← Powrót do sklepu</a>
     </div>
-
 </div>
 
 <style>
-    .category-img {
-        transition: transform .2s ease;
+    .product-img {
+        max-height: 200px;
+        object-fit: contain;
     }
 
-        .category-img:hover {
-            transform: scale(1.15);
+    .btn-back {
+        background-color: #28a745;
+        color: white;
+        font-size: 1.1rem;
+        padding: 10px 25px;
+        border: none;
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        text-decoration: none;
+    }
+
+        .btn-back:hover {
+            transform: scale(1.1);
+            background-color: #218838;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            color: white;
         }
 </style>

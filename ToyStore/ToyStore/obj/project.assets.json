@@ -5497,23 +5497,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mateu\\.nuget\\packages\\": {},
+    "C:\\Users\\Wiktor\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mateu\\Sklep-z-zabawkami\\ToyStore\\ToyStore\\ToyStore.Web.csproj",
+      "projectUniqueName": "C:\\Users\\Wiktor\\Source\\Repos\\Sklepzzabawkami\\ToyStore\\ToyStore\\ToyStore.Web.csproj",
       "projectName": "ToyStore.Web",
-      "projectPath": "C:\\Users\\mateu\\Sklep-z-zabawkami\\ToyStore\\ToyStore\\ToyStore.Web.csproj",
-      "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mateu\\Sklep-z-zabawkami\\ToyStore\\ToyStore\\obj\\",
+      "projectPath": "C:\\Users\\Wiktor\\Source\\Repos\\Sklepzzabawkami\\ToyStore\\ToyStore\\ToyStore.Web.csproj",
+      "packagesPath": "C:\\Users\\Wiktor\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Wiktor\\Source\\Repos\\Sklepzzabawkami\\ToyStore\\ToyStore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\mateu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Wiktor\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5522,23 +5522,24 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\mateu\\Sklep-z-zabawkami\\ToyStore\\ToyStore.DAL\\ToyStore.DAL.csproj": {
-              "projectPath": "C:\\Users\\mateu\\Sklep-z-zabawkami\\ToyStore\\ToyStore.DAL\\ToyStore.DAL.csproj"
+            "C:\\Users\\Wiktor\\Source\\Repos\\Sklepzzabawkami\\ToyStore\\ToyStore.DAL\\ToyStore.DAL.csproj": {
+              "projectPath": "C:\\Users\\Wiktor\\Source\\Repos\\Sklepzzabawkami\\ToyStore\\ToyStore.DAL\\ToyStore.DAL.csproj"
             },
-            "C:\\Users\\mateu\\Sklep-z-zabawkami\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj": {
-              "projectPath": "C:\\Users\\mateu\\Sklep-z-zabawkami\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj"
+            "C:\\Users\\Wiktor\\Source\\Repos\\Sklepzzabawkami\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj": {
+              "projectPath": "C:\\Users\\Wiktor\\Source\\Repos\\Sklepzzabawkami\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj"
             },
-            "C:\\Users\\mateu\\Sklep-z-zabawkami\\ToyStore\\ToyStore.Services\\ToyStore.Services.csproj": {
-              "projectPath": "C:\\Users\\mateu\\Sklep-z-zabawkami\\ToyStore\\ToyStore.Services\\ToyStore.Services.csproj"
+            "C:\\Users\\Wiktor\\Source\\Repos\\Sklepzzabawkami\\ToyStore\\ToyStore.Services\\ToyStore.Services.csproj": {
+              "projectPath": "C:\\Users\\Wiktor\\Source\\Repos\\Sklepzzabawkami\\ToyStore\\ToyStore.Services\\ToyStore.Services.csproj"
             },
-            "C:\\Users\\mateu\\Sklep-z-zabawkami\\ToyStore\\ToyStore.ViewModels\\ToyStore.ViewModels.csproj": {
-              "projectPath": "C:\\Users\\mateu\\Sklep-z-zabawkami\\ToyStore\\ToyStore.ViewModels\\ToyStore.ViewModels.csproj"
+            "C:\\Users\\Wiktor\\Source\\Repos\\Sklepzzabawkami\\ToyStore\\ToyStore.ViewModels\\ToyStore.ViewModels.csproj": {
+              "projectPath": "C:\\Users\\Wiktor\\Source\\Repos\\Sklepzzabawkami\\ToyStore\\ToyStore.ViewModels\\ToyStore.ViewModels.csproj"
             }
           }
         }
@@ -5599,7 +5600,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

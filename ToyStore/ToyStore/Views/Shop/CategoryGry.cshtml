@@ -11,12 +11,17 @@
 
         @if (products != null)
         {
-            foreach (var game in products.Values)
+            foreach (var kvp in products)
             {
+                var key = kvp.Key;       // np. "gra_memory"
+                var game = kvp.Value;
+
                 <div class="col">
-                    <a href="/Shop/Product/@game.Title" class="text-decoration-none text-dark">
+                    <a asp-controller="Shop" asp-action="Product" asp-route-name="@key" class="text-decoration-none text-dark">
+
                         <div class="card h-100 shadow-sm">
-                            <img src="@game.DefaultImage" class="card-img-top product-img" />
+                            <img src="@Url.Content(game.DefaultImage)" class="card-img-top product-img" />
+
                             <div class="card-body">
                                 <h5 class="card-title">@game.Title</h5>
                                 @if (game.Colors != null && game.Colors.Count > 0)

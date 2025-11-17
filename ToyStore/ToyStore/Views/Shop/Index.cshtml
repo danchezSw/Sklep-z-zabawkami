@@ -3,15 +3,19 @@
 }
 
 <style>
-    .card {
+    .category-img {
+        max-height: 200px; /* ograniczenie wysokości */
+        max-width: 100%; /* nie wychodzi poza kartę */
+        object-fit: contain; /* zachowuje proporcje */
+        display: block;
+        margin: 0 auto;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
     }
 
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
+    .card:hover .category-img {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
 
     .btn-back {
         background-color: #28a745;
@@ -21,6 +25,7 @@
         border: none;
         border-radius: 8px;
         transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        text-decoration: none;
     }
 
         .btn-back:hover {
@@ -28,9 +33,9 @@
             background-color: #218838;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
             color: white;
-            text-decoration: none;
         }
 </style>
+
 
 <div class="container my-5">
     <h1 class="text-center mb-4 text-primary">Kategorie produktów</h1>
@@ -42,7 +47,7 @@
         <div class="col">
             <a asp-controller="Shop" asp-action="Category" asp-route-name="klocki" class="text-decoration-none text-dark">
                 <div class="card h-100 shadow-sm">
-                    <img src="/images/klocki.jpg" class="card-img-top" alt="Klocki">
+                    <img src="/images/klocki.jpg" class="card-img-top category-img" alt="Klocki">
                     <div class="card-body">
                         <h5 class="card-title">Klocki</h5>
                         <p class="card-text">Kreatywne zestawy klocków dla dzieci w każdym wieku.</p>
@@ -55,7 +60,7 @@
         <div class="col">
             <a asp-controller="Shop" asp-action="Category" asp-route-name="misie" class="text-decoration-none text-dark">
                 <div class="card h-100 shadow-sm">
-                    <img src="/images/pluszak.jpg" class="card-img-top" alt="Misie">
+                    <img src="/images/pluszak.jpg" class="card-img-top category-img" alt="Misie">
                     <div class="card-body">
                         <h5 class="card-title">Misie</h5>
                         <p class="card-text">Pluszaki: ośmiornica, kurczak, miś i inne mięciutkie zabawki.</p>
@@ -68,7 +73,7 @@
         <div class="col">
             <a asp-controller="Shop" asp-action="Category" asp-route-name="gry" class="text-decoration-none text-dark">
                 <div class="card h-100 shadow-sm">
-                    <img src="/images/gry.jpg" class="card-img-top p-4" alt="Gry edukacyjne">
+                    <img src="/images/gry.jpg" class="card-img-top category-img" alt="Gry edukacyjne">
                     <div class="card-body">
                         <h5 class="card-title">Gry edukacyjne</h5>
                         <p class="card-text">Rozwijające gry planszowe, puzzle i zestawy edukacyjne.</p>
@@ -77,7 +82,35 @@
             </a>
         </div>
 
+        <!-- BARBIE -->
+        <div class="col">
+            <a asp-controller="Shop" asp-action="Category" asp-route-name="barbie" class="text-decoration-none text-dark">
+                <div class="card h-100 shadow-sm">
+                    <img src="/images/barbieblond.jpg" class="card-img-top category-img" alt="Barbie">
+                    <div class="card-body">
+                        <h5 class="card-title">Barbie</h5>
+                        <p class="card-text">Lalki Barbie w różnych stylizacjach i kolorach włosów.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- HOT WHEELS -->
+        <div class="col">
+            <a asp-controller="Shop" asp-action="Category" asp-route-name="hotwheels" class="text-decoration-none text-dark">
+                <div class="card h-100 shadow-sm">
+                    <img src="/images/hotwheels1.jpg" class="card-img-top category-img" alt="Hot Wheels">
+                    <div class="card-body">
+                        <h5 class="card-title">Hot Wheels</h5>
+                        <p class="card-text">Zestawy samochodzików Hot Wheels i tory wyścigowe.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
     </div>
+
+
 
     <!-- 🔹 Przycisk powrotu -->
     <div class="text-center mt-5">

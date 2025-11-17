@@ -17,7 +17,7 @@
                 <div class="col">
                     <a href="/Shop/Product?name=@key" class="text-decoration-none text-dark">
                         <div class="card h-100 shadow-sm">
-                            <img src="@Url.Content(item.DefaultImage)" class="card-img-top product-img" />
+                            <img src="/images/@item.DefaultImage" class="card-img-top product-img" />
                             <div class="card-body">
                                 <h5 class="card-title">@item.Title</h5>
                                 <p class="card-text">Opis zestawu lub krótka notka.</p>
@@ -26,6 +26,8 @@
                     </a>
                 </div>
             }
+
+
 
         }
         else
@@ -37,14 +39,29 @@
     <div class="text-center mt-5">
         <a href="/Shop" class="btn btn-success">← Powrót do sklepu</a>
     </div>
-</div>
+</div>z
 
 <style>
     .product-img {
-        transition: transform 0.2s ease;
+        max-height: 200px;
+        object-fit: contain;
     }
 
-        .product-img:hover {
-            transform: scale(1.05);
+    .btn-back {
+        background-color: #28a745;
+        color: white;
+        font-size: 1.1rem;
+        padding: 10px 25px;
+        border: none;
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        text-decoration: none;
+    }
+
+        .btn-back:hover {
+            transform: scale(1.1);
+            background-color: #218838;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            color: white;
         }
 </style>

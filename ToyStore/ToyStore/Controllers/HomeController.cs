@@ -18,26 +18,26 @@ namespace ToyStore.Controllers
             _logger = logger;
         }
 
-        // Model dla produktów wyœwietlanych na stronie g³ównej
+        // Model dla produktï¿½w wyï¿½wietlanych na stronie gï¿½ï¿½wnej
         public class HomeProductModel
         {
-            public string Key { get; set; }      // np. "gra_memory"
-            public string Title { get; set; }    // np. "Gra Memory"
-            public string Image { get; set; }    // np. "~/images/Gra-memory.jpg"
+            public string ?Key { get; set; }      // np. "gra_memory"
+            public string ?Title { get; set; }    // np. "Gra Memory"
+            public string ?Image { get; set; }    // np. "~/images/Gra-memory.jpg"
         }
 
         public IActionResult Index()
         {
-            // Lista wszystkich produktów z ca³ego sklepu
+            // Lista wszystkich produktï¿½w z caï¿½ego sklepu
             var allProducts = new List<HomeProductModel>
             {
                 // misie
-                new HomeProductModel { Key = "osmiornica", Title = "Oœmiornica", Image = "~/images/osmiornicablue.png" },
+                new HomeProductModel { Key = "osmiornica", Title = "OÅ›miornica", Image = "~/images/osmiornicablue.png" },
                 new HomeProductModel { Key = "kurczak", Title = "Kurczak", Image = "~/images/kurczakpink.png" },
-                new HomeProductModel { Key = "slon", Title = "S³oñ", Image = "~/images/plush_toy_elephant_blue.png" },
+                new HomeProductModel { Key = "slon", Title = "SÅ‚oÅ„", Image = "~/images/plush_toy_elephant_blue.png" },
                 new HomeProductModel { Key = "foka", Title = "Foka", Image = "~/images/plush_toy_seal.jpg" },
-                new HomeProductModel { Key = "pluszak", Title = "Miœ", Image = "~/images/pluszak.jpg" },
-                new HomeProductModel { Key = "krolik", Title = "Królik", Image = "~/images/krolik_blue.png"},
+                new HomeProductModel { Key = "pluszak", Title = "MiÅ›", Image = "~/images/pluszak.jpg" },
+                new HomeProductModel { Key = "krolik", Title = "KrÃ³lik", Image = "~/images/krolik_blue.png"},
 
                 // klocki
                 new HomeProductModel { Key = "lego_duplo_10986", Title = "LEGO Duplo 10986", Image = "~/images/lego_duplo_10986.jpg" },
@@ -53,7 +53,7 @@ namespace ToyStore.Controllers
                 new HomeProductModel { Key = "lego_onepiece_MonkeyDLuffy", Title = "LEGO One Piece Monkey D. Luffy", Image = "~/images/lego_onepiece_MonkeyDLuffy.jpg" },
                 new HomeProductModel { Key = "lego_onepiece_battleAtArlongPark", Title = "LEGO One Piece Battle at Arlong Park", Image = "~/images/lego_onepiece_battleAtArlongPark.png" },
                 new HomeProductModel { Key = "lego_onepiece_goingmerry", Title = "LEGO One Piece Going Merry", Image = "~/images/lego_onepiece_goingmerry.jpg" },
-                new HomeProductModel { Key = "lego_policja_samochod_przyczepka", Title = "LEGO Policja samochód z przyczepk¹", Image = "~/images/lego_policja_samochod_przyczepka.jpg" },
+                new HomeProductModel { Key = "lego_policja_samochod_przyczepka", Title = "LEGO Policja samochï¿½d z przyczepkï¿½", Image = "~/images/lego_policja_samochod_przyczepka.jpg" },
                 new HomeProductModel { Key = "lego_starwars_assaultonhoth", Title = "LEGO Star Wars Assault on Hoth", Image = "~/images/lego_starwars_assaultonhoth.jpg" },
                 new HomeProductModel { Key = "lego_starwars_atap_walker", Title = "LEGO Star Wars AT-AP Walker", Image = "~/images/lego_starwars_atap_walker.jpg" },
                 new HomeProductModel { Key = "lego_starwars_deathstar", Title = "LEGO Star Wars Death Star", Image = "~/images/lego_starwars_deathstar.jpg" },
@@ -67,10 +67,10 @@ namespace ToyStore.Controllers
 
                 // gry edukacyjne
                 new HomeProductModel { Key = "gra_memory", Title = "Gra Memory", Image = "~/images/Gra-memory.jpg" },
-                new HomeProductModel { Key = "puzzle_1000", Title = "Puzzle 1000 elementów", Image = "~/images/puzzle.jpg" },
+                new HomeProductModel { Key = "puzzle_1000", Title = "Puzzle 1000 elementÃ³w", Image = "~/images/puzzle.jpg" },
             };
 
-            // Losujemy 4 produkty jako nowoœci
+            // Losujemy 4 produkty jako nowoÅ›ci
             var rnd = new Random();
             ViewData["NewProducts"] = allProducts.OrderBy(x => rnd.Next()).Take(4).ToList();
 

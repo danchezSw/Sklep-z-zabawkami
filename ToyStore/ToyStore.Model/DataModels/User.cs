@@ -11,10 +11,10 @@ namespace ToyStore.Model.DataModels
     public class User : IdentityUser
     {
         [MaxLength(100)]
-        public string FullName { get; set; }
+        public string ?FullName { get; set; }
 
         [MaxLength(200)]
-        public string Address { get; set; }
-        public virtual ICollection<Order> Orders { get; set; }
+        public string ?Address { get; set; }
+        public virtual ICollection<Order> ?Orders { get; set; }
     }
 }

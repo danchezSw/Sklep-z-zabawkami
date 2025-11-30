@@ -4,6 +4,75 @@
     var id = Convert.ToInt32(ViewContext.RouteData.Values["id"]);
 }
 
+<hr />
+
+<h3>Opinie klientów</h3>
+
+@{
+    var product = Model.Product as ToyStore.Model.DataModels.Product;
+    var reviews = Model.Reviews as IEnumerable<ToyStore.Model.DataModels.Review>;
+    double avg = Model.AverageRating;
+}
+
+@if (reviews != null && reviews.Any())
+{
+    <p>Średnia ocena: @avg.ToString("0.0") / 5</p>
+
+    <ul class="list-group mb-4">
+        @foreach (var r in reviews)
+        {
+            <li class="list-group-item">
+                <strong>@r.AuthorName</strong>
+                <span class="text-warning">
+                    @for (int i = 0; i < r.Rating; i++)
+                    {
+                        @:<span>★</span>
+                    }
+                </span>
+                <br />
+                <small class="text-muted">
+                    @r.CreatedAt.ToLocalTime().ToString("dd.MM.yyyy HH:mm")
+                </small>
+                <p class="mb-0">@r.Content</p>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>Ten produkt nie ma jeszcze opinii. Bądź pierwszą osobą, która ją doda!</p>
+}
+
+<h4>Dodaj opinię</h4>
+
+<form asp-controller="Review" asp-action="Create" method="post">
+    @Html.AntiForgeryToken()
+
+    <input type="hidden" name="ProductId" value="@product.Id" />
+
+    <div class="mb-3">
+        <label for="AuthorName" class="form-label">Imię</label>
+        <input type="text" name="AuthorName" id="AuthorName" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="Rating" class="form-label">Ocena (1–5)</label>
+        <select name="Rating" id="Rating" class="form-select">
+            @for (var i = 1; i <= 5; i++)
+            {
+                <option value="@i">@i</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="Content" class="form-label">Treść opinii</label>
+        <textarea name="Content" id="Content" class="form-control" rows="4" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Wyślij opinię</button>
+</form>
+
 <style>
     .card {
         transition: transform 0.3s ease, box-shadow 0.3s ease;

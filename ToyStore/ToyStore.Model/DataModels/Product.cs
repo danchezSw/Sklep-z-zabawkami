@@ -13,10 +13,10 @@ namespace ToyStore.Model.DataModels
         public int Id { get; set; }
 
         [Required, MaxLength(100)]
-        public string Name { get; set; }
+        public string ?Name { get; set; }
 
         [MaxLength(500)]
-        public string Description { get; set; }
+        public string ?Description { get; set; }
 
         [Required]
         [Column(TypeName = "decimal(10,2)")]
@@ -24,11 +24,13 @@ namespace ToyStore.Model.DataModels
 
         public int StockQuantity { get; set; }
 
-        public string ImageUrl { get; set; }
+        public string ?ImageUrl { get; set; }
 
         public int CategoryId { get; set; }
-        public virtual Category Category { get; set; }
+        public virtual Category ?Category { get; set; }
 
-        public virtual ICollection<OrderItem> OrderItems { get; set; }
+        public virtual ICollection<OrderItem> ?OrderItems { get; set; }
+
+        public virtual ICollection<Review> Reviews { get; set; } = new List<Review>(); // Opinie
     }
 }

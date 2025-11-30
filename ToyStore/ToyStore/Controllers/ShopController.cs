@@ -2,12 +2,26 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using ToyStore.Web.Models;
+using WebModels = ToyStore.Web.Models;
+using Microsoft.EntityFrameworkCore;
+using ToyStore.Data;
+using ToyStore.Model.DataModels;
+using ToyStore.Services;
+using System.Threading.Tasks;
 
 namespace ToyStore.Web.Controllers
 {
     public class ShopController : Controller
     {
+
+        private readonly ApplicationDbContext _db;
+    private readonly ReviewService _reviewService;
+
+    public ShopController(ApplicationDbContext db, ReviewService reviewService)
+    {
+        _db = db;
+        _reviewService = reviewService;
+    }
         // Strona główna sklepu
         public IActionResult Index()
         {
@@ -250,8 +264,8 @@ namespace ToyStore.Web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult AddToCart(string name, string image, decimal price, int quantity = 1)
         {
-            var cart = HttpContext.Session.GetObjectFromJson<List<CartItem>>("Cart")
-                       ?? new List<CartItem>();
+            var cart = HttpContext.Session.GetObjectFromJson<List<WebModels.CartItem>>("Cart")
+                       ?? new List<WebModels.CartItem>();
 
             var existing = cart.FirstOrDefault(c => c.ProductName == name);
 
@@ -261,7 +275,7 @@ namespace ToyStore.Web.Controllers
             }
             else
             {
-                cart.Add(new CartItem
+                cart.Add(new WebModels.CartItem
                 {
                     ProductName = name,
                     Image = image,
@@ -274,7 +288,27 @@ namespace ToyStore.Web.Controllers
 
             return RedirectToAction("Index", "Cart");
         }
+    public async Task<IActionResult> Details(int id) // Opinie
+{
+    var product = await _db.Products
+        .Include(p => p.Reviews)
+        .FirstOrDefaultAsync(p => p.Id == id);
 
+    if (product == null)
+        return NotFound();
+
+    var reviews = await _reviewService.GetByProductAsync(id);
+    var avg = await _reviewService.GetAverageRatingAsync(id);
+
+    var model = new
+    {
+        Product = product,
+        Reviews = reviews,
+        AverageRating = avg
+    };
+
+    return View(model); 
+}
         // Widok koszyka
         public IActionResult Cart()
         {
@@ -289,4 +323,8 @@ namespace ToyStore.Web.Controllers
         Dictionary<string, string>? Colors,
         decimal Price
     );
+
+
+
+
 }

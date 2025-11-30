@@ -54,10 +54,43 @@
             </form>
         </div>
     </div>
+
+    <hr class="my-4" />
+
+    <h3>Opinie klientów</h3>
+    <p id="averageRating">Średnia ocena: 0 / 5</p>
+    <ul class="list-group mb-4" id="reviewsList">
+    </ul>
+
+    <h4>Dodaj opinię</h4>
+    <form id="reviewForm">
+        <div class="mb-3">
+            <label for="AuthorName" class="form-label">Imię</label>
+            <input type="text" id="AuthorName" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label for="Rating" class="form-label">Ocena (1–5)</label>
+            <select id="Rating" class="form-select">
+                @for (var i = 1; i <= 5; i++)
+                {
+                    <option value="@i">@i</option>
+                }
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="Content" class="form-label">Treść opinii</label>
+            <textarea id="Content" class="form-control" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Dodaj opinię</button>
+    </form>
 </div>
 
 @section Scripts {
     <script>
+        // Obsługa wyboru koloru
         const imgElement = document.getElementById("productImage");
         const selectedImageInput = document.getElementById("selectedImage");
         const selectedColorInput = document.getElementById("selectedColor");
@@ -74,26 +107,39 @@
                 swatch.classList.add("active");
             });
         });
+
+        // --- Opinie dynamiczne ---
+        let reviews = [];
+
+        function renderReviews() {
+            const list = document.getElementById("reviewsList");
+            list.innerHTML = "";
+            let total = 0;
+            reviews.forEach(r => {
+                total += r.Rating;
+                const li = document.createElement("li");
+                li.className = "list-group-item review-item";
+                li.innerHTML = `<strong>${r.AuthorName}</strong> <span class="text-warning">${"★".repeat(r.Rating)}${"☆".repeat(5-r.Rating)}</span><br/>
+                                <small class="text-muted">${new Date(r.CreatedAt).toLocaleString()}</small>
+                                <p class="mb-0">${r.Content}</p>`;
+                list.appendChild(li);
+            });
+            const avg = reviews.length ? (total / reviews.length).toFixed(1) : 0;
+            document.getElementById("averageRating").textContent = "Średnia ocena: " + avg + " / 5";
+        }
+
+        document.getElementById("reviewForm").addEventListener("submit", function(e){
+            e.preventDefault();
+            const author = document.getElementById("AuthorName").value;
+            const rating = parseInt(document.getElementById("Rating").value);
+            const content = document.getElementById("Content").value;
+
+            reviews.push({ AuthorName: author, Rating: rating, CreatedAt: new Date().toISOString(), Content: content });
+            renderReviews();
+
+            this.reset(); // Czyści formularz
+        });
+
+        renderReviews();
     </script>
 }
-
-<style>
-    .color-swatch {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        border: 2px solid #ccc;
-        cursor: pointer;
-        transition: transform 0.2s, border-color 0.2s;
-    }
-
-        .color-swatch:hover {
-            transform: scale(1.2);
-            border-color: #007bff;
-        }
-
-        .color-swatch.active {
-            border-color: #007bff;
-            box-shadow: 0 0 5px #007bff;
-        }
-</style>

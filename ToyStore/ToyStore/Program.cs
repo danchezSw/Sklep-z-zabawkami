@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using ToyStore.Model.DataModels;
 using ToyStore.Data;
+using ToyStore.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,8 @@ builder.Services
 
 builder.Services.AddRazorPages();
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<ReviewService>();
 
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>

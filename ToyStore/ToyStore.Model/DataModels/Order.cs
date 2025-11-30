@@ -14,14 +14,14 @@ namespace ToyStore.Model.DataModels
         public DateTime OrderDate { get; set; } = DateTime.Now;
 
         [Required, MaxLength(100)]
-        public string CustomerName { get; set; }
+        public string ?CustomerName { get; set; }
 
         [Required, MaxLength(100)]
-        public string CustomerEmail { get; set; }
+        public string ?CustomerEmail { get; set; }
 
         [MaxLength(200)]
-        public string ShippingAddress { get; set; }
+        public string ?ShippingAddress { get; set; }
         public OrderStatus Status { get; set; } = OrderStatus.Pending;
-        public virtual ICollection<OrderItem> OrderItems { get; set; }
+        public virtual ICollection<OrderItem> ?OrderItems { get; set; }
     }
 }

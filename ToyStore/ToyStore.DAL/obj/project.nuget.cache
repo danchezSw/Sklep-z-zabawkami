@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "srTmbUtiKJw=",
+  "dgSpecHash": "pc//lIr4M8Y=",
   "success": true,
-  "projectFilePath": "C:\\Users\\mateu\\Desktop\\sklepzzabawkami\\ToyStore\\ToyStore.DAL\\ToyStore.DAL.csproj",
+  "projectFilePath": "C:\\Users\\mateu\\Desktop\\Project\\Sklep-z-zabawkami\\ToyStore\\ToyStore.DAL\\ToyStore.DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mateu\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\mateu\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

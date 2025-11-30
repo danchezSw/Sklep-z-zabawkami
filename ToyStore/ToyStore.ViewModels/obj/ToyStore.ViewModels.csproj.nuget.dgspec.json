@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\sklepzzabawkami\\ToyStore\\ToyStore.ViewModels\\ToyStore.ViewModels.csproj": {}
+    "C:\\Users\\Wiktor\\Desktop\\studiaprojekt\\Sklep-z-zabawkami\\ToyStore\\ToyStore.ViewModels\\ToyStore.ViewModels.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\sklepzzabawkami\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj": {
+    "C:\\Users\\Wiktor\\Desktop\\studiaprojekt\\Sklep-z-zabawkami\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\sklepzzabawkami\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj",
+        "projectUniqueName": "C:\\Users\\Wiktor\\Desktop\\studiaprojekt\\Sklep-z-zabawkami\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj",
         "projectName": "ToyStore.Model",
-        "projectPath": "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\sklepzzabawkami\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj",
-        "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\sklepzzabawkami\\ToyStore\\ToyStore.Model\\obj\\",
+        "projectPath": "C:\\Users\\Wiktor\\Desktop\\studiaprojekt\\Sklep-z-zabawkami\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj",
+        "packagesPath": "C:\\Users\\Wiktor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Wiktor\\Desktop\\studiaprojekt\\Sklep-z-zabawkami\\ToyStore\\ToyStore.Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\mateu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Wiktor\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -71,24 +72,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\sklepzzabawkami\\ToyStore\\ToyStore.ViewModels\\ToyStore.ViewModels.csproj": {
+    "C:\\Users\\Wiktor\\Desktop\\studiaprojekt\\Sklep-z-zabawkami\\ToyStore\\ToyStore.ViewModels\\ToyStore.ViewModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\sklepzzabawkami\\ToyStore\\ToyStore.ViewModels\\ToyStore.ViewModels.csproj",
+        "projectUniqueName": "C:\\Users\\Wiktor\\Desktop\\studiaprojekt\\Sklep-z-zabawkami\\ToyStore\\ToyStore.ViewModels\\ToyStore.ViewModels.csproj",
         "projectName": "ToyStore.ViewModels",
-        "projectPath": "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\sklepzzabawkami\\ToyStore\\ToyStore.ViewModels\\ToyStore.ViewModels.csproj",
-        "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\sklepzzabawkami\\ToyStore\\ToyStore.ViewModels\\obj\\",
+        "projectPath": "C:\\Users\\Wiktor\\Desktop\\studiaprojekt\\Sklep-z-zabawkami\\ToyStore\\ToyStore.ViewModels\\ToyStore.ViewModels.csproj",
+        "packagesPath": "C:\\Users\\Wiktor\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Wiktor\\Desktop\\studiaprojekt\\Sklep-z-zabawkami\\ToyStore\\ToyStore.ViewModels\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\mateu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Wiktor\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -97,14 +98,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\sklepzzabawkami\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj": {
-                "projectPath": "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\sklepzzabawkami\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj"
+              "C:\\Users\\Wiktor\\Desktop\\studiaprojekt\\Sklep-z-zabawkami\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj": {
+                "projectPath": "C:\\Users\\Wiktor\\Desktop\\studiaprojekt\\Sklep-z-zabawkami\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj"
               }
             }
           }
@@ -140,7 +142,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

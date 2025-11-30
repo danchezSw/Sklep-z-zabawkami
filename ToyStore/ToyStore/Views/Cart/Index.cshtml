@@ -16,25 +16,41 @@
                     <th>Cena</th>
                     <th>Ilość</th>
                     <th>Łącznie</th>
+                    <th>Usuń</th> <!-- nowa kolumna -->
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model)
-                {
-                    // Obliczamy sumę dla tej linii
-                    decimal lineTotal = item.Price * item.Quantity;
+    @foreach (var item in Model)
+    {
+        decimal lineTotal = item.Price * item.Quantity;
 
-                    <tr>
-                        <td>
-                            <img src="@Url.Content(item.Image)" style="height:50px; margin-right:10px;" />
-                            @item.ProductName
-                        </td>
-                        <td>@item.Price.ToString("C")</td>
-                        <td>@item.Quantity</td>
-                        <td>@lineTotal.ToString("C")</td>
-                    </tr>
-                }
-            </tbody>
+        <tr>
+            <td>
+                <img src="@Url.Content(item.Image)" style="height:50px; margin-right:10px;" />
+                @item.ProductName
+            </td>
+            <td>@item.Price.ToString("C")</td>
+            <td>
+                <form asp-controller="Cart" asp-action="UpdateQuantity" method="post" class="d-inline">
+                    <input type="hidden" name="productKey" value="@item.ProductKey" />
+                    <select name="quantity" class="form-select form-select-sm" onchange="this.form.submit()">
+                        @for (int i = 1; i <= 10; i++)  // maksymalnie 10 sztuk
+                        {
+                                        <option value="@i" selected="@(i == item.Quantity ? "selected" : null)">@i</option>
+                        }
+                    </select>
+                </form>
+            </td>
+            <td>@lineTotal.ToString("C")</td>
+            <td>
+                <form asp-controller="Cart" asp-action="Remove" method="post">
+                    <input type="hidden" name="productKey" value="@item.ProductKey" />
+                    <button type="submit" class="btn btn-sm btn-danger">X</button>
+                </form>
+            </td>
+        </tr>
+    }
+</tbody>
         </table>
 
         decimal total = Model.Sum(x => x.Price * x.Quantity);

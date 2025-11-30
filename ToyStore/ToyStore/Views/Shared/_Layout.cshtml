@@ -1,4 +1,12 @@
-﻿<!DOCTYPE html>
+﻿@using ToyStore.Web.Models
+@using Newtonsoft.Json
+
+@{
+    var cartJson = Context.Session.GetString("Cart");
+    var cartItems = cartJson == null ? new List<CartItem>() : JsonConvert.DeserializeObject<List<CartItem>>(cartJson);
+    int cartCount = cartItems.Sum(x => x.Quantity);
+}
+<!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="utf-8" />
@@ -68,6 +76,29 @@
             border-radius: 50%;
             padding: 2px 6px;
         }
+
+        #searchResults {
+            position: absolute;
+            top: 100%; /* tuż pod inputem */
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #ddd;
+            z-index: 9999;
+            max-height: 300px;
+            overflow-y: auto;
+            display: none; /* domyślnie schowana */
+            width: 100%;
+        }
+
+            #searchResults li {
+                cursor: pointer;
+                padding: 5px 10px;
+            }
+
+                #searchResults li:hover {
+                    background-color: #f0f0f0;
+                }
     </style>
 </head>
 <body>
@@ -86,13 +117,19 @@
                         <li class="nav-item"><a class="nav-link text-dark" asp-controller="Shop" asp-action="Index">Sklep</a></li>
                         <li class="nav-item"><a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a></li>
                         <li class="nav-item"><a class="nav-link text-dark" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
+                        <li class="nav-item ms-3 position-relative">
+                            <form class="d-flex" id="searchForm" autocomplete="off">
+                                <input id="searchInput" class="form-control form-control-sm" type="text" placeholder="Szukaj produktów..." />
+                                <ul id="searchResults" class="list-group position-absolute" ...></ul>
+                            </form>
+                        </li>
                     </ul>
 
                     <ul class="navbar-nav ms-auto position-relative">
                         <li class="nav-item me-3">
                             <a class="nav-link text-dark position-relative" asp-controller="Cart" asp-action="Index">
                                 <i class="fa fa-shopping-cart"></i> Koszyk
-                                <span id="cartCount" class="cart-count">@(ViewBag.CartCount ?? 0)</span>
+                                <span id="cartCount" class="cart-count">@cartCount</span>
                             </a>
                         </li>
 
@@ -340,7 +377,44 @@
             setTimeout(()=>{ toast.style.transition="opacity 0.5s"; toast.style.opacity="1"; }, 10);
             setTimeout(()=>{ toast.style.opacity="0"; setTimeout(()=>toast.style.display="none",500); }, 3000);
         }
+                   const $input = $('#searchInput');
+        const $results = $('#searchResults');
+
+        $input.on('input', function() {
+            const term = $(this).val().trim();
+            if (term.length < 1) { $results.hide(); return; }
+
+            $.get('/Shop/SearchProducts', { term: term }, function(data) {
+                $results.empty();
+                if (data.length === 0) { $results.hide(); return; }
+
+                data.forEach(item => {
+                    const li = $('<li></li>').html(`<img src="${item.DefaultImage}" style="width:40px;height:40px;margin-right:10px"/>${item.Title} - ${item.Price.toFixed(2)} zł`);
+                    li.on('click', function(){ window.location.href = '/Shop/Product?name=' + encodeURIComponent(item.Key); });
+                    $results.append(li);
+                });
+
+                $results.show();
+            });
+        });
+
+        // schowanie listy po kliknięciu poza formą
+        $(document).click(function(e) {
+            if (!$(e.target).closest('#searchForm').length) $results.hide();
+        });
+
+        // przejście do pierwszego wyniku po Enter
+        $('#searchForm').on('submit', function(e) {
+            e.preventDefault();
+            const first = $results.children().first().data('url');
+            if (first) window.location.href = first;
+        });
+                $(document).ready(function() {
+            const $results = $('#searchResults');
+        });
     </script>
+
+
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

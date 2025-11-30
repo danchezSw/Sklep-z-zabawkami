@@ -1,0 +1,47 @@
+﻿@model ToyStore.Model.DataModels.Product
+
+@{
+    ViewData["Title"] = "Edytuj produkt";
+}
+
+<h2>Edytuj produkt</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label"></label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="StockQuantity" class="form-label"></label>
+        <input asp-for="StockQuantity" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="CategoryId" class="form-label">Kategoria</label>
+        <select asp-for="CategoryId" class="form-select"
+                asp-items="@(new SelectList(ViewData["Categories"] as IEnumerable<ToyStore.Model.DataModels.Category>, "Id", "Name"))">
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-success">Zapisz</button>
+    <a asp-action="Index" class="btn btn-secondary">Anuluj</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

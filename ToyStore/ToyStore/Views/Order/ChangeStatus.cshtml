@@ -1,0 +1,29 @@
+﻿@model ToyStore.Model.DataModels.Order
+@using ToyStore.Model.DataModels
+@{
+    ViewData["Title"] = "Zmiana statusu zamówienia";
+}
+
+<h2>Zmiana statusu zamówienia #@Model.Id</h2>
+
+<form asp-action="ChangeStatus" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <div class="form-group">
+        <label>Status:</label>
+        <select name="status" class="form-control">
+            @foreach (OrderStatus status in Enum.GetValues(typeof(OrderStatus)))
+            {
+                if (status == Model.Status)
+                {
+                    <option value="@status" selected>@status</option>
+                }
+                else
+                {
+                    <option value="@status">@status</option>
+                }
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Zapisz</button>
+    <a asp-action="Index" class="btn btn-secondary mt-2">Anuluj</a>
+</form>

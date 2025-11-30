@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using ToyStore.Model.DataModels;
@@ -30,6 +30,55 @@ builder.Services.AddSession(options =>
 });
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<Role>>();
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
+
+    // 🔹 Lista Twoich ról z RoleValue
+    var roles = new List<Role>()
+    {
+        new Role("Customer", RoleValue.Customer),
+        new Role("Employee", RoleValue.Employee),
+        new Role("Admin", RoleValue.Admin)
+    };
+
+    // 🔹 Tworzenie ról z własnymi RoleValue
+    foreach (var role in roles)
+    {
+        if (!await roleManager.RoleExistsAsync(role.Name))
+        {
+            await roleManager.CreateAsync(role);
+        }
+    }
+
+    // 🔹 Tworzenie konta Admina
+    string adminEmail = "admin1@example.com";
+    string adminPassword = "zaq1@WSX";
+
+    var adminUser = await userManager.FindByEmailAsync(adminEmail);
+
+    if (adminUser == null)
+    {
+        adminUser = new User
+        {
+            UserName = "admin1@example.com",
+            Email = "admin1@example.com",
+            FullName = "Administrator",
+            Address = "N/A"
+        };
+
+        var result = await userManager.CreateAsync(adminUser, adminPassword);
+
+        if (result.Succeeded)
+        {
+            // 🔹 Dodajemy użytkownika do roli "Admin"
+            await userManager.AddToRoleAsync(adminUser, "Admin");
+        }
+    }
+}
+
 
 if (!app.Environment.IsDevelopment())
 {

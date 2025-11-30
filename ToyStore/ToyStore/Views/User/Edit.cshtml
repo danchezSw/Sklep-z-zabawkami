@@ -1,0 +1,45 @@
+﻿@model ToyStore.ViewModels.VM.EditUserVm
+@{
+    ViewData["Title"] = "Edytuj użytkownika";
+}
+
+<h2>Edytuj użytkownika</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label asp-for="FullName" class="form-label"></label>
+        <input asp-for="FullName" class="form-control" />
+        <span asp-validation-for="FullName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Address" class="form-label"></label>
+        <input asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="SelectedRole" class="form-label">Rola użytkownika</label>
+        <select asp-for="SelectedRole" class="form-select"
+                asp-items="@(new SelectList(Model.AllRoles, Model.SelectedRole))">
+            <option value="">-- Wybierz rolę --</option>
+        </select>
+        <span asp-validation-for="SelectedRole" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Zapisz</button>
+    <a asp-action="Index" class="btn btn-secondary">Anuluj</a>
+
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

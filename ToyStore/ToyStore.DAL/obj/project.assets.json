@@ -4997,11 +4997,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mateu\\Desktop\\sklepzzabawkami\\ToyStore\\ToyStore.DAL\\ToyStore.DAL.csproj",
+      "projectUniqueName": "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\sklepzzabawkami\\ToyStore\\ToyStore.DAL\\ToyStore.DAL.csproj",
       "projectName": "ToyStore.DAL",
-      "projectPath": "C:\\Users\\mateu\\Desktop\\sklepzzabawkami\\ToyStore\\ToyStore.DAL\\ToyStore.DAL.csproj",
+      "projectPath": "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\sklepzzabawkami\\ToyStore\\ToyStore.DAL\\ToyStore.DAL.csproj",
       "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mateu\\Desktop\\sklepzzabawkami\\ToyStore\\ToyStore.DAL\\obj\\",
+      "outputPath": "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\sklepzzabawkami\\ToyStore\\ToyStore.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5022,8 +5022,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\mateu\\Desktop\\sklepzzabawkami\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj": {
-              "projectPath": "C:\\Users\\mateu\\Desktop\\sklepzzabawkami\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj"
+            "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\sklepzzabawkami\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj": {
+              "projectPath": "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\sklepzzabawkami\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj"
             }
           }
         }

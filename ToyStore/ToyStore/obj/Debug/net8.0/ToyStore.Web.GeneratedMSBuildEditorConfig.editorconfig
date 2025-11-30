@@ -9,117 +9,185 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ToyStore.Web
 build_property.RootNamespace = ToyStore.Web
-build_property.ProjectDir = C:\Users\mateu\Desktop\sklepzzabawkami\ToyStore\ToyStore\
+build_property.ProjectDir = C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\mateu\Desktop\sklepzzabawkami\ToyStore\ToyStore
+build_property.MSBuildProjectDirectory = C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Areas/Identity/Pages/Account/Login.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Areas/Identity/Pages/Account/Logout.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Areas/Identity/Pages/Account/Register.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNlbmRFbWFpbENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Areas/Identity/Pages/_ViewImports.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Views/Cart/Index.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Account/ChangeAddress.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaGFuZ2VBZGRyZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Account/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Views/Home/Index.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Category/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Category/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Category/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Views/Home/Privacy.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Views/Shared/Error.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Order/ChangeStatus.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ2hhbmdlU3RhdHVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Order/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Order/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Order/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Product/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Product/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Product/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Product/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Views/Shop/Bears.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Shop/Bears.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxCZWFycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Views/Shop/CategoryBarbie.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Shop/CategoryBarbie.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxDYXRlZ29yeUJhcmJpZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Views/Shop/CategoryGry.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Shop/CategoryGry.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxDYXRlZ29yeUdyeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Views/Shop/CategoryHotWheels.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Shop/CategoryHotWheels.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxDYXRlZ29yeUhvdFdoZWVscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Views/Shop/Categoryklocki.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Shop/Categoryklocki.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxDYXRlZ29yeWtsb2NraS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Views/Shop/Details.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Shop/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Views/Shop/Index.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Shop/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Views/Shop/Product.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Shop/Product.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxQcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Views/_ViewImports.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/User/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/User/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Views/_ViewStart.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mateu/Desktop/sklepzzabawkami/ToyStore/ToyStore/Views/Shared/_Layout.cshtml]
+[C:/Users/mateu/Desktop/Projekt aktualne/sklepzzabawkami/ToyStore/ToyStore/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-g0dsjh0p3j

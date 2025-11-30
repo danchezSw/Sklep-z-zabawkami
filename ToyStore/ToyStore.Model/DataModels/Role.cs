@@ -14,7 +14,9 @@ namespace ToyStore.Model.DataModels
         public Role() { }
         public Role(string name, RoleValue roleValue)
         {
+            Id = Guid.NewGuid().ToString();
             Name = name;
+            NormalizedName = name.ToUpper();
             RoleValue = roleValue;
         }
     }

@@ -96,8 +96,41 @@
                             </a>
                         </li>
 
+                        @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item dropdown me-3">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Panel Admina
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="adminDropdown">
+                                    <li><a class="dropdown-item" asp-controller="Product" asp-action="Index">Zarządzanie produktami</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Category" asp-action="Index">Zarządzanie kategoriami</a></li>
+                                    <li><a class="dropdown-item" asp-controller="User" asp-action="Index">Zarządzanie użytkownikami</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Order" asp-action="Index">Zarządzanie zamówieniami</a></li>
+                                </ul>
+                            </li>
+                        }
+
                         @if (User.Identity?.IsAuthenticated ?? false)
                         {
+                            <li class="nav-item dropdown me-3">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Ustawienia konta
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="accountDropdown">
+                                    <li>
+                                        <a class="dropdown-item" asp-controller="Account" asp-action="ChangeAddress">
+                                            Zmień adres
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" asp-controller="Account" asp-action="ChangePassword">
+                                            Zmień hasło
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
                             <li class="nav-item">
                                 <form class="d-inline" asp-area="Identity" asp-page="/Account/Logout" method="post">
                                     <input type="hidden" name="returnUrl" value="/" />

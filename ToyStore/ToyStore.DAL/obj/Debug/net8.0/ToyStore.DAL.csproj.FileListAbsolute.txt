@@ -69,3 +69,21 @@ C:\Users\mateu\Desktop\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\re
 C:\Users\mateu\Desktop\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.pdb
 C:\Users\mateu\Desktop\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.genruntimeconfig.cache
 C:\Users\mateu\Desktop\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ref\ToyStore.DAL.dll
+C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.deps.json
+C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.runtimeconfig.json
+C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.dll
+C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.pdb
+C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.Model.dll
+C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.Model.pdb
+C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.csproj.AssemblyReference.cache
+C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.AssemblyInfoInputs.cache
+C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.AssemblyInfo.cs
+C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.csproj.CoreCompileInputs.cache
+C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.sourcelink.json
+C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.18074464.Up2Date
+C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.dll
+C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\refint\ToyStore.DAL.dll
+C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.pdb
+C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.genruntimeconfig.cache
+C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ref\ToyStore.DAL.dll

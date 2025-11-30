@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OmiTIqCi24Y=",
+  "dgSpecHash": "Bl2F23+VhPk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\mateu\\Desktop\\sklepzzabawkami\\ToyStore\\ToyStore.ViewModels\\ToyStore.ViewModels.csproj",
+  "projectFilePath": "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\sklepzzabawkami\\ToyStore\\ToyStore.ViewModels\\ToyStore.ViewModels.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mateu\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\9.0.10\\microsoft.aspnetcore.cryptography.internal.9.0.10.nupkg.sha512",
     "C:\\Users\\mateu\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\9.0.10\\microsoft.aspnetcore.cryptography.keyderivation.9.0.10.nupkg.sha512",

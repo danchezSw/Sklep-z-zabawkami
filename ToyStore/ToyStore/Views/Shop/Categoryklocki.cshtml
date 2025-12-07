@@ -1,47 +1,40 @@
-﻿@{
-    ViewData["Title"] = "Klocki Lego";
-    var products = ViewData["Products"] as Dictionary<string, ToyStore.Web.Controllers.ProductModel>;
-}
+﻿@model ToyStore.Model.DataModels.Category
 
-<div class="container my-5">
-    <h1 class="text-center mb-4 text-primary">Klocki Lego</h1>
-    <p class="text-center text-muted mb-5">Wybierz zestaw i rozpocznij budowanie! 🧱</p>
+<h2>@Model.Name</h2>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        @if (products != null && products.Count > 0)
-        {
-            @foreach (var kv in products)
+<div class="products">
+    @foreach (var product in Model.Products)
+    {
+        <div class="product-item">
+            <h3>@product.Name</h3>
+            <img src="@product.DefaultImageUrl" alt="@product.Name" width="150" />
+            <p>Cena: @product.Price.ToString("C")</p>
+
+            @if (product.ColorVariants.Any())
             {
-                var key = kv.Key;
-                var item = kv.Value;
-                <div class="col">
-                    <a href="/Shop/Product?name=@key" class="text-decoration-none text-dark">
-                        <div class="card h-100 shadow-sm">
-                            <img src="/images/@item.DefaultImage" class="card-img-top product-img" />
-                            <div class="card-body">
-                                <h5 class="card-title">@item.Title</h5>
-                                <p class="card-text">Opis zestawu lub krótka notka.</p>
-                                <p class="card-text fw-bold text-success">Cena: @item.Price zł</p>
-                            </div>
-
-                        </div>
-                    </a>
-                </div>
+                <p>Warianty kolorystyczne:</p>
+                <ul>
+                    @foreach (var variant in product.ColorVariants)
+                    {
+                        <li>
+                            <img src="@variant.ImageUrl" alt="@variant.Color" width="50" />
+                            @variant.Color - @variant.Price?.ToString("C") ?? product.Price.ToString("C")
+                        </li>
+                    }
+                </ul>
             }
 
+            <form asp-action="AddToCart" method="post">
+                <input type="hidden" name="productId" value="@product.Id" />
+                <label>Ilość:</label>
+                <input type="number" name="quantity" value="1" min="1" />
+                <button type="submit">Dodaj do koszyka</button>
+            </form>
 
-
-        }
-        else
-        {
-            <p class="text-center text-muted">Brak produktów w tej kategorii.</p>
-        }
-    </div>
-
-    <div class="text-center mt-5">
-        <a href="/Shop" class="btn btn-success">← Powrót do sklepu</a>
-    </div>
-</div>z
+            <a asp-action="Product" asp-route-id="@product.Id">Szczegóły produktu</a>
+        </div>
+    }
+</div>
 
 <style>
     .product-img {

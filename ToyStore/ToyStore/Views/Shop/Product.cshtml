@@ -1,12 +1,30 @@
-﻿@model ToyStore.Web.Controllers.ProductModel
+﻿@model ToyStore.Model.DataModels.Product
 
 @{
-    ViewData["Title"] = Model.Title;
-    string initialImage = Url.Content(Model.DefaultImage);
+    ViewData["Title"] = Model.Name;
+    string initialImage = Url.Content(Model.DefaultImageUrl ?? "~/images/no-image.png");
+}
+
+@functions {
+    string ColorToCss(string color)
+    {
+        return color switch
+        {
+            "Niebieski" => "#0000ff",
+            "Różowy" => "#ff69b4",
+            "Żółty" => "#ffff00",
+            "Fioletowy" => "#800080",
+            "Czerwony" => "#ff0000",
+            "Zielony" => "#008000",
+            "Szary" => "#808080",
+            "Biały" => "#ffffff",
+            _ => "#ccc"
+        };
+    }
 }
 
 <div class="container mt-4">
-    <h2 class="text-center mb-4">@Model.Title</h2>
+    <h2 class="text-center mb-4">@Model.Name</h2>
 
     <div class="row">
         <div class="col-md-6 text-center">
@@ -14,34 +32,33 @@
         </div>
 
         <div class="col-md-6">
-            @* Kolory jeśli są *@
-            @if (Model.Colors != null && Model.Colors.Count > 0)
+            @if (Model.ColorVariants != null && Model.ColorVariants.Any())
             {
-                <h4>Wybierz kolor:</h4>
+                <h4>Wybierz wariant koloru:</h4>
                 <div class="d-flex gap-2 flex-wrap mb-3">
                     @{
-                        var firstColorKey = Model.Colors.Keys.First();
+                        var firstVariant = Model.ColorVariants.First();
                     }
-                    @foreach (var color in Model.Colors)
+                    @foreach (var variant in Model.ColorVariants)
                     {
-                        var activeClass = color.Key == firstColorKey ? "active" : "";
-                        <div class="color-swatch @activeClass" title="@color.Key"
-                             style="background-color:@color.Key;"
-                             data-img="@Url.Content("~/images/" + color.Value)"
-                             data-color="@color.Key">
+                        var activeClass = variant.Id == firstVariant.Id ? "active" : "";
+                        <div class="color-swatch @activeClass" title="@variant.Color"
+                             style="background-color:@ColorToCss(variant.Color);"
+                             data-img="@Url.Content(variant.ImageUrl)"
+                             data-variant="@variant.Id"
+                             data-price="@variant.Price">
                         </div>
                     }
                 </div>
             }
-            <h4 class="text-success mt-3">Cena: @Model.Price zł</h4>
+
+            <h4 class="text-success mt-3">Cena: <span id="productPrice">@Model.Price.ToString("0.00")</span> zł</h4>
 
             <form asp-controller="Shop" asp-action="AddToCart" method="post" class="mt-3">
                 @Html.AntiForgeryToken()
-                <input type="hidden" name="name" value="@Model.Title" />
-                <input type="hidden" name="image" id="selectedImage" value="@initialImage" />
-                <input type="hidden" name="color" id="selectedColor"
-                       value="@(Model.Colors?.Keys.FirstOrDefault() ?? "")" />
-                <input type="hidden" name="price" value="@Model.Price" />
+                <input type="hidden" name="productId" value="@Model.Id" />
+                <input type="hidden" name="colorVariantId" id="selectedVariantId" value="@(Model.ColorVariants.FirstOrDefault()?.Id ?? 0)" />
+                <input type="hidden" name="price" id="selectedPrice" value="@Model.Price" />
 
                 <div class="mt-3">
                     <label for="quantity" class="form-label">Ilość:</label>
@@ -49,9 +66,7 @@
                            class="form-control" value="1" min="1" style="width:120px;" />
                 </div>
 
-                <button type="submit" class="btn btn-success btn-lg mt-3">
-                    Dodaj do koszyka
-                </button>
+                <button type="submit" class="btn btn-success btn-lg mt-3">Dodaj do koszyka</button>
             </form>
         </div>
     </div>
@@ -60,16 +75,22 @@
 @section Scripts {
     <script>
         const imgElement = document.getElementById("productImage");
-        const selectedImageInput = document.getElementById("selectedImage");
-        const selectedColorInput = document.getElementById("selectedColor");
+        const variantInput = document.getElementById("selectedVariantId");
+        const priceInput = document.getElementById("selectedPrice");
 
         document.querySelectorAll(".color-swatch").forEach(swatch => {
             swatch.addEventListener("click", () => {
                 const img = swatch.dataset.img;
-                const color = swatch.dataset.color;
+                const variantId = swatch.dataset.variant;
+                const price = swatch.dataset.price;
+
                 imgElement.src = img;
-                selectedImageInput.value = img;
-                selectedColorInput.value = color;
+                variantInput.value = variantId;
+
+                if (price) {
+                    document.getElementById("productPrice").textContent = parseFloat(price).toFixed(2);
+                    priceInput.value = parseFloat(price).toFixed(2);
+                }
 
                 document.querySelectorAll(".color-swatch").forEach(s => s.classList.remove("active"));
                 swatch.classList.add("active");

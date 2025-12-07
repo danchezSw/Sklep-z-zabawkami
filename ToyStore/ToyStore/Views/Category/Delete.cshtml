@@ -7,13 +7,21 @@
 <h2>Usuń kategorię</h2>
 
 <h4>Czy na pewno chcesz usunąć tę kategorię?</h4>
-<div>
+
+<div class="mb-3">
     <h5>@Model.Name</h5>
     <p>@Model.Description</p>
+
+    @if (!string.IsNullOrEmpty(Model.ImageUrl))
+    {
+        <img src="~/images/categories/@Model.ImageUrl" alt="@Model.Name" class="img-thumbnail mb-3" style="max-width:150px;" />
+    }
 </div>
 
 <form asp-action="Delete" method="post">
     <input type="hidden" asp-for="Id" />
-    <button type="submit" class="btn btn-danger">Usuń</button>
-    <a asp-action="Index" class="btn btn-secondary">Anuluj</a>
+    <div class="mt-3">
+        <button type="submit" class="btn btn-danger me-2">Usuń</button>
+        <a asp-action="Index" class="btn btn-secondary">Anuluj</a>
+    </div>
 </form>

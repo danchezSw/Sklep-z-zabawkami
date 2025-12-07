@@ -1,33 +1,39 @@
-﻿@{
-    ViewData["Title"] = "Barbie";
-    var products = ViewData["Products"] as Dictionary<string, ToyStore.Web.Controllers.ProductModel>;
-}
+﻿@model ToyStore.Model.DataModels.Category
 
-<div class="container my-5">
-    <h1 class="text-center mb-4 text-primary">Barbie</h1>
+<h2>@Model.Name</h2>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        @foreach (var kv in products)
-        {
-            var key = kv.Key;
-            var item = kv.Value;
-            <div class="col">
-                <a asp-controller="Shop" asp-action="Product" asp-route-name="@key" class="text-decoration-none text-dark">
-                    <div class="card h-100 shadow-sm">
-                        <img src="@Url.Content(item.DefaultImage)" class="card-img-top product-img" />
-                        <div class="card-body">
-                            <h5 class="card-title">@item.Title</h5>
-                            <p class="card-text">Kliknij, aby zamówić tę lalkę.</p>
-                            <p class="card-text fw-bold text-success">Cena: @item.Price zł</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        }
-    </div>
-    <div class="text-center mt-5">
-        <a href="/Shop" class="btn btn-success">← Powrót do sklepu</a>
-    </div>
+<div class="products">
+    @foreach (var product in Model.Products)
+    {
+        <div class="product-item">
+            <h3>@product.Name</h3>
+            <img src="@product.DefaultImageUrl" alt="@product.Name" width="150" />
+            <p>Cena: @product.Price.ToString("C")</p>
+
+            @if (product.ColorVariants.Any())
+            {
+                <p>Warianty kolorystyczne:</p>
+                <ul>
+                    @foreach (var variant in product.ColorVariants)
+                    {
+                        <li>
+                            <img src="@variant.ImageUrl" alt="@variant.Color" width="50" />
+                            @variant.Color - @variant.Price?.ToString("C") ?? product.Price.ToString("C")
+                        </li>
+                    }
+                </ul>
+            }
+
+            <form asp-action="AddToCart" method="post">
+                <input type="hidden" name="productId" value="@product.Id" />
+                <label>Ilość:</label>
+                <input type="number" name="quantity" value="1" min="1" />
+                <button type="submit">Dodaj do koszyka</button>
+            </form>
+
+            <a asp-action="Product" asp-route-id="@product.Id">Szczegóły produktu</a>
+        </div>
+    }
 </div>
 
 <style>

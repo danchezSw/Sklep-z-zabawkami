@@ -281,6 +281,47 @@ namespace ToyStore.Web.Controllers
             List<CartItem> cart = HttpContext.Session.GetObjectFromJson<List<CartItem>>("Cart") ?? new List<CartItem>();
             return View(cart);
         }
+        [HttpGet]
+        public IActionResult SearchProducts(string term)
+        {
+            if (string.IsNullOrWhiteSpace(term))
+                return Json(new List<object>());
+
+            // Używamy tej samej listy produktów, jak w Category/Product
+            var products = new List<ProductModel>
+    {
+        new ProductModel("Ośmiornica", "~/images/osmiornicablue.png", null, 49.99M),
+        new ProductModel("Kurczak", "~/images/kurczakpink.png", null, 39.99M),
+        new ProductModel("Słoń", "~/images/plush_toy_elephant_blue.png", null, 45.00M),
+        new ProductModel("Foka", "~/images/plush_toy_seal.jpg", null, 29.99M),
+        new ProductModel("Miś", "~/images/pluszak.jpg", null, 24.99M),
+        new ProductModel("Królik", "~/images/krolik_blue.png", null, 34.99M),
+        new ProductModel("LEGO Duplo 10986", "~/images/lego_duplo_10986.jpg", null, 129.99M),
+        new ProductModel("LEGO Duplo 10990", "~/images/lego_duplo_10990.jpg", null, 119.99M),
+        new ProductModel("Gra Memory", "~/images/Gra-memory.jpg", null, 19.99M),
+        new ProductModel("Puzzle 1000 elementów", "~/images/puzzle.jpg", null, 49.99M),
+        new ProductModel("Barbie Blond", "~/images/barbieblond.jpg", null, 59.99M),
+        new ProductModel("Hot Wheels 1", "~/images/hotwheels1.jpg", null, 29.99M)
+        // dodaj pozostałe produkty dokładnie tak jak masz w Category/Product
+    };
+
+            // filtrujemy po nazwie
+            var results = products
+                .Where(p => p.Title.Contains(term, StringComparison.OrdinalIgnoreCase))
+                .Select(p => new
+                {
+                    Key = p.Title.Replace(" ", "_").ToLower(), // Twój klucz do Product?name=
+                    p.Title,
+                    DefaultImage = Url.Content(p.DefaultImage),
+                    p.Price
+                })
+                .ToList();
+
+            return Json(results);
+        }
+
+
+
     }
 
     public record ProductModel(

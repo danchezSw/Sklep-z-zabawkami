@@ -1,0 +1,92 @@
+﻿@model ToyStore.Model.DataModels.Product
+
+@{
+    ViewData["Title"] = "Zarządzanie wariantami kolorów";
+}
+
+<h2>@ViewData["Title"] dla produktu: @Model.Name</h2>
+
+<h4>Obecne warianty kolorów</h4>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Kolor</th>
+            <th>Cena</th>
+            <th>Miniatura</th>
+            <th>Opcje</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.ColorVariants != null && Model.ColorVariants.Any())
+        {
+            foreach (var variant in Model.ColorVariants)
+            {
+                <tr>
+                    <td>@variant.Color</td>
+                    <td>@variant.Price?.ToString("0.00") zł</td>
+                    <td>
+                        @if (!string.IsNullOrEmpty(variant.ImageUrl))
+                        {
+                            <img src="@variant.ImageUrl" alt="@variant.Color" style="max-width:60px;" class="img-thumbnail" />
+                        }
+                        else
+                        {
+                            <span class="text-muted">Brak</span>
+                        }
+                    </td>
+                    <td>
+                        <form asp-action="DeleteColor" method="post" style="display:inline;">
+                            <input type="hidden" name="id" value="@variant.Id" />
+                            <button type="submit" class="btn btn-sm btn-danger"
+                                    onclick="return confirm('Czy na pewno chcesz usunąć ten wariant?');">
+                                Usuń
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5" class="text-center text-muted">Brak wariantów kolorów</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h4>Dodaj nowy wariant kolorystyczny</h4>
+
+<form asp-action="AddColor" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="productId" value="@Model.Id" />
+
+    <div class="mb-3">
+        <label class="form-label">Kolor</label>
+        <input type="text" name="color" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Cena</label>
+        <input type="text" step="0.01" name="price" id="priceInput" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Miniatura wariantu</label>
+        <input type="file" name="imageFile" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Dodaj wariant</button>
+    <a asp-action="Index" class="btn btn-secondary">Powrót</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e){
+            var input = document.getElementById('priceInput');
+            if(input.value) {
+                input.value = input.value.replace(',', '.');
+            }
+        });
+    </script>
+}

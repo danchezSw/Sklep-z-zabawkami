@@ -1,0 +1,26 @@
+﻿@model ToyStore.Model.DataModels.User
+@{
+    ViewData["Title"] = "Usuń użytkownika";
+}
+
+<h2>Usuń użytkownika</h2>
+
+<h4>Czy na pewno chcesz usunąć tego użytkownika?</h4>
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Email</dt>
+        <dd class="col-sm-10">@Model.Email</dd>
+
+        <dt class="col-sm-2">Full Name</dt>
+        <dd class="col-sm-10">@Model.FullName</dd>
+
+        <dt class="col-sm-2">Adres</dt>
+        <dd class="col-sm-10">@Model.Address</dd>
+    </dl>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Usuń</button>
+    <a asp-action="Index" class="btn btn-secondary">Anuluj</a>
+</form>

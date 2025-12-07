@@ -1,0 +1,11 @@
+﻿@model ToyStore.Model.DataModels.Order
+
+<h2>Usuń zamówienie #@Model.Id</h2>
+
+<p>Czy na pewno chcesz usunąć zamówienie klienta <strong>@Model.CustomerName</strong>?</p>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <button type="submit" class="btn btn-danger">Usuń</button>
+    <a asp-action="Index" class="btn btn-secondary">Anuluj</a>
+</form>

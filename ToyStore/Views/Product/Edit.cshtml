@@ -1,0 +1,62 @@
+﻿@model ToyStore.Model.DataModels.Product
+
+@{
+    ViewData["Title"] = "Edytuj produkt";
+    var categories = ViewData["Categories"] as SelectList ?? new SelectList(Enumerable.Empty<object>());
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Id" />
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label"></label>
+        <input asp-for="Price" class="form-control" id="priceInput" step="0.01" type="number" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="CategoryId" class="form-label">Kategoria</label>
+        <select asp-for="CategoryId" class="form-select" asp-items="categories">
+            <option value="">-- Wybierz kategorię --</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Obrazek produktu</label>
+        <input type="file" name="imageFile" class="form-control" />
+        @if (!string.IsNullOrEmpty(Model.DefaultImageUrl))
+        {
+            <img src="@Model.DefaultImageUrl" alt="@Model.Name" style="max-width:100px;" class="mt-2" />
+        }
+    </div>
+
+    <button type="submit" class="btn btn-success">Zapisz</button>
+    <a asp-action="Index" class="btn btn-secondary">Anuluj</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e){
+            var input = document.getElementById('priceInput');
+            if(input.value) {
+                input.value = input.value.replace(',', '.');
+            }
+        });
+    </script>
+}

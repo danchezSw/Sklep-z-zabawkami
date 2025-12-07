@@ -1,0 +1,421 @@
+﻿@using ToyStore.Web.Models
+@using Newtonsoft.Json
+
+@{
+    var cartJson = Context.Session.GetString("Cart");
+    var cartItems = cartJson == null ? new List<CartItem>() : JsonConvert.DeserializeObject<List<CartItem>>(cartJson);
+    int cartCount = cartItems.Sum(x => x.Quantity);
+}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ToyStore</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ToyStore.styles.css" asp-append-version="true" />
+
+    <style>
+        .nav-link {
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+            .nav-link:hover {
+                color: #0d6efd !important;
+                transform: scale(1.05);
+            }
+
+        .btn {
+            transition: transform 0.2s ease, filter 0.2s ease;
+        }
+
+            .btn:hover {
+                transform: scale(1.05);
+                filter: brightness(0.9);
+            }
+
+        .modal.fade .modal-dialog.modal-slide-down {
+            transform: translateY(-100px);
+            transition: transform 0.4s ease-out;
+        }
+
+        .modal.show .modal-dialog.modal-slide-down {
+            transform: translateY(0);
+        }
+
+        .modal-backdrop.show {
+            backdrop-filter: blur(6px);
+            background-color: rgba(0, 0, 0, 0.45);
+        }
+
+        .modal-content {
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+            .logo-img:hover {
+                transform: scale(1.1);
+                filter: brightness(1.1);
+            }
+
+        .cart-count {
+            position: absolute;
+            top: 0;
+            right: -10px;
+            background: red;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border-radius: 50%;
+            padding: 2px 6px;
+        }
+
+        #searchResults {
+            position: absolute;
+            top: 100%; /* tuż pod inputem */
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #ddd;
+            z-index: 9999;
+            max-height: 300px;
+            overflow-y: auto;
+            display: none; /* domyślnie schowana */
+            width: 100%;
+        }
+
+            #searchResults li {
+                cursor: pointer;
+                padding: 5px 10px;
+            }
+
+                #searchResults li:hover {
+                    background-color: #f0f0f0;
+                }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/logo.png" alt="ToyStore logo" class="logo-img" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link text-dark" asp-controller="Shop" asp-action="Index">Sklep</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
+                        <li class="nav-item ms-3 position-relative">
+                            <form class="d-flex" id="searchForm" autocomplete="off">
+                                <input id="searchInput" class="form-control form-control-sm" type="text" placeholder="Szukaj produktów..." />
+                                <ul id="searchResults" class="list-group position-absolute" ...></ul>
+                            </form>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav ms-auto position-relative">
+                        <li class="nav-item me-3">
+                            <a class="nav-link text-dark position-relative" asp-controller="Cart" asp-action="Index">
+                                <i class="fa fa-shopping-cart"></i> Koszyk
+                                <span id="cartCount" class="cart-count">@cartCount</span>
+                            </a>
+                        </li>
+
+                        @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item dropdown me-3">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Panel Admina
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="adminDropdown">
+                                    <li><a class="dropdown-item" asp-controller="Product" asp-action="Index">Zarządzanie produktami</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Category" asp-action="Index">Zarządzanie kategoriami</a></li>
+                                    <li><a class="dropdown-item" asp-controller="User" asp-action="Index">Zarządzanie użytkownikami</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Order" asp-action="Index">Zarządzanie zamówieniami</a></li>
+                                </ul>
+                            </li>
+                        }
+
+                        @if (User.Identity?.IsAuthenticated ?? false)
+                        {
+                            <li class="nav-item dropdown me-3">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Ustawienia konta
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="accountDropdown">
+                                    <li>
+                                        <a class="dropdown-item" asp-controller="Account" asp-action="ChangeAddress">
+                                            Zmień adres
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" asp-controller="Account" asp-action="ChangePassword">
+                                            Zmień hasło
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <form class="d-inline" asp-area="Identity" asp-page="/Account/Logout" method="post">
+                                    <input type="hidden" name="returnUrl" value="/" />
+                                    <button type="submit" class="btn btn-link nav-link p-0 text-dark">Wyloguj</button>
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item"><a href="javascript:void(0);" class="nav-link text-dark" data-auth="login">Logowanie</a></li>
+                            <li class="nav-item"><a href="javascript:void(0);" class="nav-link text-dark" data-auth="register">Rejestracja</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">@RenderBody()</main>
+    </div>
+
+    <footer class="border-top footer text-muted text-center py-3">
+        &copy; 2025 - ToyStore - <a asp-controller="Home" asp-action="Privacy">Privacy</a>
+    </footer>
+
+    <!-- 🔹 Modal -->
+    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-slide-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="authModalLabel">Logowanie</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+                </div>
+                <div class="modal-body" id="authModalBody">
+                    <div class="text-center text-muted py-4">Ładowanie...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🔹 Toast -->
+    <div id="centerToast" class="position-fixed top-50 start-50 translate-middle bg-success text-white px-4 py-3 rounded shadow" style="z-index: 2000; display: none; min-width: 300px; text-align: center;"></div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const modal = new bootstrap.Modal(document.getElementById("authModal"));
+            const modalBody = document.getElementById("authModalBody");
+            const modalTitle = document.getElementById("authModalLabel");
+
+            // 🔹 Wczytywanie stron auth do modalu
+            async function loadAuthPage(url, title) {
+                modalTitle.innerText = title;
+                modalBody.innerHTML = `<div class="text-center text-muted py-4">Ładowanie...</div>`;
+                try {
+                    const res = await fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } });
+                    const html = await res.text();
+                    modalBody.innerHTML = html;
+                    modal.show();
+                    setupSwitchLinks();
+                    setupRegisterForm();
+                    setupLoginForm();
+                    setupForgotForm();
+                    setupResendForm();
+                } catch (err) {
+                    modalBody.innerHTML = `<div class="text-danger text-center py-4">Błąd ładowania</div>`;
+                    console.error(err);
+                }
+            }
+
+            // 🔹 Linki switch (login/register/forgot/resend)
+            function setupSwitchLinks() {
+                modalBody.querySelectorAll("[data-switch]").forEach(link => {
+                    link.addEventListener("click", e => {
+                        e.preventDefault();
+                        const type = link.getAttribute("data-switch");
+                        switch(type) {
+                            case "login": loadAuthPage("/Identity/Account/Login", "Logowanie"); break;
+                            case "register": loadAuthPage("/Identity/Account/Register", "Rejestracja"); break;
+                            case "forgot": loadAuthPage("/Identity/Account/ForgotPassword", "Przypomnienie hasła"); break;
+                            case "resend": loadAuthPage("/Identity/Account/ResendEmailConfirmation", "Wyślij ponownie e-mail"); break;
+                        }
+                    });
+                });
+            }
+
+            // 🔹 Formularz rejestracji
+            function setupRegisterForm() {
+                const form = modalBody.querySelector("#registerForm");
+                if (!form) return;
+                form.addEventListener("submit", async e => {
+                    e.preventDefault();
+                    const formData = new FormData(form);
+                    const action = form.getAttribute("action") || window.location.href;
+                    try {
+                        const res = await fetch(action, { method:"POST", body:formData, headers: {"X-Requested-With":"XMLHttpRequest"} });
+                        const text = await res.text();
+                        if(text.includes("text-danger")) { modalBody.innerHTML = text; setupRegisterForm(); }
+                        else { modal.hide(); showCenteredToast("Konto utworzone pomyślnie!"); }
+                    } catch(err){ showCenteredToast("Błąd podczas rejestracji.", "danger"); console.error(err); }
+                });
+            }
+
+            // 🔹 Formularz logowania
+                    function setupLoginForm() {
+            const loginForm = modalBody.querySelector("#loginForm");
+            if (!loginForm) return;
+
+            loginForm.addEventListener("submit", async function(e) {
+                e.preventDefault();
+                const formData = new FormData(loginForm);
+                const action = loginForm.getAttribute("action") || window.location.href;
+
+                try {
+                    const response = await fetch(action, {
+                        method: "POST",
+                        body: formData,
+                        headers: { "X-Requested-With": "XMLHttpRequest" }
+                    });
+
+                    const text = await response.text();
+
+                    // Jeśli strona zwraca Page() (czyli login nieudany)
+                    if (text.includes("text-danger")) {
+                        modalBody.innerHTML = text;
+                        setupLoginForm();
+                    } else {
+                        modal.hide();
+                        showCenteredToast("Zalogowano pomyślnie!");
+                        // Opcjonalnie: odśwież navbar, żeby pokazać, że użytkownik jest zalogowany
+                        window.location.reload();
+                    }
+                } catch (err) {
+                    showCenteredToast("Wystąpił błąd podczas logowania.", "danger");
+                    console.error(err);
+                }
+            });
+        }
+
+
+            // 🔹 Formularz ForgotPassword
+            function setupForgotForm() {
+                const form = modalBody.querySelector("#forgotPasswordForm");
+                if(!form) return;
+                form.addEventListener("submit", async e => {
+                    e.preventDefault();
+                    const formData = new FormData(form);
+                    try {
+                        const res = await fetch(form.action || "/Identity/Account/ForgotPassword", { method:"POST", body:formData });
+                        if(res.ok){ showCenteredToast("✉️ Sprawdź swoją skrzynkę e-mail."); form.reset(); }
+                        else { showCenteredToast("Błąd wysyłania prośby.", "danger"); }
+                    } catch(err){ showCenteredToast("Błąd wysyłania prośby.", "danger"); console.error(err); }
+                });
+            }
+
+            // 🔹 Formularz ResendEmailConfirmation
+                    function setupResendForm() {
+            const form = modalBody.querySelector("#resendEmailForm"); // <-- po ID, a nie po pierwszym form
+            if (!form) return;
+
+            form.addEventListener("submit", async e => {
+                e.preventDefault();
+                const formData = new FormData(form);
+
+                try {
+                    const res = await fetch(form.action || "/Identity/Account/ResendEmailConfirmation", {
+                        method: "POST",
+                        body: formData
+                    });
+                    if (res.ok) {
+                        showCenteredToast("✉️ E-mail z potwierdzeniem wysłany.");
+                        form.reset();
+                    } else {
+                        showCenteredToast("Błąd wysyłania e-mail.", "danger");
+                    }
+                } catch (err) {
+                    showCenteredToast("Błąd wysyłania e-mail.", "danger");
+                    console.error(err);
+                }
+            });
+        }
+
+
+            // 🔹 Obsługa kliknięć logowanie/rejestracja w navbarze
+            document.querySelectorAll("[data-auth]").forEach(link => {
+                link.addEventListener("click", e => {
+                    e.preventDefault();
+                    const type = link.getAttribute("data-auth");
+                    switch(type) {
+                        case "login": loadAuthPage("/Identity/Account/Login", "Logowanie"); break;
+                        case "register": loadAuthPage("/Identity/Account/Register", "Rejestracja"); break;
+                    }
+                });
+            });
+
+        });
+
+        function showCenteredToast(message, type="success"){
+            const toast = document.getElementById("centerToast");
+            toast.innerText = message;
+            toast.className = `position-fixed top-50 start-50 translate-middle px-4 py-3 rounded shadow text-white bg-${type==="danger"?"danger":"success"}`;
+            toast.style.display="block"; toast.style.opacity="0";
+            setTimeout(()=>{ toast.style.transition="opacity 0.5s"; toast.style.opacity="1"; }, 10);
+            setTimeout(()=>{ toast.style.opacity="0"; setTimeout(()=>toast.style.display="none",500); }, 3000);
+        }
+                   const $input = $('#searchInput');
+        const $results = $('#searchResults');
+
+        $input.on('input', function() {
+            const term = $(this).val().trim();
+            if (term.length < 1) { $results.hide(); return; }
+
+            $.get('/Shop/SearchProducts', { term: term }, function(data) {
+                $results.empty();
+                if (data.length === 0) { $results.hide(); return; }
+
+                data.forEach(item => {
+                    const li = $('<li></li>').html(`<img src="${item.DefaultImage}" style="width:40px;height:40px;margin-right:10px"/>${item.Title} - ${item.Price.toFixed(2)} zł`);
+                    li.on('click', function(){ window.location.href = '/Shop/Product?name=' + encodeURIComponent(item.Key); });
+                    $results.append(li);
+                });
+
+                $results.show();
+            });
+        });
+
+        // schowanie listy po kliknięciu poza formą
+        $(document).click(function(e) {
+            if (!$(e.target).closest('#searchForm').length) $results.hide();
+        });
+
+        // przejście do pierwszego wyniku po Enter
+        $('#searchForm').on('submit', function(e) {
+            e.preventDefault();
+            const first = $results.children().first().data('url');
+            if (first) window.location.href = first;
+        });
+                $(document).ready(function() {
+            const $results = $('#searchResults');
+        });
+    </script>
+
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

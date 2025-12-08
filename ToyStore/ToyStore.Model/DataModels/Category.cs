@@ -16,6 +16,11 @@ namespace ToyStore.Model.DataModels
 
         [MaxLength(200)]
         public string Description { get; set; }
-        public virtual ICollection<Product> Products { get; set; }
+
+        [MaxLength(100)]
+        public string Slug { get; set; }
+        [MaxLength(200)]
+        public string? ImageUrl { get; set; }
+        public virtual ICollection<Product>? Products { get; set; }
     }
 }

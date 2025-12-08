@@ -108,3 +108,65 @@ C:\Users\mateu\Desktop\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.ViewModels\obj
 C:\Users\mateu\Desktop\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\refint\ToyStore.ViewModels.dll
 C:\Users\mateu\Desktop\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.pdb
 C:\Users\mateu\Desktop\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ref\ToyStore.ViewModels.dll
+E:\ToyStore\ToyStore.ViewModels\bin\Debug\net8.0\ToyStore.ViewModels.deps.json
+E:\ToyStore\ToyStore.ViewModels\bin\Debug\net8.0\ToyStore.ViewModels.dll
+E:\ToyStore\ToyStore.ViewModels\bin\Debug\net8.0\ToyStore.ViewModels.pdb
+E:\ToyStore\ToyStore.ViewModels\bin\Debug\net8.0\ToyStore.Model.dll
+E:\ToyStore\ToyStore.ViewModels\bin\Debug\net8.0\ToyStore.Model.pdb
+E:\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.csproj.AssemblyReference.cache
+E:\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+E:\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.AssemblyInfoInputs.cache
+E:\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.AssemblyInfo.cs
+E:\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.csproj.CoreCompileInputs.cache
+E:\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.CA66D8C5.Up2Date
+E:\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.dll
+E:\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\refint\ToyStore.ViewModels.dll
+E:\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.pdb
+E:\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ref\ToyStore.ViewModels.dll
+C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.ViewModels\bin\Debug\net8.0\ToyStore.ViewModels.deps.json
+C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.ViewModels\bin\Debug\net8.0\ToyStore.ViewModels.dll
+C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.ViewModels\bin\Debug\net8.0\ToyStore.ViewModels.pdb
+C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.ViewModels\bin\Debug\net8.0\ToyStore.Model.dll
+C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.ViewModels\bin\Debug\net8.0\ToyStore.Model.pdb
+C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.csproj.AssemblyReference.cache
+C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.AssemblyInfoInputs.cache
+C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.AssemblyInfo.cs
+C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.CA66D8C5.Up2Date
+C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.dll
+C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\refint\ToyStore.ViewModels.dll
+C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.pdb
+C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ref\ToyStore.ViewModels.dll
+C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami-Mateusz\ToyStore\ToyStore.ViewModels\bin\Debug\net8.0\ToyStore.ViewModels.deps.json
+C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami-Mateusz\ToyStore\ToyStore.ViewModels\bin\Debug\net8.0\ToyStore.ViewModels.dll
+C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami-Mateusz\ToyStore\ToyStore.ViewModels\bin\Debug\net8.0\ToyStore.ViewModels.pdb
+C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami-Mateusz\ToyStore\ToyStore.ViewModels\bin\Debug\net8.0\ToyStore.Model.dll
+C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami-Mateusz\ToyStore\ToyStore.ViewModels\bin\Debug\net8.0\ToyStore.Model.pdb
+C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami-Mateusz\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.csproj.AssemblyReference.cache
+C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami-Mateusz\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami-Mateusz\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.AssemblyInfoInputs.cache
+C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami-Mateusz\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.AssemblyInfo.cs
+C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami-Mateusz\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami-Mateusz\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.CA66D8C5.Up2Date
+C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami-Mateusz\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.dll
+C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami-Mateusz\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\refint\ToyStore.ViewModels.dll
+C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami-Mateusz\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.pdb
+C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami-Mateusz\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ref\ToyStore.ViewModels.dll
+C:\Users\pakht\Downloads\ToyStore\ToyStore.ViewModels\bin\Debug\net8.0\ToyStore.ViewModels.deps.json
+C:\Users\pakht\Downloads\ToyStore\ToyStore.ViewModels\bin\Debug\net8.0\ToyStore.ViewModels.dll
+C:\Users\pakht\Downloads\ToyStore\ToyStore.ViewModels\bin\Debug\net8.0\ToyStore.ViewModels.pdb
+C:\Users\pakht\Downloads\ToyStore\ToyStore.ViewModels\bin\Debug\net8.0\ToyStore.Model.dll
+C:\Users\pakht\Downloads\ToyStore\ToyStore.ViewModels\bin\Debug\net8.0\ToyStore.Model.pdb
+C:\Users\pakht\Downloads\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.csproj.AssemblyReference.cache
+C:\Users\pakht\Downloads\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pakht\Downloads\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.AssemblyInfoInputs.cache
+C:\Users\pakht\Downloads\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.AssemblyInfo.cs
+C:\Users\pakht\Downloads\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\pakht\Downloads\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.sourcelink.json
+C:\Users\pakht\Downloads\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.CA66D8C5.Up2Date
+C:\Users\pakht\Downloads\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.dll
+C:\Users\pakht\Downloads\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\refint\ToyStore.ViewModels.dll
+C:\Users\pakht\Downloads\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.pdb
+C:\Users\pakht\Downloads\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ref\ToyStore.ViewModels.dll
+C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.ViewModels\obj\Debug\net8.0\ToyStore.ViewModels.sourcelink.json

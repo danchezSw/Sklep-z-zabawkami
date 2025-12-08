@@ -14,3 +14,5 @@ obj/
 
 # Node / temp files
 node_modules/
+
+.fake

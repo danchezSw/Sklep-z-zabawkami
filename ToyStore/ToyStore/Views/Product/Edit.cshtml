@@ -2,12 +2,15 @@
 
 @{
     ViewData["Title"] = "Edytuj produkt";
+    var categories = ViewData["Categories"] as SelectList ?? new SelectList(Enumerable.Empty<object>());
 }
 
-<h2>Edytuj produkt</h2>
+<h2>@ViewData["Title"]</h2>
 
-<form asp-action="Edit" method="post">
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
     <input type="hidden" asp-for="Id" />
+
+    <div asp-validation-summary="All" class="text-danger"></div>
 
     <div class="mb-3">
         <label asp-for="Name" class="form-label"></label>
@@ -22,20 +25,24 @@
 
     <div class="mb-3">
         <label asp-for="Price" class="form-label"></label>
-        <input asp-for="Price" class="form-control" />
+        <input asp-for="Price" class="form-control" id="priceInput" step="0.01" type="number" />
         <span asp-validation-for="Price" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
-        <label asp-for="StockQuantity" class="form-label"></label>
-        <input asp-for="StockQuantity" class="form-control" />
+        <label asp-for="CategoryId" class="form-label">Kategoria</label>
+        <select asp-for="CategoryId" class="form-select" asp-items="categories">
+            <option value="">-- Wybierz kategorię --</option>
+        </select>
     </div>
 
     <div class="mb-3">
-        <label asp-for="CategoryId" class="form-label">Kategoria</label>
-        <select asp-for="CategoryId" class="form-select"
-                asp-items="@(new SelectList(ViewData["Categories"] as IEnumerable<ToyStore.Model.DataModels.Category>, "Id", "Name"))">
-        </select>
+        <label class="form-label">Obrazek produktu</label>
+        <input type="file" name="imageFile" class="form-control" />
+        @if (!string.IsNullOrEmpty(Model.DefaultImageUrl))
+        {
+            <img src="@Model.DefaultImageUrl" alt="@Model.Name" style="max-width:100px;" class="mt-2" />
+        }
     </div>
 
     <button type="submit" class="btn btn-success">Zapisz</button>
@@ -44,4 +51,12 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e){
+            var input = document.getElementById('priceInput');
+            if(input.value) {
+                input.value = input.value.replace(',', '.');
+            }
+        });
+    </script>
 }

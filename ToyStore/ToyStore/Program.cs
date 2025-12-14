@@ -7,7 +7,11 @@ using ToyStore.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlite(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        x => x.MigrationsAssembly("ToyStore.DAL")
+    ));
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services
     .AddIdentity<User, Role>(options =>

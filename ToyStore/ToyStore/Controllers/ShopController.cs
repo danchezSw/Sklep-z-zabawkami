@@ -6,6 +6,7 @@ using ToyStore.Web.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity; 
 
 // Alias dla CartItem z Web.Models
 using WebCartItem = ToyStore.Web.Models.CartItem;
@@ -15,10 +16,11 @@ namespace ToyStore.Web.Controllers
     public class ShopController : Controller
     {
         private readonly ApplicationDbContext _context;
-
-        public ShopController(ApplicationDbContext context)
+        private readonly UserManager<User> _userManager; // Daniil
+        public ShopController(ApplicationDbContext context, UserManager<User> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // Strona główna sklepu - lista kategorii i produktów
@@ -62,11 +64,72 @@ namespace ToyStore.Web.Controllers
 
             if (product == null) return NotFound();
 
+            var comments = await _context.Comments
+                .Include(c => c.User)
+                .Where(c => c.ProductId == id)
+                .OrderByDescending(c => c.CreatedDate)
+                .ToListAsync();
+
+            ViewBag.Comments = comments;
             return View(product);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+
+        public async Task<IActionResult> AddComment(int productId, string text)
+        {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToPage("/Account/Login", new { 
+                    area = "Identity", 
+                    ReturnUrl = Url.Action("Product", new { id = productId }) 
+});
+            }
+
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                return RedirectToAction("Product", new { id = productId });
+            }
+
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return Unauthorized();
+
+            var comment = new Comment
+            {
+                ProductId = productId,
+                UserId = user.Id,
+                Text = text,
+                CreatedDate = DateTime.Now
+            };
+
+            _context.Comments.Add(comment);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Product", new { id = productId });
+        }
+
+        public async Task<IActionResult> DeleteComment(int commentId)
+{
+        var comment = await _context.Comments.FindAsync(commentId);
+    
+        if (comment == null)
+        {
+            return NotFound();
+        }
+
+        var user = await _userManager.GetUserAsync(User);
+
+        if (user == null || (comment.UserId != user.Id && !User.IsInRole("Admin")))
+        {
+            return Forbid(); 
+        }
+
+        _context.Comments.Remove(comment);
+        await _context.SaveChangesAsync();
+
+        return RedirectToAction("Product", new { id = comment.ProductId });
+}
         public async Task<IActionResult> AddToCart(int productId, int quantity = 1, int? colorVariantId = null)
         {
             var product = await _context.Products
@@ -135,5 +198,30 @@ namespace ToyStore.Web.Controllers
 
             return RedirectToAction("Index", "Cart");
         }
+        [HttpGet]
+        [HttpGet]
+        public IActionResult SearchProducts(string term)
+        {
+            if (string.IsNullOrWhiteSpace(term))
+                return Json(new List<object>());
+
+            var products = _context.Products
+                .Where(p => p.Name.Contains(term))
+                .OrderBy(p => p.Name)
+                .Take(8)
+                .Select(p => new
+                {
+                    Id = p.Id,
+                    Title = p.Name,
+                    Price = p.Price,
+                    DefaultImage = p.DefaultImageUrl
+                })
+                .ToList();
+
+            return Json(products);
+        }
+
+
     }
+
 }

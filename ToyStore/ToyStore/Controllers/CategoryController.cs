@@ -26,7 +26,8 @@ public class CategoryController : Controller
 
     public IActionResult Create()
     {
-        return View();
+        var category = new Category();
+        return View(category);
     }
 
     [HttpPost]
@@ -156,22 +157,31 @@ public class CategoryController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> DeleteConfirmed(int id)
     {
-        var category = await _context.Categories.FindAsync(id);
+        var category = await _context.Categories
+            .Include(c => c.Products)
+            .FirstOrDefaultAsync(c => c.Id == id);
 
-        if (category != null)
+        if (category == null)
+            return NotFound();
+
+        if (category.Products.Any())
         {
-            if (!string.IsNullOrEmpty(category.ImageUrl))
-            {
-                var uploadsFolder = Path.Combine(_env.WebRootPath, "images/categories");
-                var imgPath = Path.Combine(uploadsFolder, category.ImageUrl);
-                if (System.IO.File.Exists(imgPath))
-                    System.IO.File.Delete(imgPath);
-            }
-
-            _context.Categories.Remove(category);
-            await _context.SaveChangesAsync();
+            TempData["Error"] = "Nie można usunąć kategorii, która zawiera produkty.";
+            return RedirectToAction(nameof(Index));
         }
+
+        if (!string.IsNullOrEmpty(category.ImageUrl))
+        {
+            var uploadsFolder = Path.Combine(_env.WebRootPath, "images/categories");
+            var imgPath = Path.Combine(uploadsFolder, category.ImageUrl);
+            if (System.IO.File.Exists(imgPath))
+                System.IO.File.Delete(imgPath);
+        }
+
+        _context.Categories.Remove(category);
+        await _context.SaveChangesAsync();
 
         return RedirectToAction(nameof(Index));
     }
+
 }

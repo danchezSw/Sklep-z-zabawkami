@@ -51,7 +51,7 @@
 
         .modal-content {
             border-radius: 1rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         .logo-img {
@@ -77,9 +77,9 @@
             padding: 2px 6px;
         }
 
-        #searchResults {
+        #searchResults, #searchHistory {
             position: absolute;
-            top: 100%; /* tuż pod inputem */
+            top: 100%;
             left: 0;
             right: 0;
             background: white;
@@ -87,18 +87,23 @@
             z-index: 9999;
             max-height: 300px;
             overflow-y: auto;
-            display: none; /* domyślnie schowana */
+            display: none;
             width: 100%;
         }
 
-            #searchResults li {
+            #searchResults li, #searchHistory li {
                 cursor: pointer;
                 padding: 5px 10px;
             }
 
-                #searchResults li:hover {
+                #searchResults li:hover, #searchHistory li:hover {
                     background-color: #f0f0f0;
                 }
+
+        .history-term {
+            flex-grow: 1;
+        }
+        }
     </style>
 </head>
 <body>
@@ -120,7 +125,8 @@
                         <li class="nav-item ms-3 position-relative">
                             <form class="d-flex" id="searchForm" autocomplete="off">
                                 <input id="searchInput" class="form-control form-control-sm" type="text" placeholder="Szukaj produktów..." />
-                                <ul id="searchResults" class="list-group position-absolute" ...></ul>
+                                <ul id="searchResults" class="list-group position-absolute w-100"></ul>
+                                <ul id="searchHistory" class="list-group position-absolute w-100 mt-1"></ul>
                             </form>
                         </li>
                     </ul>
@@ -136,9 +142,7 @@
                         @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                         {
                             <li class="nav-item dropdown me-3">
-                                <a class="nav-link dropdown-toggle text-dark" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Panel Admina
-                                </a>
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Panel Admina</a>
                                 <ul class="dropdown-menu" aria-labelledby="adminDropdown">
                                     <li><a class="dropdown-item" asp-controller="Product" asp-action="Index">Zarządzanie produktami</a></li>
                                     <li><a class="dropdown-item" asp-controller="Category" asp-action="Index">Zarządzanie kategoriami</a></li>
@@ -151,23 +155,12 @@
                         @if (User.Identity?.IsAuthenticated ?? false)
                         {
                             <li class="nav-item dropdown me-3">
-                                <a class="nav-link dropdown-toggle text-dark" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Ustawienia konta
-                                </a>
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ustawienia konta</a>
                                 <ul class="dropdown-menu" aria-labelledby="accountDropdown">
-                                    <li>
-                                        <a class="dropdown-item" asp-controller="Account" asp-action="ChangeAddress">
-                                            Zmień adres
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" asp-controller="Account" asp-action="ChangePassword">
-                                            Zmień hasło
-                                        </a>
-                                    </li>
+                                    <li><a class="dropdown-item" asp-controller="Account" asp-action="ChangeAddress">Zmień adres</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Account" asp-action="ChangePassword">Zmień hasło</a></li>
                                 </ul>
                             </li>
-
                             <li class="nav-item">
                                 <form class="d-inline" asp-area="Identity" asp-page="/Account/Logout" method="post">
                                     <input type="hidden" name="returnUrl" value="/" />
@@ -217,204 +210,195 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        $(document).ready(function() {
             const modal = new bootstrap.Modal(document.getElementById("authModal"));
             const modalBody = document.getElementById("authModalBody");
             const modalTitle = document.getElementById("authModalLabel");
 
-            // 🔹 Wczytywanie stron auth do modalu
-            async function loadAuthPage(url, title) {
+            // Funkcje modalu (logowanie/rejestracja/forgot/resend)
+            async function loadAuthPage(url, title){
                 modalTitle.innerText = title;
-                modalBody.innerHTML = `<div class="text-center text-muted py-4">Ładowanie...</div>`;
-                try {
+                modalBody.innerHTML = '<div class="text-center text-muted py-4">Ładowanie...</div>';
+                try{
                     const res = await fetch(url, { headers: { "X-Requested-With": "XMLHttpRequest" } });
                     const html = await res.text();
                     modalBody.innerHTML = html;
                     modal.show();
-                    setupSwitchLinks();
-                    setupRegisterForm();
-                    setupLoginForm();
-                    setupForgotForm();
-                    setupResendForm();
-                } catch (err) {
-                    modalBody.innerHTML = `<div class="text-danger text-center py-4">Błąd ładowania</div>`;
-                    console.error(err);
-                }
+                    setupSwitchLinks(); setupRegisterForm(); setupLoginForm(); setupForgotForm(); setupResendForm();
+                }catch(err){ modalBody.innerHTML = '<div class="text-danger text-center py-4">Błąd ładowania</div>'; console.error(err);}
             }
 
-            // 🔹 Linki switch (login/register/forgot/resend)
-            function setupSwitchLinks() {
+            function setupSwitchLinks(){
                 modalBody.querySelectorAll("[data-switch]").forEach(link => {
                     link.addEventListener("click", e => {
                         e.preventDefault();
                         const type = link.getAttribute("data-switch");
-                        switch(type) {
-                            case "login": loadAuthPage("/Identity/Account/Login", "Logowanie"); break;
-                            case "register": loadAuthPage("/Identity/Account/Register", "Rejestracja"); break;
-                            case "forgot": loadAuthPage("/Identity/Account/ForgotPassword", "Przypomnienie hasła"); break;
-                            case "resend": loadAuthPage("/Identity/Account/ResendEmailConfirmation", "Wyślij ponownie e-mail"); break;
+                        switch(type){
+                            case "login": loadAuthPage("/Identity/Account/Login","Logowanie"); break;
+                            case "register": loadAuthPage("/Identity/Account/Register","Rejestracja"); break;
+                            case "forgot": loadAuthPage("/Identity/Account/ForgotPassword","Przypomnienie hasła"); break;
+                            case "resend": loadAuthPage("/Identity/Account/ResendEmailConfirmation","Wyślij ponownie e-mail"); break;
                         }
                     });
                 });
             }
 
-            // 🔹 Formularz rejestracji
-            function setupRegisterForm() {
-                const form = modalBody.querySelector("#registerForm");
-                if (!form) return;
+            function setupRegisterForm(){ const form = modalBody.querySelector("#registerForm"); if(!form) return;
                 form.addEventListener("submit", async e => {
                     e.preventDefault();
                     const formData = new FormData(form);
                     const action = form.getAttribute("action") || window.location.href;
-                    try {
-                        const res = await fetch(action, { method:"POST", body:formData, headers: {"X-Requested-With":"XMLHttpRequest"} });
+                    try{
+                        const res = await fetch(action,{method:"POST", body:formData, headers:{"X-Requested-With":"XMLHttpRequest"}});
                         const text = await res.text();
-                        if(text.includes("text-danger")) { modalBody.innerHTML = text; setupRegisterForm(); }
-                        else { modal.hide(); showCenteredToast("Konto utworzone pomyślnie!"); }
-                    } catch(err){ showCenteredToast("Błąd podczas rejestracji.", "danger"); console.error(err); }
+                        if(text.includes("text-danger")){ modalBody.innerHTML=text; setupRegisterForm(); } else { modal.hide(); showCenteredToast("Konto utworzone pomyślnie!"); }
+                    }catch(err){ showCenteredToast("Błąd podczas rejestracji.","danger"); console.error(err);}
                 });
             }
 
-            // 🔹 Formularz logowania
-                    function setupLoginForm() {
-            const loginForm = modalBody.querySelector("#loginForm");
-            if (!loginForm) return;
+            function setupLoginForm(){
+                const loginForm = modalBody.querySelector("#loginForm"); if(!loginForm) return;
+                loginForm.addEventListener("submit", async function(e){
+                    e.preventDefault();
+                    const formData = new FormData(loginForm);
+                    const action = loginForm.getAttribute("action") || window.location.href;
+                    try{
+                        const res = await fetch(action,{method:"POST", body:formData, headers:{"X-Requested-With":"XMLHttpRequest"}});
+                        const text = await res.text();
+                        if(text.includes("text-danger")){ modalBody.innerHTML=text; setupLoginForm(); } else { modal.hide(); showCenteredToast("Zalogowano pomyślnie!"); window.location.reload(); }
+                    }catch(err){ showCenteredToast("Błąd logowania.","danger"); console.error(err);}
+                });
+            }
 
-            loginForm.addEventListener("submit", async function(e) {
-                e.preventDefault();
-                const formData = new FormData(loginForm);
-                const action = loginForm.getAttribute("action") || window.location.href;
-
-                try {
-                    const response = await fetch(action, {
-                        method: "POST",
-                        body: formData,
-                        headers: { "X-Requested-With": "XMLHttpRequest" }
-                    });
-
-                    const text = await response.text();
-
-                    // Jeśli strona zwraca Page() (czyli login nieudany)
-                    if (text.includes("text-danger")) {
-                        modalBody.innerHTML = text;
-                        setupLoginForm();
-                    } else {
-                        modal.hide();
-                        showCenteredToast("Zalogowano pomyślnie!");
-                        // Opcjonalnie: odśwież navbar, żeby pokazać, że użytkownik jest zalogowany
-                        window.location.reload();
-                    }
-                } catch (err) {
-                    showCenteredToast("Wystąpił błąd podczas logowania.", "danger");
-                    console.error(err);
-                }
-            });
-        }
-
-
-            // 🔹 Formularz ForgotPassword
-            function setupForgotForm() {
-                const form = modalBody.querySelector("#forgotPasswordForm");
-                if(!form) return;
-                form.addEventListener("submit", async e => {
+            function setupForgotForm(){ const form = modalBody.querySelector("#forgotPasswordForm"); if(!form) return;
+                form.addEventListener("submit", async e=>{
                     e.preventDefault();
                     const formData = new FormData(form);
-                    try {
-                        const res = await fetch(form.action || "/Identity/Account/ForgotPassword", { method:"POST", body:formData });
-                        if(res.ok){ showCenteredToast("✉️ Sprawdź swoją skrzynkę e-mail."); form.reset(); }
-                        else { showCenteredToast("Błąd wysyłania prośby.", "danger"); }
-                    } catch(err){ showCenteredToast("Błąd wysyłania prośby.", "danger"); console.error(err); }
+                    try{ const res = await fetch(form.action || "/Identity/Account/ForgotPassword",{method:"POST", body:formData});
+                        if(res.ok){ showCenteredToast("✉️ Sprawdź swoją skrzynkę e-mail."); form.reset(); } else { showCenteredToast("Błąd wysyłania prośby.","danger"); }
+                    }catch(err){ showCenteredToast("Błąd wysyłania prośby.","danger"); console.error(err);}
                 });
             }
 
-            // 🔹 Formularz ResendEmailConfirmation
-                    function setupResendForm() {
-            const form = modalBody.querySelector("#resendEmailForm"); // <-- po ID, a nie po pierwszym form
-            if (!form) return;
+            function setupResendForm(){ const form = modalBody.querySelector("#resendEmailForm"); if(!form) return;
+                form.addEventListener("submit", async e=>{
+                    e.preventDefault();
+                    const formData = new FormData(form);
+                    try{ const res = await fetch(form.action || "/Identity/Account/ResendEmailConfirmation",{method:"POST",body:formData});
+                        if(res.ok){ showCenteredToast("✉️ E-mail z potwierdzeniem wysłany."); form.reset(); } else { showCenteredToast("Błąd wysyłania e-mail.","danger"); }
+                    }catch(err){ showCenteredToast("Błąd wysyłania e-mail","danger"); console.error(err);}
+                });
+            }
 
-            form.addEventListener("submit", async e => {
-                e.preventDefault();
-                const formData = new FormData(form);
-
-                try {
-                    const res = await fetch(form.action || "/Identity/Account/ResendEmailConfirmation", {
-                        method: "POST",
-                        body: formData
-                    });
-                    if (res.ok) {
-                        showCenteredToast("✉️ E-mail z potwierdzeniem wysłany.");
-                        form.reset();
-                    } else {
-                        showCenteredToast("Błąd wysyłania e-mail.", "danger");
-                    }
-                } catch (err) {
-                    showCenteredToast("Błąd wysyłania e-mail.", "danger");
-                    console.error(err);
-                }
+            // Obsługa linków logowania/rejestracji w navbarze
+            $("[data-auth]").click(function(e){ e.preventDefault();
+                const type = $(this).data("auth");
+                if(type==="login") loadAuthPage("/Identity/Account/Login","Logowanie");
+                else if(type==="register") loadAuthPage("/Identity/Account/Register","Rejestracja");
             });
+
+            function showCenteredToast(message,type="success"){
+                const toast = document.getElementById("centerToast");
+                toast.innerText = message;
+                toast.className = `position-fixed top-50 start-50 translate-middle px-4 py-3 rounded shadow text-white bg-${type==="danger"?"danger":"success"}`;
+                toast.style.display="block"; toast.style.opacity="0";
+                setTimeout(()=>{ toast.style.transition="opacity 0.5s"; toast.style.opacity="1"; },10);
+                setTimeout(()=>{ toast.style.opacity="0"; setTimeout(()=>toast.style.display="none",500); },3000);
+            }
+
+            // 🔹 WYSZUKIWANIE I HISTORIA
+            const $input = $('#searchInput');
+            const $results = $('#searchResults');
+            const $history = $('#searchHistory');
+
+                    function loadHistory() {
+            const history = JSON.parse(localStorage.getItem('searchHistory') || '[]');
+            $history.empty();
+            if(history.length === 0) { $history.hide(); return; }
+
+            history.forEach(item => {
+                const li = $(`
+                    <li class="list-group-item d-flex align-items-center gap-2">
+                        <img src="${item.defaultImage || '/images/no-image.png'}" style="width:40px;height:40px;object-fit:contain"/>
+                        <span class="history-term flex-grow-1">${item.title}</span>
+                        <button class="btn btn-sm btn-outline-danger btn-clear">×</button>
+                    </li>
+                `);
+                // klik w historię -> ustaw wartość i wywołaj input
+                li.find('.history-term, img').on('click', () => {
+                    $input.val(item.title).trigger('input');
+                    $history.hide();
+                });
+                // usuń z historii
+                li.find('.btn-clear').on('click', e => { e.stopPropagation(); removeFromHistory(item.title); });
+                $history.append(li);
+            });
+            $history.show();
         }
 
 
-            // 🔹 Obsługa kliknięć logowanie/rejestracja w navbarze
-            document.querySelectorAll("[data-auth]").forEach(link => {
-                link.addEventListener("click", e => {
-                    e.preventDefault();
-                    const type = link.getAttribute("data-auth");
-                    switch(type) {
-                        case "login": loadAuthPage("/Identity/Account/Login", "Logowanie"); break;
-                        case "register": loadAuthPage("/Identity/Account/Register", "Rejestracja"); break;
-                    }
-                });
-            });
+            function addToHistory(product) {
+            let history = JSON.parse(localStorage.getItem('searchHistory') || '[]');
+            history = history.filter(p => p.title !== product.title);
+            history.unshift(product);
+            if(history.length>5) history.pop();
+            localStorage.setItem('searchHistory', JSON.stringify(history));
+        }
 
+             function removeFromHistory(title) {
+            let history = JSON.parse(localStorage.getItem('searchHistory') || '[]');
+            history = history.filter(p=>p.title!==title);
+            localStorage.setItem('searchHistory', JSON.stringify(history));
+            loadHistory();
+        }
+
+             // Klik w input -> pokaż historię
+        $input.on('focus', function() {
+            if($(this).val().trim().length===0) loadHistory();
         });
 
-        function showCenteredToast(message, type="success"){
-            const toast = document.getElementById("centerToast");
-            toast.innerText = message;
-            toast.className = `position-fixed top-50 start-50 translate-middle px-4 py-3 rounded shadow text-white bg-${type==="danger"?"danger":"success"}`;
-            toast.style.display="block"; toast.style.opacity="0";
-            setTimeout(()=>{ toast.style.transition="opacity 0.5s"; toast.style.opacity="1"; }, 10);
-            setTimeout(()=>{ toast.style.opacity="0"; setTimeout(()=>toast.style.display="none",500); }, 3000);
-        }
-                   const $input = $('#searchInput');
-        const $results = $('#searchResults');
-
+            // Wpisywanie -> AJAX wyniki
         $input.on('input', function() {
             const term = $(this).val().trim();
-            if (term.length < 1) { $results.hide(); return; }
+            if(term.length===0) { $results.hide(); loadHistory(); return; }
+            $history.hide();
 
-            $.get('/Shop/SearchProducts', { term: term }, function(data) {
+            $.get('/Shop/SearchProducts', { term }, function(data){
                 $results.empty();
-                if (data.length === 0) { $results.hide(); return; }
-
-                data.forEach(item => {
-                    const li = $('<li></li>').html(`<img src="${item.DefaultImage}" style="width:40px;height:40px;margin-right:10px"/>${item.Title} - ${item.Price.toFixed(2)} zł`);
-                    li.on('click', function(){ window.location.href = '/Shop/Product?name=' + encodeURIComponent(item.Key); });
+                if(data.length===0){ $results.hide(); return; }
+                data.forEach(item=>{
+                    const li = $(`
+                        <li class="list-group-item d-flex align-items-center gap-2">
+                            <img src="${item.defaultImage}" style="width:40px;height:40px;object-fit:contain"/>
+                            <div>
+                                <div class="fw-semibold">${item.title}</div>
+                                <small class="text-muted">${item.price.toFixed(2)} zł</small>
+                            </div>
+                        </li>
+                    `);
+                    li.data('product', item);
+                    li.on('click', ()=> { addToHistory(item); window.location.href=`/Shop/Product/${item.id}`; });
                     $results.append(li);
                 });
-
                 $results.show();
             });
         });
 
-        // schowanie listy po kliknięciu poza formą
-        $(document).click(function(e) {
-            if (!$(e.target).closest('#searchForm').length) $results.hide();
+             // Klik poza input -> ukryj wszystko
+        $(document).on('click', function(e){
+            if(!$(e.target).closest('#searchForm').length){ $results.hide(); $history.hide(); }
         });
 
-        // przejście do pierwszego wyniku po Enter
-        $('#searchForm').on('submit', function(e) {
-            e.preventDefault();
-            const first = $results.children().first().data('url');
-            if (first) window.location.href = first;
-        });
-                $(document).ready(function() {
-            const $results = $('#searchResults');
+            $('#searchForm').submit(function(e){
+                e.preventDefault();
+                const firstResult = $results.children().first().data('url');
+                const firstHistory = $history.children().first().find('.history-term').text();
+                if(firstResult){ addToHistory($input.val().trim()); window.location.href = firstResult; }
+                else if(firstHistory){ $input.val(firstHistory).trigger('input'); }
+            });
+
         });
     </script>
-
-
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

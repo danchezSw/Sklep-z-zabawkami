@@ -40,8 +40,27 @@
                 <td>@item.Description</td>
                 <td>@(item.Products?.Count() ?? 0)</td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edytuj</a>
-                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Usuń</a>
+                    <a asp-action="Edit"
+                       asp-route-id="@item.Id"
+                       class="btn btn-sm btn-warning">
+                        Edytuj
+                    </a>
+
+                    @if (item.Products != null && item.Products.Any())
+                    {
+                        <button class="btn btn-sm btn-secondary" disabled
+                                title="Nie można usunąć kategorii z produktami">
+                            Usuń
+                        </button>
+                    }
+                    else
+                    {
+                        <a asp-action="Delete"
+                           asp-route-id="@item.Id"
+                           class="btn btn-sm btn-danger">
+                            Usuń
+                        </a>
+                    }
                 </td>
             </tr>
         }

@@ -32,6 +32,7 @@ public OrderController(ApplicationDbContext context)
 
         return View(order);
     }
+
     public async Task<IActionResult> ChangeStatus(int id)
     {
         var order = await _context.Orders.FindAsync(id);
@@ -60,7 +61,7 @@ public OrderController(ApplicationDbContext context)
         return View(order);
     }
 
-    [HttpPost, ActionName("Delete")]
+    [HttpPost, ActionName("DeleteConfirmed")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> DeleteConfirmed(int id)
     {

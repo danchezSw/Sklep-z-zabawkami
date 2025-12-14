@@ -1,8 +1,8 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ToyStore.Models;
-using ToyStore.Data;               // Tw�j ApplicationDbContext
+using ToyStore.Data;               // Twój ApplicationDbContext
 using ToyStore.Web.Models;         // HomeProductModel
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;

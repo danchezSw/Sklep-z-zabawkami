@@ -1,144 +1,39 @@
-C:\Users\mateu\Desktop\Projekt aktualne\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.deps.json
-C:\Users\mateu\Desktop\Projekt aktualne\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.runtimeconfig.json
-C:\Users\mateu\Desktop\Projekt aktualne\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.dll
-C:\Users\mateu\Desktop\Projekt aktualne\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.pdb
-C:\Users\mateu\Desktop\Projekt aktualne\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.Model.dll
-C:\Users\mateu\Desktop\Projekt aktualne\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.Model.pdb
-C:\Users\mateu\Desktop\Projekt aktualne\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.csproj.AssemblyReference.cache
-C:\Users\mateu\Desktop\Projekt aktualne\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\mateu\Desktop\Projekt aktualne\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.AssemblyInfoInputs.cache
-C:\Users\mateu\Desktop\Projekt aktualne\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.AssemblyInfo.cs
-C:\Users\mateu\Desktop\Projekt aktualne\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.csproj.CoreCompileInputs.cache
-C:\Users\mateu\Desktop\Projekt aktualne\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.18074464.Up2Date
-C:\Users\mateu\Desktop\Projekt aktualne\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.dll
-C:\Users\mateu\Desktop\Projekt aktualne\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\obj\Debug\net8.0\refint\ToyStore.DAL.dll
-C:\Users\mateu\Desktop\Projekt aktualne\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.pdb
-C:\Users\mateu\Desktop\Projekt aktualne\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.genruntimeconfig.cache
-C:\Users\mateu\Desktop\Projekt aktualne\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ref\ToyStore.DAL.dll
-C:\Users\mateu\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.deps.json
-C:\Users\mateu\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.runtimeconfig.json
-C:\Users\mateu\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.dll
-C:\Users\mateu\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.pdb
-C:\Users\mateu\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.Model.dll
-C:\Users\mateu\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.Model.pdb
-C:\Users\mateu\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.csproj.AssemblyReference.cache
-C:\Users\mateu\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\mateu\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.AssemblyInfoInputs.cache
-C:\Users\mateu\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.AssemblyInfo.cs
-C:\Users\mateu\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.csproj.CoreCompileInputs.cache
-C:\Users\mateu\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.sourcelink.json
-C:\Users\mateu\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.18074464.Up2Date
-C:\Users\mateu\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.dll
-C:\Users\mateu\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\refint\ToyStore.DAL.dll
-C:\Users\mateu\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.pdb
-C:\Users\mateu\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.genruntimeconfig.cache
-C:\Users\mateu\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ref\ToyStore.DAL.dll
-C:\Users\Wiktor\Source\Repos\Sklepzzabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.deps.json
-C:\Users\Wiktor\Source\Repos\Sklepzzabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.runtimeconfig.json
-C:\Users\Wiktor\Source\Repos\Sklepzzabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.dll
-C:\Users\Wiktor\Source\Repos\Sklepzzabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.pdb
-C:\Users\Wiktor\Source\Repos\Sklepzzabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.Model.dll
-C:\Users\Wiktor\Source\Repos\Sklepzzabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.Model.pdb
-C:\Users\Wiktor\Source\Repos\Sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.csproj.AssemblyReference.cache
-C:\Users\Wiktor\Source\Repos\Sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Wiktor\Source\Repos\Sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.AssemblyInfoInputs.cache
-C:\Users\Wiktor\Source\Repos\Sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.AssemblyInfo.cs
-C:\Users\Wiktor\Source\Repos\Sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.csproj.CoreCompileInputs.cache
-C:\Users\Wiktor\Source\Repos\Sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.sourcelink.json
-C:\Users\Wiktor\Source\Repos\Sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.18074464.Up2Date
-C:\Users\Wiktor\Source\Repos\Sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.dll
-C:\Users\Wiktor\Source\Repos\Sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\refint\ToyStore.DAL.dll
-C:\Users\Wiktor\Source\Repos\Sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.pdb
-C:\Users\Wiktor\Source\Repos\Sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.genruntimeconfig.cache
-C:\Users\Wiktor\Source\Repos\Sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ref\ToyStore.DAL.dll
-C:\Users\mateu\Desktop\sklepzzabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.deps.json
-C:\Users\mateu\Desktop\sklepzzabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.runtimeconfig.json
-C:\Users\mateu\Desktop\sklepzzabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.dll
-C:\Users\mateu\Desktop\sklepzzabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.pdb
-C:\Users\mateu\Desktop\sklepzzabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.Model.dll
-C:\Users\mateu\Desktop\sklepzzabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.Model.pdb
-C:\Users\mateu\Desktop\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.csproj.AssemblyReference.cache
-C:\Users\mateu\Desktop\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\mateu\Desktop\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.AssemblyInfoInputs.cache
-C:\Users\mateu\Desktop\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.AssemblyInfo.cs
-C:\Users\mateu\Desktop\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.csproj.CoreCompileInputs.cache
-C:\Users\mateu\Desktop\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.sourcelink.json
-C:\Users\mateu\Desktop\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.18074464.Up2Date
-C:\Users\mateu\Desktop\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.dll
-C:\Users\mateu\Desktop\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\refint\ToyStore.DAL.dll
-C:\Users\mateu\Desktop\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.pdb
-C:\Users\mateu\Desktop\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.genruntimeconfig.cache
-C:\Users\mateu\Desktop\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ref\ToyStore.DAL.dll
-C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.deps.json
-C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.runtimeconfig.json
-C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.dll
-C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.pdb
-C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.Model.dll
-C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.Model.pdb
-C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.csproj.AssemblyReference.cache
-C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.AssemblyInfoInputs.cache
-C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.AssemblyInfo.cs
-C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.csproj.CoreCompileInputs.cache
-C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.sourcelink.json
-C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.18074464.Up2Date
-C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.dll
-C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\refint\ToyStore.DAL.dll
-C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.pdb
-C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.genruntimeconfig.cache
-C:\Users\mateu\Desktop\Projekt aktualne\sklepzzabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ref\ToyStore.DAL.dll
-C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.deps.json
-C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.runtimeconfig.json
-C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.dll
-C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.pdb
-C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.Model.dll
-C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.Model.pdb
-C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.csproj.AssemblyReference.cache
-C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.AssemblyInfoInputs.cache
-C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.AssemblyInfo.cs
-C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.csproj.CoreCompileInputs.cache
-C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.sourcelink.json
-C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.18074464.Up2Date
-C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.dll
-C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\refint\ToyStore.DAL.dll
-C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.pdb
-C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.genruntimeconfig.cache
-C:\Users\Wiktor\Desktop\studiaprojekt\Sklep-z-zabawkami\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ref\ToyStore.DAL.dll
-C:\Users\mateu\Desktop\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.deps.json
-C:\Users\mateu\Desktop\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.runtimeconfig.json
-C:\Users\mateu\Desktop\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.dll
-C:\Users\mateu\Desktop\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.pdb
-C:\Users\mateu\Desktop\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.Model.dll
-C:\Users\mateu\Desktop\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.Model.pdb
-C:\Users\mateu\Desktop\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.csproj.AssemblyReference.cache
-C:\Users\mateu\Desktop\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\mateu\Desktop\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.AssemblyInfoInputs.cache
-C:\Users\mateu\Desktop\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.AssemblyInfo.cs
-C:\Users\mateu\Desktop\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.csproj.CoreCompileInputs.cache
-C:\Users\mateu\Desktop\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.18074464.Up2Date
-C:\Users\mateu\Desktop\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.dll
-C:\Users\mateu\Desktop\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\obj\Debug\net8.0\refint\ToyStore.DAL.dll
-C:\Users\mateu\Desktop\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.pdb
-C:\Users\mateu\Desktop\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.genruntimeconfig.cache
-C:\Users\mateu\Desktop\Sklep-z-zabawkami-Wiktor\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ref\ToyStore.DAL.dll
-E:\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.deps.json
-E:\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.runtimeconfig.json
-E:\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.dll
-E:\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.pdb
-E:\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.Model.dll
-E:\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.Model.pdb
-E:\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.csproj.AssemblyReference.cache
-E:\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.GeneratedMSBuildEditorConfig.editorconfig
-E:\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.AssemblyInfoInputs.cache
-E:\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.AssemblyInfo.cs
-E:\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.csproj.CoreCompileInputs.cache
-E:\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.18074464.Up2Date
-E:\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.dll
-E:\ToyStore\ToyStore.DAL\obj\Debug\net8.0\refint\ToyStore.DAL.dll
-E:\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.pdb
-E:\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.genruntimeconfig.cache
-E:\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ref\ToyStore.DAL.dll
+C:\Users\pakht\Downloads\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.deps.json
+C:\Users\pakht\Downloads\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.runtimeconfig.json
+C:\Users\pakht\Downloads\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.dll
+C:\Users\pakht\Downloads\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.pdb
+C:\Users\pakht\Downloads\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.Model.dll
+C:\Users\pakht\Downloads\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.Model.pdb
+C:\Users\pakht\Downloads\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.csproj.AssemblyReference.cache
+C:\Users\pakht\Downloads\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pakht\Downloads\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.AssemblyInfoInputs.cache
+C:\Users\pakht\Downloads\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.AssemblyInfo.cs
+C:\Users\pakht\Downloads\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.csproj.CoreCompileInputs.cache
+C:\Users\pakht\Downloads\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.sourcelink.json
+C:\Users\pakht\Downloads\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.18074464.Up2Date
+C:\Users\pakht\Downloads\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.dll
+C:\Users\pakht\Downloads\ToyStore\ToyStore.DAL\obj\Debug\net8.0\refint\ToyStore.DAL.dll
+C:\Users\pakht\Downloads\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.pdb
+C:\Users\pakht\Downloads\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.genruntimeconfig.cache
+C:\Users\pakht\Downloads\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ref\ToyStore.DAL.dll
+C:\Users\pakht\Desktop\PCZ\Project\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.deps.json
+C:\Users\pakht\Desktop\PCZ\Project\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.runtimeconfig.json
+C:\Users\pakht\Desktop\PCZ\Project\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.dll
+C:\Users\pakht\Desktop\PCZ\Project\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.pdb
+C:\Users\pakht\Desktop\PCZ\Project\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.Model.dll
+C:\Users\pakht\Desktop\PCZ\Project\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.Model.pdb
+C:\Users\pakht\Desktop\PCZ\Project\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.csproj.AssemblyReference.cache
+C:\Users\pakht\Desktop\PCZ\Project\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pakht\Desktop\PCZ\Project\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.AssemblyInfoInputs.cache
+C:\Users\pakht\Desktop\PCZ\Project\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.AssemblyInfo.cs
+C:\Users\pakht\Desktop\PCZ\Project\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.csproj.CoreCompileInputs.cache
+C:\Users\pakht\Desktop\PCZ\Project\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.sourcelink.json
+C:\Users\pakht\Desktop\PCZ\Project\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.18074464.Up2Date
+C:\Users\pakht\Desktop\PCZ\Project\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.dll
+C:\Users\pakht\Desktop\PCZ\Project\ToyStore\ToyStore.DAL\obj\Debug\net8.0\refint\ToyStore.DAL.dll
+C:\Users\pakht\Desktop\PCZ\Project\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.pdb
+C:\Users\pakht\Desktop\PCZ\Project\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.genruntimeconfig.cache
+C:\Users\pakht\Desktop\PCZ\Project\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ref\ToyStore.DAL.dll
 C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.deps.json
 C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.runtimeconfig.json
 C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.DAL\bin\Debug\net8.0\ToyStore.DAL.dll
@@ -150,6 +45,7 @@ C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.DAL\obj\Debug\net8.0\T
 C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.AssemblyInfoInputs.cache
 C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.AssemblyInfo.cs
 C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.csproj.CoreCompileInputs.cache
+C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.sourcelink.json
 C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.18074464.Up2Date
 C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.DAL\obj\Debug\net8.0\ToyStore.DAL.dll
 C:\Users\mateu\Desktop\Projekt aktualne\ToyStore\ToyStore.DAL\obj\Debug\net8.0\refint\ToyStore.DAL.dll

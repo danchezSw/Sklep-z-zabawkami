@@ -10,7 +10,6 @@ namespace ToyStore.Model.DataModels
     {
         Pending,
         Paid,
-        Shipped,
         Completed,
         Cancelled
     }

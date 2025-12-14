@@ -9,54 +9,60 @@
 
     @if (Model != null && Model.Count > 0)
     {
-        <table class="table table-striped">
+        <table class="table table-striped align-middle">
             <thead>
                 <tr>
                     <th>Produkt</th>
                     <th>Cena</th>
                     <th>Ilość</th>
                     <th>Łącznie</th>
-                    <th>Usuń</th> <!-- nowa kolumna -->
+                    <th>Usuń</th>
                 </tr>
             </thead>
             <tbody>
-    @foreach (var item in Model)
-    {
-        decimal lineTotal = item.Price * item.Quantity;
+                @foreach (var item in Model)
+                {
+                    decimal lineTotal = item.Price * item.Quantity;
 
-        <tr>
-            <td>
-                <img src="@Url.Content(item.Image)" style="height:50px; margin-right:10px;" />
-                @item.ProductName
-            </td>
-            <td>@item.Price.ToString("C")</td>
-            <td>
-                <form asp-controller="Cart" asp-action="UpdateQuantity" method="post" class="d-inline">
-                    <input type="hidden" name="productKey" value="@item.ProductKey" />
-                    <select name="quantity" class="form-select form-select-sm" onchange="this.form.submit()">
-                        @for (int i = 1; i <= 10; i++)  // maksymalnie 10 sztuk
-                        {
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <img src="@Url.Content(item.Image)" style="height:50px; margin-right:10px;" />
+                                <div>
+                                    <div>@item.ProductName</div>
+                                    @if (!string.IsNullOrEmpty(item.Color))
+                                    {
+                                        <div class="text-muted" style="font-size:0.9rem;">Kolor: @item.Color</div>
+                                    }
+                                </div>
+                            </div>
+                        </td>
+                        <td>@item.Price.ToString("C")</td>
+                        <td>
+                            <form asp-controller="Cart" asp-action="UpdateQuantity" method="post" class="d-inline">
+                                <input type="hidden" name="productKey" value="@item.ProductKey" />
+                                <select name="quantity" class="form-select form-select-sm" onchange="this.form.submit()">
+                                    @for (int i = 1; i <= 10; i++)
+                                    {
                                         <option value="@i" selected="@(i == item.Quantity ? "selected" : null)">@i</option>
-                        }
-                    </select>
-                </form>
-            </td>
-            <td>@lineTotal.ToString("C")</td>
-            <td>
-                <form asp-controller="Cart" asp-action="Remove" method="post">
-                    <input type="hidden" name="productKey" value="@item.ProductKey" />
-                    <button type="submit" class="btn btn-sm btn-danger">X</button>
-                </form>
-            </td>
-        </tr>
-    }
-</tbody>
+                                    }
+                                </select>
+                            </form>
+                        </td>
+                        <td>@lineTotal.ToString("C")</td>
+                        <td>
+                            <form asp-controller="Cart" asp-action="Remove" method="post">
+                                <input type="hidden" name="productKey" value="@item.ProductKey" />
+                                <button type="submit" class="btn btn-sm btn-danger">X</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
         </table>
 
-        decimal total = Model.Sum(x => x.Price * x.Quantity);
-
         <div class="text-end mt-3">
-            <strong>Suma: @total.ToString("C")</strong>
+            <strong>Suma: @Model.Sum(x => x.Price * x.Quantity).ToString("C")</strong>
         </div>
     }
     else
@@ -66,6 +72,8 @@
 
     <div class="text-center mt-4">
         <a asp-controller="Shop" asp-action="Index" class="btn btn-primary">Kontynuuj zakupy</a>
-        <button class="btn btn-success">Przejdź do płatności</button>
+        <a asp-controller="Checkout" asp-action="Index" class="btn btn-success">
+            Przejdź do płatności
+        </a>
     </div>
 </div>

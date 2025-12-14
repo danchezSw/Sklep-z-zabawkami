@@ -175,6 +175,35 @@ namespace ToyStore.DAL.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("ToyStore.Model.DataModels.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Comments");
+                });
+
             modelBuilder.Entity("ToyStore.Model.DataModels.Order", b =>
                 {
                     b.Property<int>("Id")
@@ -463,6 +492,25 @@ namespace ToyStore.DAL.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("ToyStore.Model.DataModels.Comment", b =>
+                {
+                    b.HasOne("ToyStore.Model.DataModels.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ToyStore.Model.DataModels.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("ToyStore.Model.DataModels.Order", b =>
                 {
                     b.HasOne("ToyStore.Model.DataModels.User", null)
@@ -481,7 +529,7 @@ namespace ToyStore.DAL.Migrations
                     b.HasOne("ToyStore.Model.DataModels.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Order");

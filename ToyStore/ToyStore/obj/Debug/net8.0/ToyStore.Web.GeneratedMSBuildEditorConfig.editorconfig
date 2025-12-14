@@ -92,6 +92,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcX0NhdGVnb3J5Rm9ybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/mateu/Desktop/Projekt aktualne/ToyStore/ToyStore/Views/Checkout/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Desktop/Projekt aktualne/ToyStore/ToyStore/Views/Checkout/Success.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcU3VjY2Vzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/mateu/Desktop/Projekt aktualne/ToyStore/ToyStore/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -146,6 +154,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/mateu/Desktop/Projekt aktualne/ToyStore/ToyStore/Views/Shop/Bears.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxCZWFycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mateu/Desktop/Projekt aktualne/ToyStore/ToyStore/Views/Shop/Category.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxDYXRlZ29yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/mateu/Desktop/Projekt aktualne/ToyStore/ToyStore/Views/Shop/CategoryBarbie.cshtml]

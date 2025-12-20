@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using ToyStore.Data;
 using ToyStore.Model.DataModels;
-
 using WebCartItem = ToyStore.Web.Models.CartItem;
 
 namespace ToyStore.Web.Controllers
@@ -24,20 +23,40 @@ namespace ToyStore.Web.Controllers
                             ?? new List<WebCartItem>();
 
             ViewBag.CartCount = cartItems.Sum(x => x.Quantity);
-
             return View(cartItems);
         }
 
         [HttpPost]
-        public IActionResult AddToCart(int productId, int quantity = 1, string? color = null)
+        public IActionResult AddToCart(int productId, int? colorVariantId, int quantity = 1)
         {
+            if (productId <= 0) return BadRequest("Nieprawidłowy produkt.");
+
             var product = _dbContext.Products.Find(productId);
             if (product == null) return NotFound();
+
+            string? color = null;
+            decimal price = product.Price;
+            string? image = product.DefaultImageUrl;
+
+            if (colorVariantId.HasValue)
+            {
+                var variant = _dbContext.ProductColorVariants.Find(colorVariantId.Value);
+                if (variant != null)
+                {
+                    color = variant.Color;
+                    price = variant.Price ?? price;
+                    image = variant.ImageUrl ?? image;
+                    // NIE nadpisujemy productId!
+                }
+            }
 
             var cartItems = HttpContext.Session.GetObjectFromJson<List<WebCartItem>>("Cart")
                             ?? new List<WebCartItem>();
 
-            var existingItem = cartItems.FirstOrDefault(c => c.ProductId == product.Id && c.Color == color);
+            // Unikalny klucz dla każdego produktu + wariantu
+            string productKey = $"{productId}_{colorVariantId ?? 0}";
+
+            var existingItem = cartItems.FirstOrDefault(c => c.ProductKey == productKey);
             if (existingItem != null)
             {
                 existingItem.Quantity += quantity;
@@ -46,19 +65,19 @@ namespace ToyStore.Web.Controllers
             {
                 cartItems.Add(new WebCartItem
                 {
-                    ProductId = product.Id,
+                    ProductKey = productKey,
+                    ProductId = productId,
                     ProductName = product.Name,
-                    Image = product.DefaultImageUrl ?? "",
+                    Image = image ?? "",
                     Quantity = quantity,
-                    Price = product.Price,
-                    Color = color,
-                    ProductKey = Guid.NewGuid().ToString()
+                    Price = price,
+                    Color = color
                 });
             }
 
             HttpContext.Session.SetObjectAsJson("Cart", cartItems);
 
-            return RedirectToAction("Index", "Shop");
+            return RedirectToAction("Index", "Cart");
         }
 
         [HttpPost]

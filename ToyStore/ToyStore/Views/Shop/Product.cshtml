@@ -77,12 +77,11 @@
                 </p>
             </div>
 
-            <form asp-action="AddToCart" method="post" class="mt-4">
+            <form asp-controller="Cart" asp-action="AddToCart" method="post" class="mt-4">
                 <input type="hidden" name="productId" value="@Model.Id" />
-                
-                <input type="hidden" name="colorVariantId" id="selectedVariantId" value="@(Model.ColorVariants.FirstOrDefault()?.Id)" />
+                <input type="hidden" name="colorVariantId" id="selectedVariantId" value="@(Model.ColorVariants.FirstOrDefault()?.Id ?? 0)" />
 
-                @if (Model.ColorVariants != null && Model.ColorVariants.Any())
+                @if (Model.ColorVariants.Any())
                 {
                     <div class="mb-4">
                         <label class="form-label fw-bold d-block mb-2">Wybierz wariant:</label>
@@ -93,12 +92,11 @@
                             @foreach (var variant in Model.ColorVariants)
                             {
                                 var activeClass = variant.Id == firstVariant.Id ? "active" : "";
-                                
-                                <div class="color-swatch @activeClass" 
+                                <div class="color-swatch @activeClass"
                                      title="@variant.Color"
-                                     style="background-color: @ColorToCss(variant.Color);"
-                                     data-img="@(variant.ImageUrl ?? Model.DefaultImageUrl ?? "/images/no-image.png")"
+                                     style="background-color:@ColorToCss(variant.Color);"
                                      data-variant="@variant.Id"
+                                     data-img="@(variant.ImageUrl ?? Model.DefaultImageUrl ?? "/images/no-image.png")"
                                      data-price="@(variant.Price?.ToString("0.00") ?? Model.Price.ToString("0.00"))">
                                 </div>
                             }
@@ -107,10 +105,7 @@
                 }
 
                 <div class="d-flex gap-3 align-items-center mt-3">
-                    <div>
-                        <label for="quantity" class="form-label visually-hidden">Ilość</label>
-                        <input type="number" id="quantity" name="quantity" value="1" min="1" class="form-control" style="width: 80px;">
-                    </div>
+                    <input type="number" name="quantity" value="1" min="1" class="form-control" style="width: 80px;" />
                     <button type="submit" class="btn btn-primary btn-lg px-4">
                         Do koszyka <i class="bi bi-cart-plus"></i>
                     </button>

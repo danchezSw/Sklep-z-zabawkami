@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ToyStore.Data;
 
@@ -10,9 +11,11 @@ using ToyStore.Data;
 namespace ToyStore.DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251220155813_OrderItems")]
+    partial class OrderItems
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.10");
@@ -246,12 +249,6 @@ namespace ToyStore.DAL.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("Color")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ImageUrl")
-                        .HasColumnType("TEXT");
 
                     b.Property<int>("OrderId")
                         .HasColumnType("INTEGER");

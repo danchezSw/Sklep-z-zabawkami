@@ -39,6 +39,7 @@ namespace ToyStore.Web.Controllers
 
             return View(model);
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult PlaceOrder(CheckoutVm model)
@@ -66,6 +67,15 @@ namespace ToyStore.Web.Controllers
             {
                 try
                 {
+                    foreach (var item in cartItems)
+                    {
+                        var productExists = _dbContext.Products.Any(p => p.Id == item.ProductId);
+                        if (!productExists)
+                        {
+                            throw new Exception($"Produkt w koszyku o Id {item.ProductId} nie istnieje w bazie!");
+                        }
+                    }
+
                     var order = new Order
                     {
                         CustomerName = model.CustomerName,
@@ -77,40 +87,52 @@ namespace ToyStore.Web.Controllers
 
                     _dbContext.Orders.Add(order);
                     _dbContext.SaveChanges();
-                    var productIds = cartItems.Select(c => c.ProductId).ToList();
-                    var productsInDb = _dbContext.Products
-                                        .Where(p => productIds.Contains(p.Id))
-                                        .ToDictionary(p => p.Id, p => p);
 
-                    var orderItems = cartItems
-                        .Where(c => productsInDb.ContainsKey(c.ProductId))
-                        .Select(c => new OrderItem
-                        {
-                            OrderId = order.Id,
-                            ProductId = c.ProductId,
-                            Product = productsInDb[c.ProductId],
-                            Quantity = c.Quantity,
-                            UnitPrice = c.Price
-                        })
-                        .ToList();
+                    var orderItems = cartItems.Select(item => new OrderItem
+                    {
+                        OrderId = order.Id,
+                        ProductId = item.ProductId,
+                        ProductName = item.ProductName,
+                        ImageUrl = item.Image,
+                        Color = item.Color,
+                        Quantity = item.Quantity,
+                        UnitPrice = item.Price
+                    }).ToList();
 
                     _dbContext.OrderItems.AddRange(orderItems);
                     _dbContext.SaveChanges();
 
                     transaction.Commit();
+
+                    HttpContext.Session.Remove("Cart");
+
+                    return RedirectToAction("Success");
                 }
-                catch
+                catch (Exception ex)
                 {
                     transaction.Rollback();
-                    ModelState.AddModelError("", "Wystąpił błąd przy zapisywaniu zamówienia.");
+
+                    foreach (var item in cartItems)
+                    {
+                        Console.WriteLine($"Produkt w koszyku: Id={item.ProductId}, Name={item.ProductName}");
+                    }
+
+                    ModelState.AddModelError("", "Wystąpił błąd przy zapisywaniu zamówienia: " + ex.Message);
+
+                    model.CartItems = cartItems.Select(c => new CartItemVm
+                    {
+                        ProductId = c.ProductId,
+                        ProductName = c.ProductName,
+                        Image = c.Image,
+                        Quantity = c.Quantity,
+                        Price = c.Price,
+                        Color = c.Color
+                    }).ToList();
+
                     return View("Index", model);
                 }
             }
-
-            HttpContext.Session.Remove("Cart");
-            return RedirectToAction("Success");
         }
-
 
         public IActionResult Success()
         {

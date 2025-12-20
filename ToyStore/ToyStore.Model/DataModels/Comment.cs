@@ -13,11 +13,9 @@ namespace ToyStore.Model.DataModels
 
         public DateTime CreatedDate { get; set; } = DateTime.Now;
 
-        // Связь с продуктом
         public int ProductId { get; set; }
         public virtual Product Product { get; set; }
 
-        // Связь с пользователем (Identity)
         public string UserId { get; set; }
         
         [ForeignKey("UserId")]

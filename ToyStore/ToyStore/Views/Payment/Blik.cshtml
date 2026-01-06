@@ -1,0 +1,15 @@
+﻿@model ToyStore.ViewModels.VM.BlikPaymentVm
+
+<h2>Płatność BLIK</h2>
+
+<form method="post" asp-action="Blik">
+    <input type="hidden" asp-for="OrderId" />
+
+    <div class="mb-3">
+        <label>Kod BLIK</label>
+        <input asp-for="BlikCode" class="form-control" />
+        <span asp-validation-for="BlikCode" class="text-danger"></span>
+    </div>
+
+    <button class="btn btn-success">Zapłać</button>
+</form>

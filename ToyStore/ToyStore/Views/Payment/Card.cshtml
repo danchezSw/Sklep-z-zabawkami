@@ -1,0 +1,30 @@
+﻿@model ToyStore.ViewModels.VM.CardPaymentVm
+
+<h2>Płatność kartą</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="OrderId" />
+
+    <div class="mb-3">
+        <label>Numer karty</label>
+        <input asp-for="CardNumber" class="form-control" />
+        <span asp-validation-for="CardNumber" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label>Imię i nazwisko</label>
+        <input asp-for="CardHolder" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Data ważności (MM/YY)</label>
+        <input asp-for="ExpiryDate" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>CVV</label>
+        <input asp-for="CVV" class="form-control" />
+    </div>
+
+    <button class="btn btn-success">Zapłać</button>
+</form>

@@ -21,6 +21,8 @@ namespace ToyStore.Model.DataModels
 
         [MaxLength(200)]
         public string ShippingAddress { get; set; }
+        [Required, MaxLength(20)]
+        public string PaymentMethod { get; set; }
         public OrderStatus Status { get; set; } = OrderStatus.Pending;
         public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
     }

@@ -1,0 +1,16 @@
+﻿@model ToyStore.ViewModels.VM.TransferPaymentVm
+
+<h2>Płatność przelewem</h2>
+
+<p><strong>Numer konta:</strong> 11 2222 3333 4444 5555 6666</p>
+<p><strong>Tytuł przelewu:</strong> Zamówienie #@Model.OrderId</p>
+
+<form method="post" asp-action="Transfer">
+    <input type="hidden" asp-for="OrderId" />
+    <div class="form-check mb-3">
+        <input asp-for="Confirmed" class="form-check-input" type="checkbox" />
+        <label asp-for="Confirmed" class="form-check-label">Potwierdzam wykonanie przelewu</label>
+        <span asp-validation-for="Confirmed" class="text-danger"></span>
+    </div>
+    <button class="btn btn-primary">Zakończ</button>
+</form>

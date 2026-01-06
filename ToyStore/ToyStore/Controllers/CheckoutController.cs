@@ -18,6 +18,19 @@ namespace ToyStore.Web.Controllers
             _dbContext = dbContext;
         }
 
+        private List<CartItemVm> MapCart(List<WebCartItem> cartItems)
+        {
+            return cartItems.Select(c => new CartItemVm
+            {
+                ProductId = c.ProductId,
+                ProductName = c.ProductName,
+                Image = c.Image,
+                Quantity = c.Quantity,
+                Price = c.Price,
+                Color = c.Color
+            }).ToList();
+        }
+
         public IActionResult Index()
         {
             var cartItems = HttpContext.Session.GetObjectFromJson<List<WebCartItem>>("Cart");
@@ -50,87 +63,50 @@ namespace ToyStore.Web.Controllers
 
             if (!ModelState.IsValid)
             {
-                model.CartItems = cartItems.Select(c => new CartItemVm
-                {
-                    ProductId = c.ProductId,
-                    ProductName = c.ProductName,
-                    Image = c.Image,
-                    Quantity = c.Quantity,
-                    Price = c.Price,
-                    Color = c.Color
-                }).ToList();
-
+                model.CartItems = MapCart(cartItems);
                 return View("Index", model);
             }
 
-            using (var transaction = _dbContext.Database.BeginTransaction())
+            using var transaction = _dbContext.Database.BeginTransaction();
+
+            try
             {
-                try
+                var order = new Order
                 {
-                    foreach (var item in cartItems)
-                    {
-                        var productExists = _dbContext.Products.Any(p => p.Id == item.ProductId);
-                        if (!productExists)
-                        {
-                            throw new Exception($"Produkt w koszyku o Id {item.ProductId} nie istnieje w bazie!");
-                        }
-                    }
+                    CustomerName = model.CustomerName,
+                    CustomerEmail = model.CustomerEmail,
+                    ShippingAddress = model.ShippingAddress,
+                    PaymentMethod = model.PaymentMethod,
+                    Status = OrderStatus.Pending,
+                    OrderDate = DateTime.Now
+                };
 
-                    var order = new Order
-                    {
-                        CustomerName = model.CustomerName,
-                        CustomerEmail = model.CustomerEmail,
-                        ShippingAddress = model.ShippingAddress,
-                        Status = OrderStatus.Pending,
-                        OrderDate = DateTime.Now
-                    };
+                _dbContext.Orders.Add(order);
+                _dbContext.SaveChanges();
 
-                    _dbContext.Orders.Add(order);
-                    _dbContext.SaveChanges();
-
-                    var orderItems = cartItems.Select(item => new OrderItem
-                    {
-                        OrderId = order.Id,
-                        ProductId = item.ProductId,
-                        ProductName = item.ProductName,
-                        ImageUrl = item.Image,
-                        Color = item.Color,
-                        Quantity = item.Quantity,
-                        UnitPrice = item.Price
-                    }).ToList();
-
-                    _dbContext.OrderItems.AddRange(orderItems);
-                    _dbContext.SaveChanges();
-
-                    transaction.Commit();
-
-                    HttpContext.Session.Remove("Cart");
-
-                    return RedirectToAction("Success");
-                }
-                catch (Exception ex)
+                var orderItems = cartItems.Select(item => new OrderItem
                 {
-                    transaction.Rollback();
+                    OrderId = order.Id,
+                    ProductId = item.ProductId,
+                    ProductName = item.ProductName,
+                    ImageUrl = item.Image,
+                    Color = item.Color,
+                    Quantity = item.Quantity,
+                    UnitPrice = item.Price
+                }).ToList();
 
-                    foreach (var item in cartItems)
-                    {
-                        Console.WriteLine($"Produkt w koszyku: Id={item.ProductId}, Name={item.ProductName}");
-                    }
+                _dbContext.OrderItems.AddRange(orderItems);
+                _dbContext.SaveChanges();
 
-                    ModelState.AddModelError("", "Wystąpił błąd przy zapisywaniu zamówienia: " + ex.Message);
-
-                    model.CartItems = cartItems.Select(c => new CartItemVm
-                    {
-                        ProductId = c.ProductId,
-                        ProductName = c.ProductName,
-                        Image = c.Image,
-                        Quantity = c.Quantity,
-                        Price = c.Price,
-                        Color = c.Color
-                    }).ToList();
-
-                    return View("Index", model);
-                }
+                transaction.Commit();
+                return RedirectToAction("Start", "Payment", new { orderId = order.Id });
+            }
+            catch
+            {
+                transaction.Rollback();
+                ModelState.AddModelError("", "Błąd zapisu zamówienia");
+                model.CartItems = MapCart(cartItems);
+                return View("Index", model);
             }
         }
 

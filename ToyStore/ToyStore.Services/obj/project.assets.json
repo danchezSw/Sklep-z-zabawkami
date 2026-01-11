@@ -4049,11 +4049,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\ToyStore\\ToyStore.Services\\ToyStore.Services.csproj",
+      "projectUniqueName": "C:\\Users\\mateu\\Desktop\\ToyStore\\ToyStore.Services\\ToyStore.Services.csproj",
       "projectName": "ToyStore.Services",
-      "projectPath": "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\ToyStore\\ToyStore.Services\\ToyStore.Services.csproj",
+      "projectPath": "C:\\Users\\mateu\\Desktop\\ToyStore\\ToyStore.Services\\ToyStore.Services.csproj",
       "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\ToyStore\\ToyStore.Services\\obj\\",
+      "outputPath": "C:\\Users\\mateu\\Desktop\\ToyStore\\ToyStore.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4074,14 +4074,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\ToyStore\\ToyStore.DAL\\ToyStore.DAL.csproj": {
-              "projectPath": "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\ToyStore\\ToyStore.DAL\\ToyStore.DAL.csproj"
+            "C:\\Users\\mateu\\Desktop\\ToyStore\\ToyStore.DAL\\ToyStore.DAL.csproj": {
+              "projectPath": "C:\\Users\\mateu\\Desktop\\ToyStore\\ToyStore.DAL\\ToyStore.DAL.csproj"
             },
-            "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj": {
-              "projectPath": "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj"
+            "C:\\Users\\mateu\\Desktop\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj": {
+              "projectPath": "C:\\Users\\mateu\\Desktop\\ToyStore\\ToyStore.Model\\ToyStore.Model.csproj"
             },
-            "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\ToyStore\\ToyStore.ViewModels\\ToyStore.ViewModels.csproj": {
-              "projectPath": "C:\\Users\\mateu\\Desktop\\Projekt aktualne\\ToyStore\\ToyStore.ViewModels\\ToyStore.ViewModels.csproj"
+            "C:\\Users\\mateu\\Desktop\\ToyStore\\ToyStore.ViewModels\\ToyStore.ViewModels.csproj": {
+              "projectPath": "C:\\Users\\mateu\\Desktop\\ToyStore\\ToyStore.ViewModels\\ToyStore.ViewModels.csproj"
             }
           }
         }

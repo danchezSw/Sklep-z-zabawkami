@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity; 
+using ToyStore.Web.Services;
 
 // Alias dla CartItem z Web.Models
 using WebCartItem = ToyStore.Web.Models.CartItem;
@@ -16,11 +17,13 @@ namespace ToyStore.Web.Controllers
     public class ShopController : Controller
     {
         private readonly ApplicationDbContext _context;
-        private readonly UserManager<User> _userManager; // Daniil
-        public ShopController(ApplicationDbContext context, UserManager<User> userManager)
+        private readonly UserManager<User> _userManager;
+        private readonly EmailService _emailService; 
+        public ShopController(ApplicationDbContext context, UserManager<User> userManager, EmailService emailService)
         {
             _context = context;
             _userManager = userManager;
+            _emailService = emailService;
         }
 
         // Strona główna sklepu - lista kategorii i produktów
@@ -52,6 +55,30 @@ namespace ToyStore.Web.Controllers
             return View(category);
         }
 
+        // Odpowiedź administratora na komentarz
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ReplyToComment(int commentId, string replyText)
+        {
+            
+            if (!User.IsInRole("Admin"))
+            {
+                return Forbid();
+            }
+
+            var comment = await _context.Comments.FindAsync(commentId);
+            if (comment == null) return NotFound();
+
+            if (!string.IsNullOrWhiteSpace(replyText))
+            {
+                comment.AdminReply = replyText;
+                comment.ReplyDate = DateTime.Now;
+                await _context.SaveChangesAsync();
+            }
+
+            
+            return RedirectToAction("Product", new { id = comment.ProductId });
+        }
         // Widok pojedynczego produktu
         public async Task<IActionResult> Product(int? id)
         {
@@ -111,24 +138,27 @@ namespace ToyStore.Web.Controllers
 
         public async Task<IActionResult> DeleteComment(int commentId)
 {
-        var comment = await _context.Comments.FindAsync(commentId);
-    
-        if (comment == null)
-        {
-            return NotFound();
-        }
+    var comment = await _context.Comments.FindAsync(commentId);
+    if (comment == null) return NotFound();
 
-        var user = await _userManager.GetUserAsync(User);
+    var user = await _userManager.GetUserAsync(User);
 
-        if (user == null || (comment.UserId != user.Id && !User.IsInRole("Admin")))
-        {
-            return Forbid(); 
-        }
 
-        _context.Comments.Remove(comment);
-        await _context.SaveChangesAsync();
+    var adminEmails = new[] { "ADMIN1@EXAMPLE.COM" };
 
-        return RedirectToAction("Product", new { id = comment.ProductId });
+
+    bool isAdmin = User.IsInRole("Admin") || 
+                   (user != null && user.Email != null && adminEmails.Contains(user.Email.ToUpper()));
+
+    if (user == null || (comment.UserId != user.Id && !isAdmin))
+    {
+        return Forbid();
+    }
+
+    _context.Comments.Remove(comment);
+    await _context.SaveChangesAsync();
+
+    return RedirectToAction("Product", new { id = comment.ProductId });
 }
         public async Task<IActionResult> AddToCart(int productId, int quantity = 1, int? colorVariantId = null)
         {

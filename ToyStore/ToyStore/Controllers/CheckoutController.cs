@@ -6,16 +6,18 @@ using ToyStore.Data;
 using ToyStore.Model.DataModels;
 using ToyStore.ViewModels.VM;
 using WebCartItem = ToyStore.Web.Models.CartItem;
+using ToyStore.Web.Services;
 
 namespace ToyStore.Web.Controllers
 {
     public class CheckoutController : Controller
     {
         private readonly ApplicationDbContext _dbContext;
-
-        public CheckoutController(ApplicationDbContext dbContext)
+        private readonly EmailService _emailService;
+        public CheckoutController(ApplicationDbContext dbContext, EmailService emailService)
         {
             _dbContext = dbContext;
+            _emailService = emailService;
         }
 
         private List<CartItemVm> MapCart(List<WebCartItem> cartItems)
@@ -55,7 +57,7 @@ namespace ToyStore.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult PlaceOrder(CheckoutVm model)
+        public async Task<IActionResult> PlaceOrder(CheckoutVm model)
         {
             var cartItems = HttpContext.Session.GetObjectFromJson<List<WebCartItem>>("Cart");
             if (cartItems == null || !cartItems.Any())
@@ -82,7 +84,7 @@ namespace ToyStore.Web.Controllers
                 };
 
                 _dbContext.Orders.Add(order);
-                _dbContext.SaveChanges();
+                await _dbContext.SaveChangesAsync();
 
                 var orderItems = cartItems.Select(item => new OrderItem
                 {
@@ -96,9 +98,50 @@ namespace ToyStore.Web.Controllers
                 }).ToList();
 
                 _dbContext.OrderItems.AddRange(orderItems);
-                _dbContext.SaveChanges();
+                await _dbContext.SaveChangesAsync();
 
                 transaction.Commit();
+
+                try
+                {
+                    decimal totalAmount = orderItems.Sum(x => x.Quantity * x.UnitPrice);
+                    string subject = $"Potwierdzenie zamówienia nr #{order.Id} - ToyStore";
+
+                    string body = $@"
+                        <div style='font-family: Arial, sans-serif; padding: 20px; border: 1px solid #ddd; border-radius: 5px;'>
+                            <h2 style='color: #0d6efd;'>Dziękujemy za zamówienie, {model.CustomerName}!</h2>
+                            <p>Twój numer zamówienia: <strong>#{order.Id}</strong></p>
+                            <p>Adres dostawy: {model.ShippingAddress}</p>
+                            <hr />
+                            <h3>Podsumowanie:</h3>
+                            <ul>";
+
+                    foreach (var item in cartItems)
+                    {
+                        string colorInfo = !string.IsNullOrEmpty(item.Color) ? $" (Kolor: {item.Color})" : "";
+                        body += $"<li>{item.ProductName}{colorInfo} - {item.Quantity} szt. x {item.Price:C}</li>";
+                    }
+
+                    body += $@"
+                            </ul>
+                            <h3>Do zapłaty: {totalAmount:C}</h3>
+                            <p>Metoda płatności: {model.PaymentMethod}</p>
+                            <br/>
+                            <p>Pozdrawiamy,<br/>Zespół ToyStore</p>
+                        </div>";
+
+                    if (!string.IsNullOrEmpty(model.CustomerEmail))
+                    {
+                        await _emailService.SendEmailAsync(model.CustomerEmail, subject, body);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Błąd wysyłania e-maila: {ex.Message}");
+                }
+
+                HttpContext.Session.Remove("Cart");
+
                 return RedirectToAction("Start", "Payment", new { orderId = order.Id });
             }
             catch

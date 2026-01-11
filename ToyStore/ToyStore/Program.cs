@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using ToyStore.Model.DataModels;
 using ToyStore.Data;
+using ToyStore.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,7 +25,7 @@ builder.Services
 
 builder.Services.AddRazorPages();
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddTransient<EmailService>();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
 {

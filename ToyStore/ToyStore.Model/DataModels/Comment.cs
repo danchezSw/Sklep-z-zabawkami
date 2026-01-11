@@ -20,5 +20,8 @@ namespace ToyStore.Model.DataModels
         
         [ForeignKey("UserId")]
         public virtual User User { get; set; }
+
+        public string? AdminReply { get; set; } 
+        public DateTime? ReplyDate { get; set; }
     }
 }

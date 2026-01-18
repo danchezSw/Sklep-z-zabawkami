@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using ToyStore.Data;
 using ToyStore.Model.DataModels;
 
-[Authorize(Roles = "Admin")]
+[Authorize(Roles = "Admin,Employee")]
 public class OrderController : Controller
 {
     private readonly ApplicationDbContext _context;
@@ -53,6 +53,7 @@ public OrderController(ApplicationDbContext context)
 
         return RedirectToAction(nameof(Index));
     }
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Delete(int id)
     {
         var order = await _context.Orders.FindAsync(id);
@@ -62,6 +63,7 @@ public OrderController(ApplicationDbContext context)
     }
 
     [HttpPost, ActionName("DeleteConfirmed")]
+    [Authorize(Roles = "Admin")]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> DeleteConfirmed(int id)
     {

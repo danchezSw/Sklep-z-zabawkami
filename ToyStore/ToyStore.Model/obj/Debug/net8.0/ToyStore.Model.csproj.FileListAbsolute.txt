@@ -185,3 +185,15 @@ C:\Users\mateu\Desktop\ToyStore\ToyStore.Model\obj\Debug\net8.0\ToyStore.Model.d
 C:\Users\mateu\Desktop\ToyStore\ToyStore.Model\obj\Debug\net8.0\refint\ToyStore.Model.dll
 C:\Users\mateu\Desktop\ToyStore\ToyStore.Model\obj\Debug\net8.0\ToyStore.Model.pdb
 C:\Users\mateu\Desktop\ToyStore\ToyStore.Model\obj\Debug\net8.0\ref\ToyStore.Model.dll
+D:\ToyStore\ToyStore.Model\bin\Debug\net8.0\ToyStore.Model.deps.json
+D:\ToyStore\ToyStore.Model\bin\Debug\net8.0\ToyStore.Model.dll
+D:\ToyStore\ToyStore.Model\bin\Debug\net8.0\ToyStore.Model.pdb
+D:\ToyStore\ToyStore.Model\obj\Debug\net8.0\ToyStore.Model.csproj.AssemblyReference.cache
+D:\ToyStore\ToyStore.Model\obj\Debug\net8.0\ToyStore.Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\ToyStore\ToyStore.Model\obj\Debug\net8.0\ToyStore.Model.AssemblyInfoInputs.cache
+D:\ToyStore\ToyStore.Model\obj\Debug\net8.0\ToyStore.Model.AssemblyInfo.cs
+D:\ToyStore\ToyStore.Model\obj\Debug\net8.0\ToyStore.Model.csproj.CoreCompileInputs.cache
+D:\ToyStore\ToyStore.Model\obj\Debug\net8.0\ToyStore.Model.dll
+D:\ToyStore\ToyStore.Model\obj\Debug\net8.0\refint\ToyStore.Model.dll
+D:\ToyStore\ToyStore.Model\obj\Debug\net8.0\ToyStore.Model.pdb
+D:\ToyStore\ToyStore.Model\obj\Debug\net8.0\ref\ToyStore.Model.dll

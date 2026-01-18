@@ -168,6 +168,10 @@
                                 </ul>
                             </li>
                         }
+                        @if (User.Identity.IsAuthenticated && User.IsInRole("Employee"))
+                        {
+                             <a class="dropdown-item" asp-controller="Order" asp-action="Index">Zarządzanie zamówieniami</a>
+                        }
 
                         @if (User.Identity?.IsAuthenticated ?? false)
                         {

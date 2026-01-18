@@ -1,28 +1,50 @@
 ﻿@page
 @model ResendEmailConfirmationModel
 @{
-    ViewData["Title"] = "Wyślij ponownie email z potwierdzeniem";
-}
-@{
-    Layout = null;
+    ViewData["Title"] = "Wyślij ponownie email potwierdzający";
 }
 
-<h1>@ViewData["Title"]</h1>
-<h2>Podaj swój email:</h2>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form id="resendEmailForm" method="post">
-            <div asp-validation-summary="All" class="text-danger" role="alert"></div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.Email" class="form-control" aria-required="true" placeholder="name@example.com" />
-                <label asp-for="Input.Email" class="form-label"></label>
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-lg border-0" style="max-width: 420px; width: 100%;">
+        <div class="card-body p-4">
+
+            <div class="text-center mb-4">
+                <h3 class="fw-bold">@ViewData["Title"]</h3>
+                <p class="text-muted small">
+                    Jeśli nie otrzymałeś wiadomości e-mail z potwierdzeniem konta,
+                    wpisz swój adres poniżej — wyślemy ją ponownie.
+                </p>
             </div>
-            <button type="submit" class="w-100 btn btn-lg btn-primary">Wyślij</button>
-            <p><a href="javascript:void(0);" data-switch="login">Wróć do logowania</a></p>
-        </form>
 
+            <form id="resendEmailForm" method="post">
+                <div asp-validation-summary="ModelOnly"
+                     class="alert alert-danger d-none"
+                     role="alert"></div>
+
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Email"
+                           class="form-control"
+                           autocomplete="email"
+                           aria-required="true"
+                           placeholder="name@example.com" />
+                    <label asp-for="Input.Email">Adres e-mail</label>
+                    <span asp-validation-for="Input.Email"
+                          class="text-danger small"></span>
+                </div>
+
+                <button type="submit"
+                        class="btn btn-primary w-100 py-2">
+                    Wyślij ponownie
+                </button>
+
+                <div class="text-center mt-3">
+                    <a asp-page="/Account/Login" class="text-decoration-none">
+                        ← Powrót do logowania
+                    </a>
+                </div>
+            </form>
+
+        </div>
     </div>
 </div>
 
